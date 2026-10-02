@@ -194,6 +194,21 @@ h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.02em;line-height:1.15;m
 .case dd{margin:2px 0 0}
 @media (max-width:860px){.cases{grid-template-columns:1fr}}
 @media (max-width:640px){.logo-slot{min-width:120px}}
+.problems{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.problem{display:flex;flex-direction:column;gap:8px;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px 26px;transition:border-color .2s}
+.problem:hover{border-color:var(--signal)}
+.problem h3{margin:0;font-size:1.12rem;letter-spacing:-.01em}
+.problem p{margin:0;color:var(--muted);flex:1}
+.problem .go{color:var(--signal);font-weight:600;font-size:.92rem;margin-top:6px}
+@media (max-width:700px){.problems{grid-template-columns:1fr}}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--line)}
+.steps li{padding:22px 22px 0 0;position:relative}
+.steps li::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--signal)}
+.steps .num{display:block;color:var(--signal);font-weight:700;font-size:.9rem;margin-bottom:6px}
+.steps h3{margin:0 0 6px;font-size:1.1rem}
+.steps p{margin:0;color:var(--muted);font-size:.97rem}
+@media (max-width:760px){.steps{grid-template-columns:1fr;border-top:0;border-left:2px solid var(--line);gap:22px}.steps li{padding:0 0 0 24px}.steps li::before{top:6px;left:-7px}}
+.about p{max-width:68ch;color:var(--muted);margin:0;font-size:1.08rem}
 footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
 
 @media print{
@@ -212,9 +227,9 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
     <a class="brand" href="#top">Trương Mạnh Tùng</a>
     <div class="right">
       <nav class="links" aria-label="Menu">
+        <a href="#bai-toan"><span data-l="vi">Bài toán</span><span data-l="en">Challenges</span></a>
         <a href="#giai-phap"><span data-l="vi">Giải pháp</span><span data-l="en">Solutions</span></a>
-        <a href="#vai-tro"><span data-l="vi">Vai trò</span><span data-l="en">Role</span></a>
-        <a href="#kinh-nghiem"><span data-l="vi">Kinh nghiệm</span><span data-l="en">Experience</span></a>
+        <a href="#du-an"><span data-l="vi">Dự án</span><span data-l="en">Projects</span></a>
         <a href="#lien-he"><span data-l="vi">Liên hệ</span><span data-l="en">Contact</span></a>
       </nav>
       <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
@@ -234,7 +249,7 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
         <p class="lead" data-l="vi">Tôi đồng hành cùng ngân hàng, công ty tài chính, bảo hiểm và chứng khoán trong việc xây dựng và vận hành Contact Center. Kinh nghiệm triển khai giải pháp của Cisco, Calabrio cùng các nền tảng CRM, autodialer và AI đã được kiểm chứng qua những hệ thống vận hành ổn định, liên tục nhiều năm. Mỗi giải pháp đều bắt đầu từ việc lắng nghe nhu cầu và sáng kiến của chính doanh nghiệp, để những gì được xây dựng thực sự phù hợp với cách họ vận hành.</p>
         <p class="lead" data-l="en">I work with banks, consumer finance, insurance and securities companies to build and run their Contact Centers. My experience deploying Cisco and Calabrio solutions, alongside CRM, autodialer and AI platforms, is proven by systems that have run stably and continuously for years. Every solution starts with listening to the client's own needs and ideas, so that what we build truly fits the way they operate.</p>
         <div class="btns">
-          <a class="btn primary" href="mailto:tungtm@basebs.com"><span data-l="vi">Gửi email cho tôi</span><span data-l="en">Email me</span></a>
+          <a class="btn primary" href="#lien-he"><span data-l="vi">Trao đổi với tôi</span><span data-l="en">Talk to me</span></a>
           <a class="btn" href="#giai-phap"><span data-l="vi">Xem giải pháp</span><span data-l="en">See solutions</span></a>
         </div>
       </div>
@@ -251,9 +266,22 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
     </div>
   </div>
 
+  <section id="bai-toan">
+    <div class="wrap">
+      <h2><span data-l="vi">Những bài toán tôi thường cùng khách hàng giải quyết</span><span data-l="en">Challenges I help clients solve</span></h2>
+      <p class="intro"><span data-l="vi">Mỗi Contact Center có hoàn cảnh riêng, nhưng phần lớn bắt đầu từ một trong những câu hỏi này.</span><span data-l="en">Every Contact Center is different, but most conversations start with one of these questions.</span></p>
+      <div class="problems">
+        <a class="problem" href="#giai-phap" data-go="cc"><h3><span data-l="vi">Tổng đài sắp hết vòng đời hỗ trợ</span><span data-l="en">Platform nearing end of support</span></h3><p><span data-l="vi">Nâng cấp hoặc chuyển đổi nền tảng tổng đài mà không làm gián đoạn vận hành Call Center.</span><span data-l="en">Upgrade or migrate the contact center platform without disrupting Call Center operations.</span></p><span class="go"><span data-l="vi">Xem giải pháp</span><span data-l="en">See solution</span> →</span></a>
+        <a class="problem" href="#giai-phap" data-go="crm"><h3><span data-l="vi">Thông tin khách hàng rời rạc</span><span data-l="en">Fragmented customer information</span></h3><p><span data-l="vi">Điện thoại viên thấy đủ hồ sơ và lịch sử tương tác ngay khi cuộc gọi đến; mọi yêu cầu được theo dõi theo ticket và SLA.</span><span data-l="en">Agents see the full profile and interaction history as the call arrives; every request is tracked by ticket and SLA.</span></p><span class="go"><span data-l="vi">Xem giải pháp</span><span data-l="en">See solution</span> →</span></a>
+        <a class="problem" href="#giai-phap" data-go="camp"><h3><span data-l="vi">Chiến dịch gọi ra quy mô lớn</span><span data-l="en">Large-scale outbound campaigns</span></h3><p><span data-l="vi">Telesales, chăm sóc và thu hồi nợ cho hàng trăm agent cùng lúc, kết hợp SMS, Email, Zalo.</span><span data-l="en">Telesales, customer care and collections for hundreds of concurrent agents, combined with SMS, Email and Zalo.</span></p><span class="go"><span data-l="vi">Xem giải pháp</span><span data-l="en">See solution</span> →</span></a>
+        <a class="problem" href="#giai-phap" data-go="ai"><h3><span data-l="vi">Đưa AI vào chăm sóc khách hàng</span><span data-l="en">Bringing AI into customer service</span></h3><p><span data-l="vi">Chatbot, Voicebot xử lý các yêu cầu lặp lại; AI hỗ trợ điện thoại viên và giám sát chất lượng cuộc gọi.</span><span data-l="en">Chatbots and voicebots handle repetitive requests, while AI assists agents and monitors call quality.</span></p><span class="go"><span data-l="vi">Xem giải pháp</span><span data-l="en">See solution</span> →</span></a>
+      </div>
+    </div>
+  </section>
+
   <section id="giai-phap">
     <div class="wrap">
-      <h2><span data-l="vi">Chuỗi giải pháp tôi phụ trách</span><span data-l="en">The solution chain I cover</span></h2>
+      <h2><span data-l="vi">Giải pháp cho toàn bộ hành trình chăm sóc khách hàng</span><span data-l="en">Solutions across the customer service journey</span></h2>
       <p class="intro"><span data-l="vi">Một hành trình chăm sóc khách hàng đi qua nhiều lớp hệ thống. Chọn từng lớp để xem giải pháp và sản phẩm BaseBS tương ứng.</span><span data-l="en">Every customer interaction passes through several layers of systems. Select a layer to see the matching BaseBS solutions and products.</span></p>
       <ol class="path" role="tablist" aria-label="Contact Center solution chain">
         <li><button class="node" role="tab" data-k="cc" style="--i:0"><span class="dot">CC</span>Contact Center</button></li>
@@ -268,23 +296,11 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
     </div>
   </section>
 
-  <section id="vai-tro">
-    <div class="wrap">
-      <h2><span data-l="vi">Không chỉ bán hàng</span><span data-l="en">More than sales</span></h2>
-      <p class="intro"><span data-l="vi">Công việc của tôi nằm ở giao điểm của bốn vai trò. Khách hàng làm việc với một người, nhưng phía sau là cả đội BA, IT, DB, Product và triển khai.</span><span data-l="en">My work sits where four roles meet. Clients deal with one person, backed by BA, IT, DB, Product and delivery teams.</span></p>
-      <div class="roles">
-        <div><h3>Sales</h3><p><span data-l="vi">Hiểu nhu cầu, xây dựng phương án thương mại, báo giá và đàm phán hợp đồng.</span><span data-l="en">Understand needs, shape the commercial proposal, quote and negotiate contracts.</span></p></div>
-        <div><h3>Account Management</h3><p><span data-l="vi">Chăm sóc quan hệ dài hạn, theo dõi hợp đồng, gia hạn và mở rộng phạm vi.</span><span data-l="en">Look after long-term relationships, contracts, renewals and scope expansion.</span></p></div>
-        <div><h3>Solution Consulting</h3><p><span data-l="vi">Cùng khách hàng làm rõ bài toán vận hành và chọn kiến trúc giải pháp phù hợp.</span><span data-l="en">Clarify operational problems with clients and choose the right solution architecture.</span></p></div>
-        <div><h3>Project Coordination</h3><p><span data-l="vi">Điều phối giữa khách hàng và các đội nội bộ, giữ timeline và phạm vi dự án.</span><span data-l="en">Coordinate between clients and internal teams, keeping timeline and scope on track.</span></p></div>
-      </div>
-    </div>
-  </section>
 
   <section id="du-an">
     <div class="wrap">
       <h2><span data-l="vi">Dự án tiêu biểu</span><span data-l="en">Selected projects</span></h2>
-      <p class="intro"><span data-l="vi">Mỗi khách hàng dùng một phần khác nhau của chuỗi giải pháp. Đây là những tài khoản tôi đang trực tiếp phụ trách tại BaseBS.</span><span data-l="en">Each client uses a different part of the solution chain. These are accounts I personally manage at BaseBS.</span></p>
+      <p class="intro"><span data-l="vi">Một số doanh nghiệp đang vận hành Contact Center cùng BaseBS, mỗi đơn vị dùng một phần khác nhau của chuỗi giải pháp.</span><span data-l="en">A few of the organisations running their Contact Centers with BaseBS, each using a different part of the solution chain.</span></p>
       <div class="cases">
         <article class="case">
           <div class="case-head"><div class="logo-slot"><img src="data:image/webp;base64,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" alt="LOTTE Finance" loading="eager"></div></div>
@@ -320,86 +336,34 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
     </div>
   </section>
 
-  <section id="ky-nang">
+
+
+
+
+  <section id="cach-lam-viec">
     <div class="wrap">
-      <h2><span data-l="vi">Kỹ năng</span><span data-l="en">Skills</span></h2>
-      <div class="skills">
-        <div><h3><span data-l="vi">Thương mại</span><span data-l="en">Commercial</span></h3>
-          <ul data-l="vi"><li>Xây dựng phương án thương mại và báo giá</li><li>Đàm phán và hoàn thiện hợp đồng</li><li>Quản lý hợp đồng và gia hạn</li></ul>
-          <ul data-l="en"><li>Commercial proposals and quotations</li><li>Contract negotiation and closing</li><li>Contract management and renewals</li></ul></div>
-        <div><h3><span data-l="vi">Giải pháp</span><span data-l="en">Solutions</span></h3>
-          <ul data-l="vi"><li>Kiến trúc Contact Center đa lớp</li><li>Phân tích nghiệp vụ, đọc và phản biện BRD, SAD</li><li>Bài toán tích hợp với hệ thống khách hàng</li></ul>
-          <ul data-l="en"><li>Multi-layer Contact Center architecture</li><li>Business analysis; reviewing BRDs and SADs</li><li>Integration with client systems</li></ul></div>
-        <div><h3><span data-l="vi">Điều phối</span><span data-l="en">Coordination</span></h3>
-          <ul data-l="vi"><li>Làm việc liên phòng ban</li><li>Quản lý timeline và phạm vi</li><li>Viết tài liệu, đào tạo quy trình</li></ul>
-          <ul data-l="en"><li>Cross-functional teamwork</li><li>Timeline and scope management</li><li>Documentation and process training</li></ul></div>
-      </div>
+      <h2><span data-l="vi">Cách chúng ta làm việc cùng nhau</span><span data-l="en">How we work together</span></h2>
+      <p class="intro"><span data-l="vi">Một đầu mối duy nhất từ lúc khảo sát đến khi vận hành, phía sau là đội ngũ BA, kỹ thuật, sản phẩm và triển khai của BaseBS.</span><span data-l="en">One point of contact from assessment to operations, backed by BaseBS's BA, engineering, product and delivery teams.</span></p>
+      <ol class="steps">
+        <li><span class="num">01</span><h3><span data-l="vi">Lắng nghe</span><span data-l="en">Listen</span></h3><p><span data-l="vi">Khảo sát hiện trạng, hiểu nhu cầu và sáng kiến của doanh nghiệp.</span><span data-l="en">Assess the current setup and understand the organisation's needs and ideas.</span></p></li>
+        <li><span class="num">02</span><h3><span data-l="vi">Đề xuất</span><span data-l="en">Propose</span></h3><p><span data-l="vi">Kiến trúc giải pháp và phương án thương mại phù hợp ngân sách, lộ trình.</span><span data-l="en">A solution architecture and commercial plan that fit the budget and roadmap.</span></p></li>
+        <li><span class="num">03</span><h3><span data-l="vi">Triển khai</span><span data-l="en">Deliver</span></h3><p><span data-l="vi">Điều phối đội BA, kỹ thuật, sản phẩm và triển khai, giữ đúng phạm vi và tiến độ.</span><span data-l="en">Coordinating BA, engineering, product and delivery teams to keep scope and timeline on track.</span></p></li>
+        <li><span class="num">04</span><h3><span data-l="vi">Đồng hành</span><span data-l="en">Support</span></h3><p><span data-l="vi">Vận hành, bảo trì, gia hạn và mở rộng hệ thống sau go-live.</span><span data-l="en">Operations, maintenance, renewals and expansion after go-live.</span></p></li>
+      </ol>
     </div>
   </section>
 
-  <section id="kinh-nghiem">
-    <div class="wrap">
-      <h2><span data-l="vi">Kinh nghiệm</span><span data-l="en">Experience</span></h2>
-      <p class="intro"><span data-l="vi">Hơn 8 năm làm việc ở giao điểm giữa kinh doanh và sản phẩm công nghệ: phần mềm quản lý bán hàng, ERP, CRM và giải pháp Contact Center.</span><span data-l="en">8+ years at the intersection of business and technology products: retail management software, ERP, CRM and Contact Center solutions.</span></p>
-      <ol class="timeline">
-        <li>
-          <div class="when"><span data-l="vi">2024 – nay</span><span data-l="en">2024 – present</span></div>
-          <div>
-            <h3>Account Manager</h3>
-            <p class="org">BaseBS (Base Business Solutions)</p>
-            <ul data-l="vi">
-              <li>Quản lý tài khoản khách hàng enterprise nhóm BFSI: ngân hàng, tài chính, bảo hiểm, chứng khoán và doanh nghiệp lớn có Contact Center.</li>
-              <li>Tư vấn giải pháp Contact Center, CRM, WFM, Autodialer, AI và tích hợp hệ thống.</li>
-              <li>Phụ trách báo giá, BOM, proposal và theo dõi hợp đồng.</li>
-              <li>Điều phối giữa khách hàng với BA, IT, DB, Product và đội triển khai; làm việc trên BRD, SAD và timeline dự án.</li>
-            </ul>
-            <ul data-l="en">
-              <li>Manage enterprise BFSI accounts: banks, consumer finance, insurance, securities and large enterprises running Contact Centers.</li>
-              <li>Advise on Contact Center, CRM, WFM, Autodialer, AI and integration solutions.</li>
-              <li>Own quotations, BOMs, proposals and contract follow-up.</li>
-              <li>Coordinate between clients and BA, IT, DB, Product and delivery teams; work with BRDs, SADs and project timelines.</li>
-            </ul>
-          </div>
-        </li>
-      </ol>
-
-      <h3 class="subhead"><span data-l="vi">Trước BaseBS</span><span data-l="en">Before BaseBS</span></h3>
-      <ol class="timeline compact" style="margin-top:20px">
-        <li>
-          <div class="when">08/2023 – 05/2024</div>
-          <div><h3>Customer Success</h3><p class="org">1C International Company</p>
-          <p class="note"><span data-l="vi">Phân tích nghiệp vụ, cải tiến hệ thống ERP cho khách hàng doanh nghiệp. Nhân viên cống hiến của năm 2023.</span><span data-l="en">Business analysis and ERP improvements for enterprise clients. 2023 Employee of the Year.</span></p></div>
-        </li>
-        <li>
-          <div class="when">07/2022 – 05/2023</div>
-          <div><h3>Customer Success Manager</h3><p class="org"><span data-l="vi">Công ty cổ phần phần mềm Lameco</span><span data-l="en">Lameco JSC</span></p>
-          <p class="note"><span data-l="vi">Onboarding hơn 30 dự án marketing, website, CRM cho khách hàng.</span><span data-l="en">Onboarded 30+ marketing, website and CRM projects.</span></p></div>
-        </li>
-        <li>
-          <div class="when">09/2019 – 04/2022</div>
-          <div><h3>Project Manager – Marketing Agency</h3><p class="org">Nhanh.vn</p>
-          <p class="note"><span data-l="vi">Phụ trách dự án Ecomcare Agency, quy mô 50 nhân sự; mở chi nhánh TP. Hồ Chí Minh năm 2021.</span><span data-l="en">Led the Ecomcare Agency project with a 50-person team; opened the Ho Chi Minh City branch in 2021.</span></p></div>
-        </li>
-        <li>
-          <div class="when">01/2018 – 01/2022</div>
-          <div><h3>R&amp;D Manager</h3><p class="org"><span data-l="vi">Vật Giá Việt Nam</span><span data-l="en">VNP Group</span></p>
-          <p class="note"><span data-l="vi">Phối hợp Tech Lead phân tích và cải tiến tính năng phần mềm quản lý bán hàng.</span><span data-l="en">Worked with the Tech Lead to analyze and improve sales management software features.</span></p></div>
-        </li>
-      </ol>
-      <div class="edu">
-        <p><strong><span data-l="vi">Học vấn</span><span data-l="en">Education</span></strong> <span data-l="vi">Cử nhân Quản trị kinh doanh, Đại học Thăng Long (2013 – 2017)</span><span data-l="en">Bachelor of Business Administration, Thang Long University (2013 – 2017)</span></p>
-        <p><strong><span data-l="vi">Chứng chỉ</span><span data-l="en">Certificates</span></strong> TOEIC (2019), <span data-l="vi">Quản trị doanh nghiệp</span><span data-l="en">Corporate Governance</span> (2019), Eagle Camp (2020), Product is King (2021)</p>
-        <p><strong><span data-l="vi">Ngoại ngữ</span><span data-l="en">Languages</span></strong> <span data-l="vi">Tiếng Anh giao tiếp, thành thạo thuật ngữ ERP, CRM</span><span data-l="en">Vietnamese (native); business English, fluent with ERP and CRM terminology</span></p>
-      </div>
+  <section id="ve-toi">
+    <div class="wrap about">
+      <h2><span data-l="vi">Về tôi</span><span data-l="en">About me</span></h2>
+      <p><span data-l="vi">Hơn 8 năm làm việc ở giao điểm giữa kinh doanh và công nghệ, từ phần mềm quản lý bán hàng, ERP đến CRM và Contact Center. Gia nhập BaseBS từ 2024, tôi phụ trách các khách hàng doanh nghiệp nhóm BFSI và làm việc trực tiếp cùng đội ngũ kỹ thuật từ khâu đề xuất đến triển khai.</span><span data-l="en">8+ years where business meets technology, from retail management software and ERP to CRM and Contact Center. At BaseBS since 2024, I look after enterprise BFSI clients and work hand in hand with engineering from proposal through delivery.</span></p>
     </div>
   </section>
-
-
 
   <section id="lien-he">
     <div class="wrap">
-      <h2><span data-l="vi">Liên hệ</span><span data-l="en">Contact</span></h2>
-      <p class="intro"><span data-l="vi">Trao đổi về bài toán Contact Center, CRM hay vận hành CSKH của doanh nghiệp bạn.</span><span data-l="en">Let's talk about your Contact Center, CRM or customer service operations.</span></p>
+      <h2><span data-l="vi">Trao đổi về bài toán của bạn</span><span data-l="en">Let's talk about your challenge</span></h2>
+      <p class="intro"><span data-l="vi">Gửi email hoặc gọi trực tiếp để trao đổi về hiện trạng và định hướng Contact Center của doanh nghiệp.</span><span data-l="en">Email or call me to discuss where your Contact Center is today and where you want it to go.</span></p>
       <dl class="contact">
         <div><dt>Email</dt><dd><a href="mailto:tungtm@basebs.com">tungtm@basebs.com</a></dd></div>
         <div><dt><span data-l="vi">Điện thoại / Zalo</span><span data-l="en">Phone / Zalo</span></dt><dd><a href="tel:+84915306688">0915 306 688</a></dd></div>
@@ -465,6 +429,7 @@ nodes.forEach((n,i)=>{
     if(j!==null){e.preventDefault();nodes[j].focus();pick(nodes[j].dataset.k);}
   });
 });
+document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=>pick(a.dataset.go)));
 setLang('vi');
 </script>
 </body>
