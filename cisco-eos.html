@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiểm tra vòng đời hỗ trợ Cisco Contact Center — Trương Mạnh Tùng</title>
+<meta name="description" content="Tra cứu nhanh mốc ngừng bán, ngừng bản vá và hết hỗ trợ của Cisco UCCE, PCCE, UCCX, CVP và CUCM theo thông báo End-of-Life chính thức của Cisco.">
+<meta property="og:title" content="Hệ thống Cisco của bạn còn được hỗ trợ đến khi nào?">
+<meta property="og:description" content="Tra cứu mốc End-of-Life của Cisco UCCE, PCCE, UCCX, CVP, CUCM theo thông báo chính thức của Cisco.">
+<meta property="og:url" content="https://truongmanhtung.com/cisco-eos">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://truongmanhtung.com/og-image.jpg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="48x48" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#16233A; --muted:#5B6878; --line:#D3DAE2;
+  --signal:#0B7F72; --signal-soft:#DDF1EE;
+  --ok:#0B7F72; --ok-soft:#DDF1EE;
+  --warn:#9A5B00; --warn-soft:#FFF1D6;
+  --risk:#B4441C; --risk-soft:#FDE6DC;
+  --dead:#A1262B; --dead-soft:#FBE1E2;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1522; --surface:#152033; --ink:#E5EAF1; --muted:#9AA7B8; --line:#2A3850;
+    --signal:#45C2B0; --signal-soft:#12302D;
+    --ok:#45C2B0; --ok-soft:#12302D;
+    --warn:#F0C25A; --warn-soft:#3A2E10;
+    --risk:#F29A6E; --risk-soft:#3D2015;
+    --dead:#F2858A; --dead-soft:#3D1A1D;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1522; --surface:#152033; --ink:#E5EAF1; --muted:#9AA7B8; --line:#2A3850;
+  --signal:#45C2B0; --signal-soft:#12302D;
+  --ok:#45C2B0; --ok-soft:#12302D;
+  --warn:#F0C25A; --warn-soft:#3A2E10;
+  --risk:#F29A6E; --risk-soft:#3D2015;
+  --dead:#F2858A; --dead-soft:#3D1A1D;
+}
+html[data-lang="vi"] [data-l="en"], html[data-lang="en"] [data-l="vi"]{display:none !important}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+.right{display:flex;align-items:center;gap:20px}
+.back{font-size:.95rem;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--ink)}
+.lang{display:inline-flex;border:1.5px solid var(--line);border-radius:6px;overflow:hidden}
+.lang button{all:unset;cursor:pointer;padding:4px 10px;font-size:.85rem;font-weight:600;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lang button:focus-visible{outline:2px solid var(--signal);outline-offset:-2px}
+@media (max-width:560px){.back{display:none}}
+
+.hero{padding:56px 0 28px}
+.eyebrow{font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--signal);margin:0 0 12px}
+.hero h1{font-size:clamp(2rem,5.4vw,3.4rem);line-height:1.08;letter-spacing:-.03em;margin:0 0 16px;font-weight:700;max-width:20ch}
+.hero .lead{max-width:62ch;color:var(--muted);margin:0;font-size:1.1rem}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.picker{padding:24px;margin-bottom:20px}
+.step{margin-bottom:20px}
+.step:last-child{margin-bottom:0}
+.step-label{font-size:.85rem;font-weight:600;color:var(--muted);margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{all:unset;cursor:pointer;min-height:44px;padding:0 16px;border-radius:6px;border:1.5px solid var(--line);
+  display:inline-flex;flex-direction:column;justify-content:center;font-weight:600;font-size:.98rem;background:var(--bg)}
+.chip small{font-weight:400;font-size:.75rem;color:var(--muted);line-height:1.2}
+.chip:hover{border-color:var(--signal)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip[aria-pressed="true"] small{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.chip:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+
+.result{padding:28px 24px;margin-bottom:20px}
+.res-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:6px}
+.res-title{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;margin:0}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:.85rem;font-weight:600}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.s-ok{color:var(--ok);background:var(--ok-soft)}
+.s-warn{color:var(--warn);background:var(--warn-soft)}
+.s-risk{color:var(--risk);background:var(--risk-soft)}
+.s-dead{color:var(--dead);background:var(--dead-soft)}
+.res-sub{color:var(--muted);margin:0 0 24px;font-size:.95rem}
+
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:28px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:var(--bg)}
+.stat .k{font-size:.85rem;color:var(--muted);margin:0 0 4px}
+.stat .v{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin:0}
+.stat .d{font-size:.9rem;color:var(--muted);margin:4px 0 0}
+@media (max-width:560px){.stats{grid-template-columns:1fr}}
+
+h2{font-size:1.15rem;margin:0 0 12px;letter-spacing:-.01em}
+.timeline{list-style:none;margin:0 0 28px;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.ms{position:relative;padding:0 0 16px 34px}
+.ms:last-child{padding-bottom:0}
+.ms .dot{position:absolute;left:2px;top:6px;width:16px;height:16px;border-radius:50%;border:2px solid var(--line);background:var(--surface)}
+.ms.past .dot{background:var(--muted);border-color:var(--muted)}
+.ms.next .dot{border-color:var(--signal);background:var(--signal);box-shadow:0 0 0 4px var(--signal-soft)}
+.ms .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px}
+.ms .name{font-weight:600}
+.ms.past .name{color:var(--muted)}
+.ms .date{font-variant-numeric:tabular-nums;font-weight:600}
+.ms.past .date{color:var(--muted);font-weight:500}
+.ms .def{font-size:.9rem;color:var(--muted);margin:2px 0 0}
+.ms .when{font-size:.8rem;font-weight:600;color:var(--signal)}
+.ms.past .when{color:var(--muted)}
+
+.mean{margin:0 0 28px;padding:0;list-style:none;display:grid;gap:10px}
+.mean li{padding:12px 14px;border-radius:8px;background:var(--bg);border:1px solid var(--line);font-size:.97rem}
+.mean li b{display:block;margin-bottom:2px}
+
+.paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:24px}
+.path{border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--bg)}
+.path h3{font-size:1rem;margin:0 0 6px}
+.path p{margin:0;font-size:.93rem;color:var(--muted)}
+@media (max-width:760px){.paths{grid-template-columns:1fr}}
+
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--line)}
+.cta p{margin:0;flex:1 1 280px;font-weight:500}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:6px;font-weight:600;
+  text-decoration:none;border:1.5px solid var(--ink);font-size:.98rem}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--signal)}
+.btn.primary:hover{background:var(--signal);border-color:var(--signal)}
+
+.note{font-size:.88rem;color:var(--muted);margin:12px 0 0}
+.src{font-size:.88rem;color:var(--muted);margin:16px 0 0}
+.src a{color:var(--signal)}
+
+.overview{padding:24px;margin-bottom:20px}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:620px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody tr{cursor:pointer}
+tbody tr:hover td{background:var(--bg)}
+tbody tr.sel td{background:var(--signal-soft)}
+
+.foot{padding:12px 0 56px;font-size:.88rem;color:var(--muted)}
+.foot p{margin:0 0 10px;max-width:80ch}
+.foot a{color:var(--signal)}
+
+@media print{
+  header.top,.picker,.cta,.lang{display:none !important}
+  body{background:#fff}
+  .card{border-color:#ccc}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="back" href="/"><span data-l="vi">← Trang chủ</span><span data-l="en">← Home</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><span data-l="vi">Công cụ tra cứu · Cisco Contact Center</span><span data-l="en">Lookup tool · Cisco Contact Center</span></p>
+      <h1><span data-l="vi">Hệ thống Cisco của bạn còn được hỗ trợ đến khi nào?</span><span data-l="en">How long will your Cisco system stay supported?</span></h1>
+      <p class="lead"><span data-l="vi">Chọn sản phẩm và phiên bản đang vận hành để xem các mốc ngừng bán, ngừng phát hành bản vá và hết hỗ trợ. Dữ liệu tổng hợp từ các thông báo End-of-Life chính thức của Cisco.</span><span data-l="en">Pick the product and version you run to see its end-of-sale, end-of-maintenance and end-of-support milestones. Data is compiled from Cisco's official End-of-Life bulletins.</span></p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="card picker">
+      <div class="step">
+        <p class="step-label" id="lbl-p"><span data-l="vi">1. Sản phẩm</span><span data-l="en">1. Product</span></p>
+        <div class="chips" id="products" role="group" aria-labelledby="lbl-p"></div>
+      </div>
+      <div class="step">
+        <p class="step-label" id="lbl-v"><span data-l="vi">2. Phiên bản</span><span data-l="en">2. Version</span></p>
+        <div class="chips" id="versions" role="group" aria-labelledby="lbl-v"></div>
+      </div>
+    </div>
+
+    <section class="card result" id="result" aria-live="polite"></section>
+
+    <section class="card overview">
+      <h2><span data-l="vi">Tổng quan các phiên bản</span><span data-l="en">All versions at a glance</span></h2>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr>
+            <th><span data-l="vi">Sản phẩm</span><span data-l="en">Product</span></th>
+            <th><span data-l="vi">Phiên bản</span><span data-l="en">Version</span></th>
+            <th><span data-l="vi">Ngừng bản vá</span><span data-l="en">End of SW maintenance</span></th>
+            <th><span data-l="vi">Hết hỗ trợ</span><span data-l="en">Last date of support</span></th>
+            <th><span data-l="vi">Trạng thái hôm nay</span><span data-l="en">Status today</span></th>
+          </tr></thead>
+          <tbody id="ov"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><span data-l="vi">Dữ liệu được kiểm tra lần cuối ngày 02/10/2026 từ các thông báo End-of-Life công khai trên cisco.com. Cisco có thể sửa đổi thông báo; bản tiếng Anh trên cisco.com là bản có giá trị. Hợp đồng dịch vụ cụ thể của doanh nghiệp có thể có điều khoản khác, hãy đối chiếu với hợp đồng đang có.</span><span data-l="en">Data last checked on 2 Oct 2026 against public End-of-Life bulletins on cisco.com. Cisco may amend its bulletins; the English version on cisco.com is authoritative. Your own service contract may carry different terms, so check it against what you have.</span></p>
+    <p><span data-l="vi">Cisco, UCCE, PCCE, UCCX, CVP và CUCM là thương hiệu của Cisco Systems, Inc. Trang này là công cụ tham khảo độc lập, không do Cisco phát hành.</span><span data-l="en">Cisco, UCCE, PCCE, UCCX, CVP and CUCM are trademarks of Cisco Systems, Inc. This page is an independent reference tool and is not published by Cisco.</span></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ===== DATA: dates copied from Cisco EoL bulletins (Table 1). Update here only. ===== */
+  var SRC = {
+    EOL15696: {id:"EOL15696", url:"https://www.cisco.com/c/en/us/products/collateral/unified-communications/cisco-collaboration-flex-plan/12-5-12-6-ucce-pcce-uccx-cvp-eol.html"},
+    EOL13640: {id:"EOL13640", url:"https://www.cisco.com/c/en/us/products/collateral/customer-collaboration/unified-contact-center-enterprise/eos-eol-notice-c51-744787.html"},
+    EOL13457: {id:"EOL13457", url:"https://www.cisco.com/c/en/us/products/collateral/contact-center/unified-contact-center-express/eos-eol-notice-c51-743990.html"},
+    EOL14949: {id:"EOL14949", url:"https://www.cisco.com/c/en/us/products/collateral/unified-communications/unified-communications-manager-callmanager/v-12-5-on-premises-calling-applications-eol.html"},
+    EOL15245: {id:"EOL15245", url:"https://www.cisco.com/c/en/us/products/collateral/unified-communications/unified-communications-manager-callmanager/v-14-premises-calling-applications-eol.html"}
+  };
+  var CC125 = {src:"EOL15696", m:{ann:"2025-06-30", eos:"2025-12-31", lsd:"2026-03-31", eoswm:"2026-12-31", eonsa:"2026-12-31", eoscr:"2027-12-31", ldos:"2027-12-31"}};
+  var CCE120 = {src:"EOL13640", m:{ann:"2021-01-23", eos:"2021-04-23", lsd:"2021-05-15", eoswm:"2022-04-23", eoscr:"2023-07-20", ldos:"2024-04-30"}};
+  var V15 = {src:null, m:{}};
+
+  var PRODUCTS = [
+    {k:"ucce", n:"UCCE", vi:"Unified Contact Center Enterprise", en:"Unified Contact Center Enterprise",
+      v:[["12.0",CCE120],["12.5",CC125],["12.6",CC125],["15",V15]]},
+    {k:"pcce", n:"PCCE", vi:"Packaged Contact Center Enterprise", en:"Packaged Contact Center Enterprise",
+      v:[["12.0",CCE120],["12.5",CC125],["12.6",CC125],["15",V15]]},
+    {k:"uccx", n:"UCCX", vi:"Unified Contact Center Express", en:"Unified Contact Center Express",
+      v:[["12.0",{src:"EOL13457", m:{ann:"2020-07-01", eos:"2020-08-01", lsd:"2020-10-31", eoswm:"2021-05-01", eonsa:"2021-05-01", eoscr:"2022-12-01", ldos:"2023-08-31"}}],
+         ["12.5",CC125],["12.6",CC125],["15",V15]]},
+    {k:"cvp", n:"CVP", vi:"Customer Voice Portal (IVR)", en:"Customer Voice Portal (IVR)",
+      v:[["12.0",CCE120],["12.5",CC125],["12.6",CC125],["15",V15]]},
+    {k:"cucm", n:"CUCM", vi:"Unified Communications Manager", en:"Unified Communications Manager",
+      v:[["12.5",{src:"EOL14949", lic:"flex", m:{ann:"2023-03-01", eos:"2023-08-31", eoswm:"2024-08-31", eoscr:"2025-08-31", ldos:"2025-08-31"}}],
+         ["14",{src:"EOL15245", lic:"perp", m:{ann:"2024-10-07", eos:"2025-04-07", lsd:"2025-07-06", eoswm:"2026-04-07", eonsa:"2024-10-07", eoscr:"2024-10-07", ldos:"2027-04-30"}}],
+         ["15",V15]]}
+  ];
+
+  var MS = [
+    ["ann",   {vi:"Công bố End-of-Life", en:"End-of-Life announcement"},
+              {vi:"Ngày Cisco công bố lộ trình ngừng bán và ngừng hỗ trợ.", en:"Date Cisco published the end-of-sale and end-of-life notice."}],
+    ["eos",   {vi:"Ngừng bán (End-of-Sale)", en:"End-of-Sale"},
+              {vi:"Không còn đặt mua mới qua kênh bán hàng của Cisco.", en:"Last date to order through Cisco point-of-sale."}],
+    ["lsd",   {vi:"Ngày giao hàng cuối", en:"Last ship date"},
+              {vi:"Ngày giao hàng muộn nhất có thể yêu cầu.", en:"Last possible ship date that can be requested."}],
+    ["eoswm", {vi:"Ngừng phát hành bản vá", en:"End of SW maintenance releases"},
+              {vi:"Sau ngày này Cisco không phát triển, sửa lỗi hay kiểm thử phần mềm này nữa.", en:"After this, Cisco no longer develops, repairs, maintains or tests the software."}],
+    ["eonsa", {vi:"Ngừng ký mới hợp đồng dịch vụ", en:"End of new service attachment"},
+              {vi:"Hạn chót để mua mới hợp đồng hỗ trợ cho phần mềm chưa có hợp đồng.", en:"Last date to buy a new support contract for software not yet covered."}],
+    ["eoscr", {vi:"Ngừng gia hạn hợp đồng dịch vụ", en:"End of service contract renewal"},
+              {vi:"Hạn chót để gia hạn hoặc kéo dài hợp đồng hỗ trợ.", en:"Last date to extend or renew a service contract."}],
+    ["ldos",  {vi:"Hết hỗ trợ (Last Date of Support)", en:"Last Date of Support"},
+              {vi:"Sau ngày này không còn bất kỳ dịch vụ hỗ trợ nào, sản phẩm được coi là lỗi thời.", en:"After this, all support ends and the product becomes obsolete."}]
+  ];
+
+  /* ===== HELPERS ===== */
+  var root = document.documentElement;
+  function L(){ return root.getAttribute("data-lang") || "vi"; }
+  function bi(vi,en){ return '<span data-l="vi">'+vi+'</span><span data-l="en">'+en+'</span>'; }
+  function d(s){ var p=s.split("-"); return Date.UTC(+p[0],+p[1]-1,+p[2]); }
+  var now = new Date();
+  var TODAY = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  function days(s){ return Math.round((d(s)-TODAY)/86400000); }
+  var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  function fVi(s){ var p=s.split("-"); return p[2]+"/"+p[1]+"/"+p[0]; }
+  function fEn(s){ var p=s.split("-"); return (+p[2])+" "+MON[+p[1]-1]+" "+p[0]; }
+  function fd(s){ return bi(fVi(s), fEn(s)); }
+  function nf(n){ return n.toLocaleString("vi-VN"); }
+  function rel(n){
+    if(n>0) return bi("còn "+nf(n)+" ngày", "in "+n.toLocaleString("en-US")+" days");
+    if(n===0) return bi("hôm nay","today");
+    return bi("đã qua "+nf(-n)+" ngày", Math.abs(n).toLocaleString("en-US")+" days ago");
+  }
+
+  function status(e){
+    var m=e.m;
+    if(!m.ldos) return {c:"s-ok", t:bi("Chưa có thông báo End-of-Life","No End-of-Life notice yet")};
+    if(days(m.ldos)<0) return {c:"s-dead", t:bi("Đã hết hỗ trợ","Out of support")};
+    if(m.eoswm && days(m.eoswm)<0) return {c:"s-risk", t:bi("Đã ngừng bản vá","No more SW fixes")};
+    if(m.eos && days(m.eos)<0) return {c:"s-warn", t:bi("Đã ngừng bán","End of sale")};
+    return {c:"s-warn", t:bi("Đã có thông báo End-of-Life","End-of-Life announced")};
+  }
+
+  var state = {p:"ucce", v:"12.5"};
+  function prod(k){ for(var i=0;i<PRODUCTS.length;i++) if(PRODUCTS[i].k===k) return PRODUCTS[i]; return PRODUCTS[0]; }
+  function entry(p,v){ for(var i=0;i<p.v.length;i++) if(p.v[i][0]===v) return p.v[i][1]; return null; }
+
+  /* ===== RENDER ===== */
+  var elP=document.getElementById("products"), elV=document.getElementById("versions"),
+      elR=document.getElementById("result"), elO=document.getElementById("ov");
+
+  function renderProducts(){
+    elP.innerHTML = PRODUCTS.map(function(p){
+      return '<button type="button" class="chip" data-p="'+p.k+'" aria-pressed="'+(p.k===state.p)+'">'+p.n+
+             '<small>'+bi(p.vi,p.en)+'</small></button>';
+    }).join("");
+  }
+  function renderVersions(){
+    var p=prod(state.p);
+    elV.innerHTML = p.v.map(function(x){
+      return '<button type="button" class="chip" data-v="'+x[0]+'" aria-pressed="'+(x[0]===state.v)+'">'+x[0]+'</button>';
+    }).join("");
+  }
+
+  function meaning(e){
+    var m=e.m, out=[];
+    if(m.eos) out.push(days(m.eos)<0
+      ? ['<b>'+bi("Không mua mới được","No new purchases")+'</b>'+bi("Không thể đặt mua thêm license hay phần mềm của phiên bản này qua Cisco.","Licenses and software for this version can no longer be ordered from Cisco.")]
+      : ['<b>'+bi("Sắp ngừng bán","End of sale is coming")+'</b>'+bi("Nếu cần mở rộng license trên phiên bản này, nên đặt hàng trước "+fVi(m.eos)+".","If you need more licenses on this version, order before "+fEn(m.eos)+".")]);
+    if(m.eoswm) out.push(days(m.eoswm)<0
+      ? ['<b>'+bi("Không còn bản vá","No more fixes")+'</b>'+bi("Lỗi phần mềm hoặc lỗ hổng bảo mật phát hiện từ nay sẽ không được Cisco sửa cho phiên bản này. Đây thường là điểm bị kiểm toán CNTT và an toàn thông tin chú ý.","Bugs or security vulnerabilities found from now on will not be fixed for this version. Internal IT and security audits typically flag this.")]
+      : ['<b>'+bi("Bản vá cuối cùng","Final fixes")+'</b>'+bi("Sau "+fVi(m.eoswm)+", Cisco không phát hành thêm bản sửa lỗi hay bản vá bảo mật cho phiên bản này.","After "+fEn(m.eoswm)+", Cisco releases no further bug or security fixes for this version.")]);
+    if(m.eoscr) out.push(days(m.eoscr)<0
+      ? ['<b>'+bi("Không gia hạn được hợp đồng","Contracts cannot be renewed")+'</b>'+bi("Hợp đồng hỗ trợ đang có vẫn chạy đến hết hạn, nhưng không thể gia hạn thêm.","Existing contracts run to their end date, but cannot be extended.")]
+      : ['<b>'+bi("Hạn gia hạn hợp đồng","Renewal deadline")+'</b>'+bi("Hợp đồng hỗ trợ chỉ gia hạn được đến "+fVi(m.eoscr)+".","Support contracts can only be renewed until "+fEn(m.eoscr)+".")]);
+    if(m.ldos) out.push(days(m.ldos)<0
+      ? ['<b>'+bi("Không còn hỗ trợ từ Cisco","No Cisco support")+'</b>'+bi("Không còn hỗ trợ kỹ thuật (TAC) từ Cisco. Sự cố phát sinh phải tự xử lý hoặc dựa vào đối tác.","Cisco technical support (TAC) has ended. Incidents must be handled in-house or through a partner.")]
+      : ['<b>'+bi("Mốc cuối cùng","Final milestone")+'</b>'+bi("Từ "+fVi(m.ldos)+", Cisco ngừng mọi hỗ trợ. Một dự án nâng cấp hoặc chuyển đổi Contact Center thường cần nhiều tháng để khảo sát, mua sắm và triển khai, nên cần lên kế hoạch sớm.","From "+fEn(m.ldos)+", all Cisco support ends. A contact center upgrade or migration usually takes months of assessment, procurement and deployment, so plan early.")]);
+    return out;
+  }
+
+  function renderResult(){
+    var p=prod(state.p), e=entry(p,state.v), st=status(e), m=e.m, h="";
+    var label = p.n+" "+state.v;
+    h+='<div class="res-head"><h2 class="res-title">Cisco '+label+'</h2><span class="badge '+st.c+'">'+st.t+'</span></div>';
+    h+='<p class="res-sub">'+bi(p.vi,p.en)+(e.src?' · '+bi("Thông báo","Bulletin")+' '+SRC[e.src].id:'')+'</p>';
+
+    if(!e.src){
+      h+='<ul class="mean"><li><b>'+bi("Phiên bản đang được Cisco khuyến nghị","Cisco's recommended version")+'</b>'+
+        bi("Tính đến ngày kiểm tra dữ liệu, chưa tìm thấy thông báo End-of-Life cho phiên bản "+state.v+". Trong thông báo EOL15696, Cisco khuyến nghị khách hàng Contact Center chuyển lên phiên bản 15 trở lên.",
+           "As of the data check date, no End-of-Life notice was found for version "+state.v+". In bulletin EOL15696, Cisco recommends contact center customers move to version 15 or later.")+'</li></ul>';
+    } else {
+      /* stats */
+      var nextKey=null;
+      for(var i=0;i<MS.length;i++){ var k=MS[i][0]; if(m[k] && days(m[k])>=0){ nextKey=k; break; } }
+      var dl=days(m.ldos);
+      h+='<div class="stats">';
+      h+='<div class="stat"><p class="k">'+bi("Đến ngày hết hỗ trợ","Until last date of support")+'</p><p class="v">'+
+         (dl>=0? nf(dl)+' '+bi("ngày","days") : bi("Đã quá "+nf(-dl)+" ngày","Passed "+(-dl).toLocaleString("en-US")+" days ago"))+
+         '</p><p class="d">'+fd(m.ldos)+'</p></div>';
+      if(nextKey && nextKey!=="ldos"){
+        var nm=MS.filter(function(x){return x[0]===nextKey;})[0];
+        h+='<div class="stat"><p class="k">'+bi("Mốc kế tiếp","Next milestone")+'</p><p class="v">'+nf(days(m[nextKey]))+' '+bi("ngày","days")+
+           '</p><p class="d">'+bi(nm[1].vi,nm[1].en)+' · '+fd(m[nextKey])+'</p></div>';
+      } else if(m.eoswm){
+        var dw=days(m.eoswm);
+        h+='<div class="stat"><p class="k">'+bi("Ngừng phát hành bản vá","End of SW maintenance")+'</p><p class="v">'+
+           (dw>=0? nf(dw)+' '+bi("ngày","days") : bi("Đã quá "+nf(-dw)+" ngày","Passed "+(-dw).toLocaleString("en-US")+" days ago"))+
+           '</p><p class="d">'+fd(m.eoswm)+'</p></div>';
+      }
+      h+='</div>';
+
+      /* timeline */
+      h+='<h2>'+bi("Các mốc vòng đời","Lifecycle milestones")+'</h2><ol class="timeline">';
+      MS.forEach(function(x){
+        var k=x[0]; if(!m[k]) return;
+        var n=days(m[k]), cls = n<0 ? "past" : (k===nextKey ? "next" : "");
+        h+='<li class="ms '+cls+'"><span class="dot" aria-hidden="true"></span><div class="row"><span class="name">'+bi(x[1].vi,x[1].en)+
+           '</span><span class="date">'+fd(m[k])+'</span></div><p class="def">'+bi(x[2].vi,x[2].en)+' <span class="when">· '+rel(n)+'</span></p></li>';
+      });
+      h+='</ol>';
+
+      h+='<h2>'+bi("Điều này có nghĩa là gì","What this means")+'</h2><ul class="mean">'+
+         meaning(e).map(function(t){return '<li>'+t[0]+'</li>';}).join("")+'</ul>';
+    }
+
+    /* paths */
+    h+='<h2>'+bi("Các hướng thường được cân nhắc","Options usually considered")+'</h2><div class="paths">';
+    h+='<div class="path"><h3>'+bi("Nâng cấp phiên bản","Upgrade in place")+'</h3><p>'+
+       bi("Lên phiên bản Cisco khuyến nghị, giữ kiến trúc và quy trình vận hành hiện tại. Cần kiểm tra tương thích giữa các thành phần (CUCM, CVP, Finesse, CUIC) và ứng dụng tích hợp.",
+          "Move to Cisco's recommended version and keep your current architecture and operations. Compatibility across components (CUCM, CVP, Finesse, CUIC) and integrations must be checked.")+'</p></div>';
+    h+='<div class="path"><h3>'+bi("Chuyển mô hình cấp phép","Change licensing model")+'</h3><p>'+
+       bi("Cisco hướng khách hàng sang Collaboration Flex Plan (thuê bao). Cần so sánh tổng chi phí nhiều năm so với mô hình hiện tại.",
+          "Cisco steers customers to Collaboration Flex Plan (subscription). Multi-year total cost should be compared against your current model.")+'</p></div>';
+    h+='<div class="path"><h3>'+bi("Đánh giá nền tảng thay thế","Assess alternatives")+'</h3><p>'+
+       bi("Nhân dịp hết vòng đời, rà lại toàn bộ nhu cầu: đa kênh, CRM, ghi âm, chiến dịch gọi ra, AI, để chọn lộ trình phù hợp cho 5 năm tới.",
+          "Use the end of life to review all needs: omnichannel, CRM, recording, outbound campaigns, AI, and choose the right path for the next five years.")+'</p></div>';
+    h+='</div>';
+
+    /* CTA */
+    var subjVi="Đánh giá hiện trạng Cisco "+label, subjEn="Cisco "+label+" assessment";
+    var bodyVi="Chào anh Tùng,%0D%0A%0D%0AĐơn vị tôi đang vận hành Cisco "+label+". Tôi muốn trao đổi về phương án cho hệ thống này.%0D%0A%0D%0ATên đơn vị:%0D%0ASố agent:%0D%0AThời gian thuận tiện:";
+    var bodyEn="Hi Tung,%0D%0A%0D%0AWe run Cisco "+label+" and would like to discuss options for it.%0D%0A%0D%0AOrganization:%0D%0ANumber of agents:%0D%0APreferred time:";
+    h+='<div class="cta"><p>'+bi("Cần đánh giá hiện trạng và lộ trình cho hệ thống của bạn? Một buổi trao đổi 30 phút là đủ để bắt đầu.",
+         "Need an assessment and roadmap for your system? A 30-minute conversation is enough to start.")+'</p>'+
+       '<a class="btn primary" data-l="vi" href="mailto:tungtm@basebs.com?subject='+encodeURIComponent(subjVi)+'&body='+bodyVi+'">Gửi email trao đổi</a>'+
+       '<a class="btn primary" data-l="en" href="mailto:tungtm@basebs.com?subject='+encodeURIComponent(subjEn)+'&body='+bodyEn+'">Email me</a>'+
+       '<a class="btn" href="https://zalo.me/0915306688" target="_blank" rel="noopener">Zalo</a></div>';
+
+    if(e.lic==="flex") h+='<p class="note">'+bi("Ghi chú: thông báo EOL14949 áp dụng cho CUCM 12.5 và các thuê bao Flex on-premises đi kèm. Ngày lấy theo Bảng 1 của thông báo.","Note: bulletin EOL14949 covers CUCM 12.5 and the associated on-premises Flex subscriptions. Dates are taken from Table 1 of the bulletin.")+'</p>';
+    if(e.lic==="perp") h+='<p class="note">'+bi("Ghi chú: ngày trên áp dụng cho CUCM 14 cấp phép vĩnh viễn (perpetual). Nếu đang dùng thuê bao Flex, Cisco có thông báo riêng với các mốc khác.","Note: these dates apply to CUCM 14 with perpetual licensing. Flex subscriptions are covered by a separate Cisco bulletin with different milestones.")+'</p>';
+    if(e.src) h+='<p class="src">'+bi("Nguồn","Source")+': <a href="'+SRC[e.src].url+'" target="_blank" rel="noopener">Cisco '+SRC[e.src].id+'</a></p>';
+
+    elR.innerHTML=h;
+  }
+
+  function renderOverview(){
+    var rows="";
+    PRODUCTS.forEach(function(p){
+      p.v.forEach(function(x){
+        var e=x[1], st=status(e), sel=(p.k===state.p && x[0]===state.v);
+        rows+='<tr data-p="'+p.k+'" data-v="'+x[0]+'" class="'+(sel?"sel":"")+'" tabindex="0"><td><b>'+p.n+'</b></td><td>'+x[0]+'</td>'+
+          '<td class="num">'+(e.m.eoswm?fd(e.m.eoswm):"—")+'</td><td class="num">'+(e.m.ldos?fd(e.m.ldos):"—")+'</td>'+
+          '<td><span class="badge '+st.c+'">'+st.t+'</span></td></tr>';
+      });
+    });
+    elO.innerHTML=rows;
+  }
+
+  function renderAll(push){
+    renderProducts(); renderVersions(); renderResult(); renderOverview();
+    if(push){ try{ history.replaceState(null,"","#"+state.p+"-"+state.v); }catch(err){} }
+  }
+
+  function select(p,v,push){
+    var P=prod(p); state.p=P.k;
+    state.v = (v && entry(P,v)) ? v : (entry(P,"12.5") ? "12.5" : P.v[0][0]);
+    renderAll(push);
+  }
+
+  elP.addEventListener("click",function(ev){ var b=ev.target.closest("[data-p]"); if(b) select(b.getAttribute("data-p"),state.v,true); });
+  elV.addEventListener("click",function(ev){ var b=ev.target.closest("[data-v]"); if(b) select(state.p,b.getAttribute("data-v"),true); });
+  function rowPick(ev){ var r=ev.target.closest("tr[data-p]"); if(!r) return;
+    select(r.getAttribute("data-p"),r.getAttribute("data-v"),true);
+    document.getElementById("result").scrollIntoView({behavior:"smooth",block:"start"}); }
+  elO.addEventListener("click",rowPick);
+  elO.addEventListener("keydown",function(ev){ if(ev.key==="Enter"||ev.key===" "){ ev.preventDefault(); rowPick(ev);} });
+
+  /* language: always default VI, no persistence */
+  document.querySelectorAll(".lang button").forEach(function(b){
+    b.addEventListener("click",function(){
+      var l=b.getAttribute("data-set");
+      root.setAttribute("data-lang",l); root.setAttribute("lang",l);
+      document.querySelectorAll(".lang button").forEach(function(x){ x.setAttribute("aria-pressed", String(x===b)); });
+    });
+  });
+
+  /* initial selection from #product-version or ?p=&v= */
+  var init={p:"ucce",v:"12.5"};
+  var hm=(location.hash||"").replace("#","").match(/^([a-z]+)-([\d.]+)$/);
+  if(hm){ init.p=hm[1]; init.v=hm[2]; }
+  else { try{ var q=new URLSearchParams(location.search); if(q.get("p")) init.p=q.get("p"); if(q.get("v")) init.v=q.get("v"); }catch(err){} }
+  select(init.p,init.v,false);
+})();
+</script>
+</body>
+</html>

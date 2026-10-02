@@ -76,6 +76,13 @@ nav.links a:hover{color:var(--ink)}
 .btn.primary{background:var(--ink);color:var(--bg)}
 .btn:hover{border-color:var(--signal)}
 .btn.primary:hover{background:var(--signal);border-color:var(--signal)}
+.btn.eos{background:var(--signal);border-color:var(--signal);color:#fff;gap:8px;
+  box-shadow:0 6px 18px -6px color-mix(in srgb,var(--signal) 70%,transparent)}
+.btn.eos .ico{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn.eos:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.eos{color:#0E1522}}
+:root[data-theme="dark"] .btn.eos{color:#0E1522}
+@media (max-width:560px){.btn.eos{flex:1 1 100%;justify-content:center}}
 @media (max-width:760px){
   .hero{padding-top:36px}
   .hero .wrap{grid-template-columns:1fr;gap:28px}
@@ -249,6 +256,7 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
         <p class="lead" data-l="vi">Tôi đồng hành cùng ngân hàng, công ty tài chính, bảo hiểm và chứng khoán trong việc xây dựng và vận hành Contact Center. Kinh nghiệm triển khai giải pháp của Cisco, Calabrio cùng các nền tảng CRM, autodialer và AI đã được kiểm chứng qua những hệ thống vận hành ổn định, liên tục nhiều năm. Mỗi giải pháp đều bắt đầu từ việc lắng nghe nhu cầu và sáng kiến của chính doanh nghiệp, để những gì được xây dựng thực sự phù hợp với cách họ vận hành.</p>
         <p class="lead" data-l="en">I work with banks, consumer finance, insurance and securities companies to build and run their Contact Centers. My experience deploying Cisco and Calabrio solutions, alongside CRM, autodialer and AI platforms, is proven by systems that have run stably and continuously for years. Every solution starts with listening to the client's own needs and ideas, so that what we build truly fits the way they operate.</p>
         <div class="btns">
+          <a class="btn eos" href="/cisco-eos"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-l="vi">Kiểm tra hạn hỗ trợ Cisco</span><span data-l="en">Check Cisco support dates</span></a>
           <a class="btn primary" href="#lien-he"><span data-l="vi">Trao đổi với tôi</span><span data-l="en">Talk to me</span></a>
           <a class="btn" href="#giai-phap"><span data-l="vi">Xem giải pháp</span><span data-l="en">See solutions</span></a>
         </div>
