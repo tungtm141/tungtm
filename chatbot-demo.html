@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trải nghiệm trợ lý AI ngân hàng — Trương Mạnh Tùng</title>
+<!-- Trang đang ẩn: bỏ dòng noindex khi chatbot đã tích hợp và sẵn sàng công khai -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Trò chuyện thử với trợ lý AI của một ngân hàng giả lập. Trợ lý tự hiểu câu hỏi và trả lời dựa trên kho tài liệu của ngân hàng.">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="48x48" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#16233A; --muted:#5B6878; --line:#D3DAE2;
+  --signal:#0B7F72; --signal-soft:#DDF1EE; --warn:#9A5B00; --warn-soft:#FFF1D6;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1522; --surface:#152033; --ink:#E5EAF1; --muted:#9AA7B8; --line:#2A3850;
+    --signal:#45C2B0; --signal-soft:#12302D; --warn:#F0C25A; --warn-soft:#3A2E10;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1522; --surface:#152033; --ink:#E5EAF1; --muted:#9AA7B8; --line:#2A3850;
+  --signal:#45C2B0; --signal-soft:#12302D; --warn:#F0C25A; --warn-soft:#3A2E10;
+}
+html[data-lang="vi"] [data-l="en"], html[data-lang="en"] [data-l="vi"]{display:none !important}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+.right{display:flex;align-items:center;gap:20px}
+.back{font-size:.95rem;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--ink)}
+.lang{display:inline-flex;border:1.5px solid var(--line);border-radius:6px;overflow:hidden}
+.lang button{all:unset;cursor:pointer;padding:4px 10px;font-size:.85rem;font-weight:600;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lang button:focus-visible{outline:2px solid var(--signal);outline-offset:-2px}
+@media (max-width:560px){.back{display:none}}
+
+.hero{padding:56px 0 24px}
+.eyebrow{font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--signal);margin:0 0 12px}
+.hero h1{font-size:clamp(2rem,5.2vw,3.3rem);line-height:1.08;letter-spacing:-.03em;margin:0 0 16px;font-weight:700;max-width:18ch}
+.hero .lead{max-width:62ch;color:var(--muted);margin:0 0 20px;font-size:1.1rem}
+.topics{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.topics li{font-size:.88rem;font-weight:600;padding:4px 12px;border-radius:999px;background:var(--signal-soft);color:var(--signal)}
+
+.trust{display:flex;gap:16px;align-items:flex-start;margin:28px 0 0;padding:20px 22px;border-radius:12px;
+  background:var(--surface);border:1.5px solid var(--signal);box-shadow:0 8px 24px -14px color-mix(in srgb,var(--signal) 60%,transparent)}
+.trust .ic{flex:none;width:44px;height:44px;border-radius:10px;background:var(--signal-soft);display:grid;place-items:center}
+.trust svg,.guard svg{fill:none;stroke:var(--signal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.trust .ic svg{width:24px;height:24px}
+.trust h2{margin:0 0 4px;font-size:1.2rem}
+.trust p{margin:0;color:var(--muted);max-width:72ch}
+.trust p b{color:var(--ink)}
+.guard{display:flex;align-items:center;gap:8px;padding:8px 16px;background:var(--signal-soft);color:var(--signal);font-size:.82rem;font-weight:600;border-bottom:1px solid var(--line)}
+.guard svg{width:16px;height:16px;flex:none}
+.chat .st.on{color:var(--signal)}
+#chat-slot iframe{flex:1;width:100%;height:100%;border:0;display:block;background:var(--surface)}
+.chat.live #chat-slot{padding:0;background:var(--surface)}
+.chat.live .inp{display:none}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:28px 0 32px;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px 16px 58px;position:relative;font-size:.97rem}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:16px;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--bg);
+  display:grid;place-items:center;font-weight:700;font-size:.9rem}
+.steps b{display:block}
+.steps span.d{color:var(--muted)}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+
+.lab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:24px;align-items:start;margin-bottom:40px}
+@media (max-width:900px){.lab{grid-template-columns:1fr}}
+h2{font-size:1.3rem;letter-spacing:-.02em;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 18px;font-size:.97rem}
+
+.tries{display:grid;gap:14px}
+.try{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px}
+.try .head{display:flex;gap:12px;align-items:baseline;margin-bottom:6px}
+.try .no{font-weight:700;color:var(--signal);font-variant-numeric:tabular-nums}
+.try h3{font-size:1.1rem;margin:0}
+.try .see{margin:0 0 14px;color:var(--muted);font-size:.95rem}
+.try .see b{color:var(--ink);font-weight:600}
+.q{display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--bg);border:1px solid var(--line);border-radius:8px;
+  padding:10px 10px 10px 14px;margin-bottom:8px}
+.q.main{border-color:var(--signal)}
+.q .t{font-size:.97rem}
+.q.main .t{font-weight:600}
+.q .tag{display:block;font-size:.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.use{all:unset;cursor:pointer;flex:none;font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:6px;border:1.5px solid var(--line);white-space:nowrap}
+.use:hover{border-color:var(--signal);color:var(--signal)}
+.use:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+.use.done{border-color:var(--signal);background:var(--signal);color:var(--bg)}
+.try .hint{font-size:.88rem;color:var(--muted);margin:8px 0 0}
+
+.persona{background:var(--surface);border:1px dashed var(--signal);border-radius:10px;padding:18px 20px;margin-top:14px}
+.persona h3{font-size:1rem;margin:0 0 4px}
+.persona p{margin:0 0 12px;font-size:.92rem;color:var(--muted)}
+.persona dl{display:grid;grid-template-columns:auto 1fr auto;gap:8px 14px;align-items:center;margin:0}
+.persona dt{font-size:.85rem;color:var(--muted)}
+.persona dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums}
+
+.chat{position:sticky;top:84px;background:var(--surface);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;
+  height:min(640px,calc(100vh - 110px));overflow:hidden}
+@media (max-width:900px){.chat{position:static;height:560px}}
+.chat .bar{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.chat .av{width:34px;height:34px;border-radius:50%;background:var(--signal);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.85rem}
+.chat .nm{font-weight:700;line-height:1.2}
+.chat .st{font-size:.8rem;color:var(--warn);font-weight:600}
+/* #chat-slot: thay toàn bộ phần bên trong bằng iframe / widget / giao diện gọi API khi tích hợp */
+#chat-slot{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px;gap:10px;background:var(--bg)}
+#chat-slot .ic{width:56px;height:56px;border-radius:14px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center}
+#chat-slot .ic svg{width:28px;height:28px;fill:none;stroke:var(--signal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#chat-slot p{margin:0;max-width:30ch;color:var(--muted);font-size:.95rem}
+#chat-slot p b{color:var(--ink)}
+.chat .inp{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
+.chat .inp .fld{flex:1;border:1.5px solid var(--line);border-radius:8px;padding:10px 12px;color:var(--muted);font-size:.95rem}
+.chat .inp .snd{border-radius:8px;padding:10px 14px;background:var(--line);color:var(--muted);font-weight:600;font-size:.9rem}
+
+.fab{display:none}
+@media (max-width:900px){
+  .fab{display:inline-flex;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9;align-items:center;gap:8px;
+    background:var(--signal);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:999px;
+    box-shadow:0 8px 20px -6px color-mix(in srgb,var(--signal) 70%,transparent)}
+  .fab svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+}
+
+.how{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:20px}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0 0;padding:0;list-style:none}
+.flow li{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:14px;font-size:.93rem}
+.flow li b{display:block;margin-bottom:2px}
+.flow li span{color:var(--muted)}
+@media (max-width:760px){.flow{grid-template-columns:1fr 1fr}}
+.limits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.limits div{border-radius:8px;padding:14px 16px;font-size:.93rem}
+.limits .yes{background:var(--signal-soft)}
+.limits .no{background:var(--warn-soft)}
+.limits b{display:block;margin-bottom:4px}
+.limits ul{margin:0;padding-left:18px}
+@media (max-width:760px){.limits{grid-template-columns:1fr}}
+
+.cta{background:var(--ink);color:var(--bg);border-radius:12px;padding:28px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-bottom:20px}
+.cta h2{color:var(--bg);margin:0 0 4px}
+.cta p{margin:0;opacity:.8}
+.cta .txt{flex:1 1 320px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.98rem}
+.btn.a{background:var(--signal);color:#fff}
+.btn.b{border:1.5px solid color-mix(in srgb,var(--bg) 50%,transparent);color:var(--bg)}
+
+.foot{padding:8px 0 56px;font-size:.88rem;color:var(--muted)}
+.foot p{margin:0 0 10px;max-width:80ch}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="back" href="/"><span data-l="vi">← Trang chủ</span><span data-l="en">← Home</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow"><span data-l="vi">Trải nghiệm · Trợ lý AI cho ngân hàng</span><span data-l="en">Hands-on · AI assistant for banks</span></p>
+    <h1><span data-l="vi">Hỏi bất cứ điều gì, theo cách bạn vẫn nói.</span><span data-l="en">Ask anything, the way you normally talk.</span></h1>
+    <p class="lead"><span data-l="vi">Đây không phải chatbot kịch bản. Trợ lý AI của Ngân hàng X, một ngân hàng giả lập, tự hiểu câu hỏi và soạn câu trả lời dựa trên kho tài liệu của ngân hàng. Bạn có thể chat tự do, các gợi ý bên dưới chỉ là điểm xuất phát.</span><span data-l="en">This is not a scripted chatbot. The AI assistant of Bank X, a simulated bank, understands your question and writes its answer from the bank's own documents. Chat freely; the suggestions below are only a starting point.</span></p>
+    <ul class="topics" aria-label="Chủ đề">
+      <li><span data-l="vi">Thẻ</span><span data-l="en">Cards</span></li>
+      <li><span data-l="vi">Vay</span><span data-l="en">Loans</span></li>
+      <li><span data-l="vi">Tiết kiệm</span><span data-l="en">Savings</span></li>
+      <li><span data-l="vi">Biểu phí tín dụng</span><span data-l="en">Credit fees</span></li>
+      <li><span data-l="vi">Thông tin khách hàng</span><span data-l="en">Customer information</span></li>
+    </ul>
+    <div class="trust">
+      <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+      <div>
+        <h2><span data-l="vi">Không tự bịa câu trả lời</span><span data-l="en">It doesn't make answers up</span></h2>
+        <p><span data-l="vi">Chatbot AI của BaseBS <b>chỉ khai thác trên kho kiến thức có sẵn</b>. Câu hỏi nằm ngoài phạm vi sẽ nhận phản hồi <b>"không có thông tin"</b>, để ngân hàng yên tâm khi đưa trợ lý đến với khách hàng.</span><span data-l="en">BaseBS's AI chatbot <b>only draws on the knowledge base it is given</b>. Questions outside that scope get a clear <b>"no information available"</b>, so a bank can put the assistant in front of customers with confidence.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <ol class="steps">
+    <li><b><span data-l="vi">Chọn một gợi ý</span><span data-l="en">Pick a suggestion</span></b><span class="d"><span data-l="vi">Mỗi gợi ý cho thấy một khả năng khác nhau của trợ lý.</span><span data-l="en">Each one shows a different capability.</span></span></li>
+    <li><b><span data-l="vi">Bắt đầu bằng câu mẫu</span><span data-l="en">Start with the sample question</span></b><span class="d"><span data-l="vi">Sao chép câu mở đầu và dán vào khung chat.</span><span data-l="en">Copy the opening line into the chat.</span></span></li>
+    <li><b><span data-l="vi">Rồi hỏi tự do</span><span data-l="en">Then go off-script</span></b><span class="d"><span data-l="vi">Đổi cách hỏi, hỏi tiếp, thử làm khó trợ lý.</span><span data-l="en">Rephrase, follow up, try to trip it up.</span></span></li>
+  </ol>
+
+  <div class="lab">
+    <section>
+      <h2><span data-l="vi">4 gợi ý trải nghiệm</span><span data-l="en">4 things to try</span></h2>
+      <p class="sub"><span data-l="vi">Không cần làm theo thứ tự. Câu hỏi của bạn càng tự nhiên càng tốt.</span><span data-l="en">No particular order. The more natural your questions, the better.</span></p>
+
+      <div class="tries">
+        <article class="try">
+          <div class="head"><span class="no">01</span><h3><span data-l="vi">Hỏi như nói chuyện</span><span data-l="en">Ask the way you talk</span></h3></div>
+          <p class="see"><b><span data-l="vi">Bạn sẽ thấy:</span><span data-l="en">What you'll see:</span></b> <span data-l="vi">trợ lý hiểu câu viết tắt, không dấu, nhiều ý trong một câu, và trả lời đủ từng ý.</span><span data-l="en">it understands shorthand, missing accents and several questions in one line, and answers each of them.</span></p>
+          <div class="q main"><span class="t"><span class="tag"><span data-l="vi">Câu mở đầu</span><span data-l="en">Opening line</span></span><span data-l="vi" data-q>mo the tin dung can giay to gi, bao lau co the, phi thuong nien bao nhieu</span><span data-l="en" data-q>credit card - what docs do i need, how long does it take, annual fee?</span></span></div>
+          <div class="q"><span class="t"><span data-l="vi" data-q>Có loại thẻ nào miễn phí thường niên không?</span><span data-l="en" data-q>Is there any card with no annual fee?</span></span></div>
+          <div class="q"><span class="t"><span data-l="vi" data-q>Rút tiền mặt bằng thẻ tín dụng mất phí bao nhiêu?</span><span data-l="en" data-q>How much does a cash advance on a credit card cost?</span></span></div>
+        </article>
+
+        <article class="try">
+          <div class="head"><span class="no">02</span><h3><span data-l="vi">Hỏi tiếp, không cần nhắc lại</span><span data-l="en">Follow up without repeating yourself</span></h3></div>
+          <p class="see"><b><span data-l="vi">Bạn sẽ thấy:</span><span data-l="en">What you'll see:</span></b> <span data-l="vi">trợ lý nhớ ngữ cảnh, hiểu "cái đó", "thế còn…" đang nói về sản phẩm nào.</span><span data-l="en">it keeps the context and knows what "that one" or "what about…" refers to.</span></p>
+          <div class="q main"><span class="t"><span class="tag"><span data-l="vi">Câu mở đầu</span><span data-l="en">Opening line</span></span><span data-l="vi" data-q>Lãi suất gửi tiết kiệm kỳ hạn 12 tháng là bao nhiêu?</span><span data-l="en" data-q>What is the interest rate on a 12-month savings deposit?</span></span></div>
+          <div class="q"><span class="t"><span data-l="vi" data-q>Thế nếu rút trước hạn thì sao?</span><span data-l="en" data-q>What if I withdraw early?</span></span></div>
+          <div class="q"><span class="t"><span data-l="vi" data-q>So với kỳ hạn 6 tháng thì chênh bao nhiêu?</span><span data-l="en" data-q>How does that compare with 6 months?</span></span></div>
+        </article>
+
+        <article class="try">
+          <div class="head"><span class="no">03</span><h3><span data-l="vi">Đóng vai khách hàng của ngân hàng</span><span data-l="en">Play an existing customer</span></h3></div>
+          <p class="see"><b><span data-l="vi">Bạn sẽ thấy:</span><span data-l="en">What you'll see:</span></b> <span data-l="vi">trợ lý trả lời theo thông tin của chính khách hàng, không chỉ thông tin chung.</span><span data-l="en">answers based on that customer's own information, not just general product facts.</span></p>
+          <div class="q main"><span class="t"><span class="tag"><span data-l="vi">Câu mở đầu</span><span data-l="en">Opening line</span></span><span data-l="vi" data-q>Tôi là Nguyễn Văn A, tôi muốn kiểm tra thông tin thẻ của mình</span><span data-l="en" data-q>I'm Nguyen Van A and I'd like to check my card details</span></span></div>
+          <div class="q"><span class="t"><span data-l="vi" data-q>Khoản vay của tôi hiện còn bao nhiêu?</span><span data-l="en" data-q>How much is left on my loan?</span></span></div>
+          <div class="q"><span class="t"><span data-l="vi" data-q>Sổ tiết kiệm của tôi khi nào đến hạn?</span><span data-l="en" data-q>When does my savings deposit mature?</span></span></div>
+          <div class="persona">
+            <h3><span data-l="vi">Hồ sơ khách hàng giả lập</span><span data-l="en">Simulated customer profile</span></h3>
+            <p><span data-l="vi">Dùng các thông tin này khi trợ lý hỏi để xác định bạn là ai.</span><span data-l="en">Use these details if the assistant asks who you are.</span></p>
+            <dl>
+              <dt><span data-l="vi">Họ tên</span><span data-l="en">Name</span></dt><dd data-q>Nguyễn Văn A</dd><dd></dd>
+              <dt>CCCD</dt><dd data-q>1441</dd><dd></dd>
+              <dt><span data-l="vi">Điện thoại</span><span data-l="en">Phone</span></dt><dd data-q>0915306688</dd><dd></dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="try">
+          <div class="head"><span class="no">04</span><h3><span data-l="vi">Thử làm khó trợ lý</span><span data-l="en">Try to trip it up</span></h3></div>
+          <p class="see"><b><span data-l="vi">Bạn sẽ thấy:</span><span data-l="en">What you'll see:</span></b> <span data-l="vi">khi câu hỏi nằm ngoài kho kiến thức, trợ lý trả lời "không có thông tin" thay vì tự bịa câu trả lời.</span><span data-l="en">when a question falls outside its knowledge base, it replies "no information available" instead of making up an answer.</span></p>
+          <div class="q main"><span class="t"><span class="tag"><span data-l="vi">Câu mở đầu</span><span data-l="en">Opening line</span></span><span data-l="vi" data-q>Tỷ giá USD hôm nay là bao nhiêu?</span><span data-l="en" data-q>What is today's USD exchange rate?</span></span></div>
+          <div class="q"><span class="t"><span data-l="vi" data-q>Ngân hàng khác có lãi suất tiết kiệm cao hơn không?</span><span data-l="en" data-q>Do other banks pay higher savings rates?</span></span></div>
+          <div class="q"><span class="t"><span data-l="vi" data-q>Cho tôi vay 500 triệu không cần giấy tờ được không?</span><span data-l="en" data-q>Can I borrow 500 million without any paperwork?</span></span></div>
+          <p class="hint"><span data-l="vi">Với ngân hàng, một câu "tôi không có thông tin này" quan trọng hơn một câu trả lời nghe hay nhưng sai.</span><span data-l="en">For a bank, an honest "I don't have that information" matters more than a confident wrong answer.</span></p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="chat" id="chat" aria-label="Khung chat">
+      <div class="bar">
+        <div class="av" aria-hidden="true">X</div>
+        <div><div class="nm"><span data-l="vi">Trợ lý AI · Ngân hàng X</span><span data-l="en">AI assistant · Bank X</span></div>
+          <div class="st" id="chat-status"><span data-l="vi">Đang được tích hợp</span><span data-l="en">Being integrated</span></div></div>
+      </div>
+      <div class="guard"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span data-l="vi">Chỉ trả lời từ kho kiến thức · Ngoài phạm vi: "không có thông tin"</span><span data-l="en">Answers only from the knowledge base · Out of scope: "no information"</span></div>
+      <div id="chat-slot">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></div>
+        <p><b><span data-l="vi">Khung chat sẽ hiển thị tại đây.</span><span data-l="en">The chat will appear here.</span></b></p>
+        <p><span data-l="vi">Trong lúc chờ, bạn có thể liên hệ để xem demo trực tiếp.</span><span data-l="en">Meanwhile, get in touch for a live demo.</span></p>
+      </div>
+      <div class="inp" aria-hidden="true"><div class="fld"><span data-l="vi">Nhập câu hỏi…</span><span data-l="en">Type a question…</span></div><div class="snd"><span data-l="vi">Gửi</span><span data-l="en">Send</span></div></div>
+    </aside>
+  </div>
+
+  <section class="how">
+    <h2><span data-l="vi">Phía sau trợ lý</span><span data-l="en">Behind the assistant</span></h2>
+    <p class="sub" style="margin-bottom:0"><span data-l="vi">Câu trả lời không được viết sẵn. Mỗi lần bạn hỏi, trợ lý đi qua 4 bước:</span><span data-l="en">Answers are not pre-written. Every time you ask, the assistant goes through four steps:</span></p>
+    <ol class="flow">
+      <li><b><span data-l="vi">Hiểu câu hỏi</span><span data-l="en">Understand</span></b><span><span data-l="vi">Kể cả câu viết tắt, không dấu</span><span data-l="en">Including shorthand and no accents</span></span></li>
+      <li><b><span data-l="vi">Tìm tài liệu</span><span data-l="en">Retrieve</span></b><span><span data-l="vi">Lấy đúng đoạn liên quan trong kho dữ liệu</span><span data-l="en">Pulls the relevant passages from the knowledge base</span></span></li>
+      <li><b><span data-l="vi">Soạn câu trả lời</span><span data-l="en">Compose</span></b><span><span data-l="vi">AI viết lại bằng ngôn ngữ tự nhiên</span><span data-l="en">AI writes it in natural language</span></span></li>
+      <li><b><span data-l="vi">Trả lời</span><span data-l="en">Reply</span></b><span><span data-l="vi">Hoặc báo "không có thông tin" nếu tài liệu không đề cập</span><span data-l="en">Or says "no information" if the documents don't cover it</span></span></li>
+    </ol>
+    <div class="limits">
+      <div class="yes"><b><span data-l="vi">Nguyên tắc trả lời</span><span data-l="en">How it answers</span></b>
+        <ul><li><span data-l="vi">Chỉ khai thác kho kiến thức của Ngân hàng X: thẻ, vay, tiết kiệm, biểu phí, thông tin khách hàng</span><span data-l="en">Draws only on Bank X's knowledge base: cards, loans, savings, fees, customer data</span></li>
+            <li><span data-l="vi">Ngoài phạm vi: trả lời "không có thông tin", không tự bịa</span><span data-l="en">Out of scope: replies "no information", never improvises</span></li></ul></div>
+      <div class="no"><b><span data-l="vi">Lưu ý</span><span data-l="en">Keep in mind</span></b>
+        <ul><li><span data-l="vi">Ngân hàng X, sản phẩm, lãi suất, biểu phí và khách hàng đều là dữ liệu giả lập</span><span data-l="en">Bank X, its products, rates, fees and customers are all simulated</span></li>
+            <li><span data-l="vi">Không nhập thông tin cá nhân thật của bạn</span><span data-l="en">Do not enter your own real personal data</span></li></ul></div>
+    </div>
+  </section>
+
+  <section class="cta" id="lien-he">
+    <div class="txt">
+      <h2><span data-l="vi">Muốn trợ lý này chạy trên tài liệu của chính ngân hàng bạn?</span><span data-l="en">Want this assistant running on your own bank's documents?</span></h2>
+      <p><span data-l="vi">Trao đổi 30 phút về dữ liệu, kênh triển khai và cách làm POC.</span><span data-l="en">A 30-minute talk about your data, channels and how a POC would work.</span></p>
+    </div>
+    <a class="btn a" href="mailto:tungtm@basebs.com?subject=Trao%20%C4%91%E1%BB%95i%20v%E1%BB%81%20tr%E1%BB%A3%20l%C3%BD%20AI%20cho%20ng%C3%A2n%20h%C3%A0ng"><span data-l="vi">Gửi email trao đổi</span><span data-l="en">Email me</span></a>
+    <a class="btn b" href="https://zalo.me/0915306688" target="_blank" rel="noopener">Zalo</a>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><span data-l="vi">Ngân hàng X là ngân hàng giả lập dùng cho mục đích trình diễn. Mọi tên sản phẩm, lãi suất, biểu phí và thông tin khách hàng trên trang và trong hội thoại đều là dữ liệu minh họa, không phản ánh bất kỳ ngân hàng thực tế nào. Câu trả lời do AI soạn từ kho dữ liệu giả lập, chỉ mang tính trình diễn.</span><span data-l="en">Bank X is a simulated bank for demonstration purposes. All product names, rates, fees and customer details on this page and in the conversation are illustrative and do not reflect any real bank. Answers are AI-generated from simulated data and are for demonstration only.</span></p>
+  </div>
+</footer>
+
+<a class="fab" href="#chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span data-l="vi">Mở khung chat</span><span data-l="en">Open chat</span></a>
+
+<script>
+(function(){
+  /* ===== TÍCH HỢP CHATBOT =====
+     Dán link iframe do đội chatbot cung cấp vào giữa hai dấu nháy, ví dụ:
+     var CHAT_IFRAME_URL = "https://chatbot.example.com/embed/abc";
+     Để trống = hiện khung chờ "Đang được tích hợp". */
+  var CHAT_IFRAME_URL = "";
+
+  var root=document.documentElement;
+  if(CHAT_IFRAME_URL){
+    var slot=document.getElementById("chat-slot"), box=document.getElementById("chat");
+    var f=document.createElement("iframe");
+    f.src=CHAT_IFRAME_URL; f.title="Trợ lý AI Ngân hàng X"; f.loading="lazy"; f.setAttribute("allow","clipboard-write");
+    slot.innerHTML=""; slot.appendChild(f); box.classList.add("live");
+    var st=document.getElementById("chat-status"); st.classList.add("on");
+    st.innerHTML='<span data-l="vi">Đang hoạt động</span><span data-l="en">Online</span>';
+  }
+  /* Ngôn ngữ: luôn mặc định VI, không lưu lựa chọn */
+  document.querySelectorAll(".lang button").forEach(function(b){
+    b.addEventListener("click",function(){
+      var l=b.getAttribute("data-set"); root.setAttribute("data-lang",l); root.setAttribute("lang",l);
+      document.querySelectorAll(".lang button").forEach(function(x){x.setAttribute("aria-pressed",String(x===b));});
+    });
+  });
+
+  /* Gắn nút cho mỗi câu gợi ý.
+     Khi chatbot tích hợp qua API, gán window.CHAT_SEND = function(text){...}
+     là các nút tự đổi thành "Gửi vào chat". Còn lại (iframe/widget): sao chép. */
+  function canSend(){ return typeof window.CHAT_SEND==="function"; }
+  function label(){ return canSend()
+      ? '<span data-l="vi">Gửi vào chat</span><span data-l="en">Send to chat</span>'
+      : '<span data-l="vi">Sao chép</span><span data-l="en">Copy</span>'; }
+  function copy(text){
+    if(navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(res,rej){
+      var t=document.createElement("textarea"); t.value=text; t.style.position="fixed"; t.style.opacity="0";
+      document.body.appendChild(t); t.select();
+      try{ document.execCommand("copy") ? res() : rej(); }catch(e){ rej(e); } document.body.removeChild(t);
+    });
+  }
+  function current(el){
+    var lang=root.getAttribute("data-lang")||"vi";
+    var pick=el.querySelector('[data-q][data-l="'+lang+'"]')||el.querySelector("[data-q]");
+    return pick?pick.textContent.trim():"";
+  }
+  function addBtn(host,getText){
+    var b=document.createElement("button"); b.type="button"; b.className="use"; b.innerHTML=label();
+    b.addEventListener("click",function(){
+      var text=getText(); if(!text) return;
+      if(canSend()){ window.CHAT_SEND(text); if(window.innerWidth<=900) document.getElementById("chat").scrollIntoView({behavior:"smooth"}); return; }
+      copy(text).then(function(){
+        b.classList.add("done"); b.innerHTML='<span data-l="vi">Đã chép ✓</span><span data-l="en">Copied ✓</span>';
+        setTimeout(function(){ b.classList.remove("done"); b.innerHTML=label(); },1600);
+      },function(){});
+    });
+    host.appendChild(b);
+  }
+  document.querySelectorAll(".q").forEach(function(q){ addBtn(q,function(){ return current(q); }); });
+  document.querySelectorAll(".persona dd[data-q]").forEach(function(dd){
+    addBtn(dd.nextElementSibling,function(){ return dd.textContent.trim(); });
+  });
+})();
+</script>
+</body>
+</html>
