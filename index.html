@@ -173,6 +173,8 @@ h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.02em;line-height:1.15;m
 .contact dd{margin:4px 0 0;font-weight:500;word-break:break-word}
 .contact a{text-decoration:none;border-bottom:1px solid var(--line)}
 .contact a:hover{border-color:var(--signal)}
+.contact a[href^="tel:"],.contact a[href*="zalo"]{white-space:nowrap}
+@media (max-width:480px){.contact{grid-template-columns:1fr!important}.contact div{padding:14px 0}}
 @media (max-width:760px){.contact{grid-template-columns:1fr 1fr}}
 .edu{margin-top:32px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.97rem}
 .edu p{margin:0 0 6px;max-width:80ch}
@@ -381,8 +383,8 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
       <p class="intro"><span data-l="vi">Gửi email hoặc gọi trực tiếp để trao đổi về hiện trạng và định hướng Contact Center của doanh nghiệp.</span><span data-l="en">Email or call me to discuss where your Contact Center is today and where you want it to go.</span></p>
       <dl class="contact">
         <div><dt>Email</dt><dd><a href="mailto:tungtm@basebs.com">tungtm@basebs.com</a></dd></div>
-        <div><dt><span data-l="vi">Điện thoại / Zalo</span><span data-l="en">Phone / Zalo</span></dt><dd><a href="tel:+84915306688">0915 306 688</a></dd></div>
-        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></dd></div>
+        <div><dt><span data-l="vi">Điện thoại / Zalo</span><span data-l="en">Phone / Zalo</span></dt><dd><a href="tel:+84915306688">0915 306 688</a> · <a href="https://zalo.me/0915306688" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo</span><span data-l="en">Chat on Zalo</span></a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/tungtm141" target="_blank" rel="noopener">linkedin.com/in/tungtm141</a></dd></div>
         <div><dt><span data-l="vi">Khu vực</span><span data-l="en">Location</span></dt><dd><span data-l="vi">Hà Nội</span><span data-l="en">Hanoi, Vietnam</span></dd></div>
       </dl>
     </div>
