@@ -208,6 +208,58 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
   .ph{background:none;color:#000}
   .photo{max-width:120px}
 }
+
+/* ===== Bản in gọn ~2 trang A4 (chỉ áp dụng khi in / lưu PDF; nội dung giữ nguyên) ===== */
+@page{size:A4;margin:11mm 13mm}
+@media print{
+  :root,:root:not([data-theme="x"]),:root[data-theme="dark"]{--bg:#fff;--surface:#fff;--ink:#16233A;--muted:#5B6878;--line:#D3DAE2;--signal:#0B7F72;--signal-soft:#DDF1EE}
+  html{font-size:8.6pt}
+  body{font-size:1rem;line-height:1.38;background:#fff;color:#16233A;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{max-width:none;padding:0}
+  header.top,.btns{display:none!important}
+  .hero{padding:0 0 6pt}
+  .hero .wrap{grid-template-columns:1fr 78pt;gap:14pt;align-items:start}
+  .hero h1{font-size:22pt;margin:0 0 3pt;letter-spacing:-.02em}
+  .hero .role{font-size:10.5pt;margin:0 0 4pt}
+  .hero .lead{font-size:1rem;margin:0 0 4pt;max-width:none}
+  .facts{margin:0;gap:2pt 14pt;font-size:.95rem}
+  .photo{max-width:78pt}
+  section{padding:6pt 0;break-inside:auto;border-top:1px solid #D3DAE2}
+  h2{font-size:12.5pt;margin:0 0 3pt;break-after:avoid}
+  .intro{margin:0 0 5pt;max-width:none;font-size:.95rem}
+  .roles{grid-template-columns:repeat(4,1fr)}
+  .roles div,.roles div:nth-child(even){padding:4pt 6pt 4pt 0;border-right:0}
+  .roles div:nth-child(even){padding-left:0}
+  .roles h3{font-size:1rem;margin:0 0 1pt}
+  .roles p{font-size:.92rem;max-width:none}
+  .timeline > li{grid-template-columns:78pt 1fr;gap:10pt;padding:4pt 0;break-inside:avoid}
+  .timeline h3{font-size:1.05rem;margin:0}
+  .timeline .org{margin:0 0 2pt}
+  .timeline ul{max-width:none}
+  .timeline ul li{margin-bottom:1pt}
+  .timeline .note{max-width:none}
+  .subhead{font-size:1rem;margin:6pt 0 0}
+  .cases{gap:6pt}
+  .case{padding:7pt;break-inside:avoid;border-color:#D3DAE2}
+  .case-head{margin-bottom:3pt}
+  .case h3{font-size:1.05rem}
+  .since{margin:0 0 3pt;font-size:.88rem}
+  .layers{margin:0 0 3pt;gap:3pt}
+  .layers li{font-size:.78rem;padding:1pt 6pt}
+  .case dt{margin-top:3pt;font-size:.82rem}
+  .case dt,.case dd{font-size:.9rem}
+  .skills{gap:10pt}
+  .skills h3{font-size:1rem;margin:0 0 2pt}
+  .skills li{margin-bottom:0}
+  .chips{margin-top:4pt;gap:4pt}
+  .chip{padding:1pt 7pt;font-size:.85rem}
+  #hoc-van .timeline{display:grid;grid-template-columns:1fr 1fr;column-gap:16pt}
+  .edu{margin-top:4pt;padding-top:4pt}
+  .contact{grid-template-columns:repeat(4,1fr)!important}
+  .contact div{padding:3pt 6pt 3pt 0}
+  footer{padding:4pt 0 0;font-size:.85rem}
+  a{text-decoration:none}
+}
 </style>
 </head>
 <body>
