@@ -175,6 +175,23 @@ h2{font-size:1.3rem;letter-spacing:-.02em;margin:0 0 6px}
 
 .foot{padding:8px 0 56px;font-size:.88rem;color:var(--muted)}
 .foot p{margin:0 0 10px;max-width:80ch}
+
+/* Lớp khóa mã truy cập / tạm dừng */
+.gate{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;width:100%;max-width:300px}
+.gate .ic{width:56px;height:56px;border-radius:14px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center}
+.gate .ic svg{width:26px;height:26px;fill:none;stroke:var(--signal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.gate p{margin:0;color:var(--muted);font-size:.95rem}
+.gate .gt{color:var(--ink)}
+.gf{display:flex;gap:8px;width:100%}
+.gf input{flex:1;min-width:0;font:inherit;font-size:1rem;padding:10px 12px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)}
+.gf input::placeholder{letter-spacing:.2em}
+.chat.gated .inp{display:none}
+.gf input:focus{outline:none;border-color:var(--signal)}
+.gf button{font:inherit;font-weight:600;padding:10px 16px;border-radius:8px;border:0;background:var(--signal);color:#fff;cursor:pointer}
+.gf button:disabled{opacity:.6;cursor:wait}
+.gate .gerr{color:#C0392B;font-size:.88rem}
+.gate .gh a{color:var(--signal);font-weight:600}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 </style>
 </head>
 <body>
@@ -325,21 +342,75 @@ h2{font-size:1.3rem;letter-spacing:-.02em;margin:0 0 6px}
 
 <script>
 (function(){
-  /* ===== TÍCH HỢP CHATBOT =====
-     Dán link iframe do đội chatbot cung cấp vào giữa hai dấu nháy, ví dụ:
-     var CHAT_IFRAME_URL = "https://chatbot.example.com/embed/abc";
-     Để trống = hiện khung chờ "Đang được tích hợp". */
+  /* ===== TÍCH HỢP CHATBOT – CHẾ ĐỘ HIỂN THỊ =====
+     CHAT_MODE:
+       "open" = mở tự do, dùng link CHAT_IFRAME_URL bên dưới
+       "code" = khách phải nhập mã truy cập (phân biệt chữ hoa/thường); link lấy từ CHAT_LOCKED (đã mã hóa bằng mã)
+       "off"  = tạm dừng, hiện thông báo kèm nút liên hệ
+     KHI CHUYỂN SANG "code": xóa trắng CHAT_IFRAME_URL (để "") để link không lộ trong code.
+     Đổi mã truy cập hoặc đổi link widget: CHAT_LOCKED phải được tạo lại (nhờ Claude). */
+  var CHAT_MODE = "open";
   var CHAT_IFRAME_URL = "https://uat.connect247.com.vn/aiuchat_tenant/widget.html?channelKey=wc_jg2ekzvmuy73j";
+  var CHAT_LOCKED = {salt:"Q79DOmIriw3URrntSynt3g==", iv:"GMRl+kejr3sEbNkq", data:"Ule2tVJBwlvJ0ZUTfcGDcc1m+NZ2K3LQPjnHddoBlSDOGQI5zOJU6ZMuxKw37hQp/xYJZE4rLlraOSVkSGz5lqGSfa9/NkgXrMsuIJ06khLIx6lKQP1ySz6TVV8moxRaOvturQ==", iter:200000};
 
   var root=document.documentElement;
-  if(CHAT_IFRAME_URL){
-    var slot=document.getElementById("chat-slot"), box=document.getElementById("chat");
+  var slot=document.getElementById("chat-slot"), box=document.getElementById("chat"), st=document.getElementById("chat-status");
+  var ZALO="https://zalo.me/0915306688";
+  function setStatus(vi,en,on){ st.innerHTML='<span data-l="vi">'+vi+'</span><span data-l="en">'+en+'</span>'; st.classList.toggle("on",!!on); }
+  function mount(url){
     var f=document.createElement("iframe");
-    f.src=CHAT_IFRAME_URL; f.title="Trợ lý AI Ngân hàng X"; f.loading="lazy"; f.setAttribute("allow","clipboard-write");
-    slot.innerHTML=""; slot.appendChild(f); box.classList.add("live");
-    var st=document.getElementById("chat-status"); st.classList.add("on");
-    st.innerHTML='<span data-l="vi">Bản demo · dữ liệu giả lập</span><span data-l="en">Demo · simulated data</span>';
+    f.src=url; f.title="Trợ lý AI Ngân hàng X"; f.loading="lazy"; f.setAttribute("allow","clipboard-write");
+    slot.innerHTML=""; slot.appendChild(f); box.classList.remove("gated","locked"); box.classList.add("live");
+    setStatus("Bản demo · dữ liệu giả lập","Demo · simulated data",true);
   }
+  function b64(s){ return Uint8Array.from(atob(s),function(c){return c.charCodeAt(0);}); }
+  function unlock(code){
+    var enc=new TextEncoder();
+    return crypto.subtle.importKey("raw",enc.encode(code.trim()),"PBKDF2",false,["deriveKey"])
+      .then(function(base){ return crypto.subtle.deriveKey({name:"PBKDF2",salt:b64(CHAT_LOCKED.salt),iterations:CHAT_LOCKED.iter,hash:"SHA-256"},base,{name:"AES-GCM",length:256},false,["decrypt"]); })
+      .then(function(key){ return crypto.subtle.decrypt({name:"AES-GCM",iv:b64(CHAT_LOCKED.iv)},key,b64(CHAT_LOCKED.data)); })
+      .then(function(buf){ return new TextDecoder().decode(buf); });
+  }
+  var KEY="chatbot-demo-code";
+  function lockScreen(){
+    box.classList.add("locked","gated");
+    setStatus("Cần mã truy cập","Access code required",false);
+    slot.innerHTML='<div class="gate">'+
+      '<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>'+
+      '<p class="gt"><b><span data-l="vi">Nhập mã truy cập để dùng thử</span><span data-l="en">Enter the access code to try it</span></b></p>'+
+      '<form class="gf" novalidate><label class="sr" for="gcode">Mã truy cập</label>'+
+      '<input id="gcode" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="••••••">'+
+      '<button type="submit"><span data-l="vi">Mở</span><span data-l="en">Open</span></button></form>'+
+      '<p class="gerr" role="alert" hidden><span data-l="vi">Mã chưa đúng, vui lòng thử lại.</span><span data-l="en">That code is not right, please try again.</span></p>'+
+      '<p class="gh"><span data-l="vi">Chưa có mã?</span><span data-l="en">No code yet?</span> <a href="'+ZALO+'" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo để nhận mã</span><span data-l="en">Message me on Zalo</span></a></p>'+
+      '</div>';
+    var form=slot.querySelector(".gf"), inp=slot.querySelector("#gcode"), err=slot.querySelector(".gerr"), btn=form.querySelector("button");
+    form.addEventListener("submit",function(e){
+      e.preventDefault(); var code=inp.value; if(!code.trim()) return;
+      btn.disabled=true; err.hidden=true;
+      unlock(code).then(function(url){
+        try{ localStorage.setItem(KEY,code.trim()); }catch(x){}
+        box.classList.remove("locked"); mount(url);
+      },function(){ err.hidden=false; btn.disabled=false; inp.select(); });
+    });
+  }
+  function pausedScreen(){
+    box.classList.add("gated");
+    setStatus("Tạm dừng","Paused",false);
+    slot.innerHTML='<div class="gate">'+
+      '<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 9v6M14 9v6"/><circle cx="12" cy="12" r="9"/></svg></div>'+
+      '<p class="gt"><b><span data-l="vi">Bản demo đang tạm dừng</span><span data-l="en">The demo is paused</span></b></p>'+
+      '<p><span data-l="vi">Liên hệ để xem demo trực tiếp.</span><span data-l="en">Get in touch for a live demo.</span></p>'+
+      '<p class="gh"><a href="'+ZALO+'" target="_blank" rel="noopener">Zalo</a> · <a href="mailto:tungtm@basebs.com">Email</a></p>'+
+      '</div>';
+  }
+  if(CHAT_MODE==="off"){ pausedScreen(); }
+  else if(CHAT_MODE==="code"){
+    var saved=null; try{ saved=localStorage.getItem(KEY); }catch(x){}
+    if(saved){ unlock(saved).then(mount,function(){ try{localStorage.removeItem(KEY);}catch(x){} lockScreen(); }); }
+    else lockScreen();
+  }
+  else if(CHAT_IFRAME_URL){ mount(CHAT_IFRAME_URL); }
   /* Ngôn ngữ: luôn mặc định VI, không lưu lựa chọn */
   document.querySelectorAll(".lang button").forEach(function(b){
     b.addEventListener("click",function(){
