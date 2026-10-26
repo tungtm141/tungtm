@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" data-title-vi="Khi nào nên rà soát vòng đời hỗ trợ Cisco Contact Center? — Trương Mạnh Tùng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Khi nào nên rà soát vòng đời hỗ trợ Cisco Contact Center? — Trương Mạnh Tùng</title>
+<meta name="description" content="Khi nào cần rà soát vòng đời hỗ trợ Cisco Contact Center? Hiểu các mốc EoS, LDoS của UCCE/PCCE 12.x và 4 thời điểm nên kiểm tra phiên bản.">
+<link rel="canonical" href="https://truongmanhtung.com/blog/ra-soat-vong-doi-ho-tro-cisco-contact-center/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://truongmanhtung.com/blog/ra-soat-vong-doi-ho-tro-cisco-contact-center/">
+<meta property="og:title" content="Khi nào nên rà soát vòng đời hỗ trợ Cisco Contact Center?">
+<meta property="og:description" content="Khi nào cần rà soát vòng đời hỗ trợ Cisco Contact Center? Hiểu các mốc EoS, LDoS của UCCE/PCCE 12.x và 4 thời điểm nên kiểm tra phiên bản.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://truongmanhtung.com/blog/ra-soat-vong-doi-ho-tro-cisco-contact-center/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:author" content="https://www.linkedin.com/in/tungtm141">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+ "headline":"Khi nào nên rà soát vòng đời hỗ trợ Cisco Contact Center?","description":"Khi nào cần rà soát vòng đời hỗ trợ Cisco Contact Center? Hiểu các mốc EoS, LDoS của UCCE/PCCE 12.x và 4 thời điểm nên kiểm tra phiên bản.",
+ "datePublished":"2026-10-26","dateModified":"2026-10-26","inLanguage":"vi",
+ "image":"https://truongmanhtung.com/blog/ra-soat-vong-doi-ho-tro-cisco-contact-center/og.jpg",
+ "mainEntityOfPage":"https://truongmanhtung.com/blog/ra-soat-vong-doi-ho-tro-cisco-contact-center/",
+ "author":{"@type":"Person","name":"Trương Mạnh Tùng","url":"https://truongmanhtung.com/"}}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="navlink hide-sm" href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap narrow">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/"><span data-l="vi">Trang chủ</span><span data-l="en">Home</span></a> / <a href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a></nav>
+
+  <header class="post-head">
+    <div class="meta">
+      <time datetime="2026-10-26"><span data-l="vi">26/10/2026</span><span data-l="en">26 Oct 2026</span></time>
+      <span>· <span data-l="vi">8 phút đọc</span><span data-l="en">8 min read</span></span>
+      <span class="tag"><span data-l="vi">Contact Center</span><span data-l="en">Contact Center</span></span>
+    </div>
+    <h1>Khi nào nên rà soát vòng đời hỗ trợ Cisco Contact Center?</h1>
+  </header>
+
+  <p class="lang-note" data-l="en">This article is currently available in Vietnamese only.</p>
+
+  <article class="prose" lang="vi">
+<p>Ngày 31/12/2027 là ngày cuối cùng Cisco hỗ trợ các bản UCCE, PCCE, UCCX và CVP 12.5/12.6 chạy on-premise, theo <a href="https://www.cisco.com/c/en/us/products/collateral/unified-communications/cisco-collaboration-flex-plan/v12-5-12-6-ucce-pcce-uccx-cvp-eol.html" target="_blank" rel="noopener">thông báo EOL15603 của Cisco</a> phát hành ngày 30/06/2025. Trước đó, 31/12/2026 là hạn cuối để gia hạn hoặc bổ sung subscription cho các bản này.</p>
+<p>Nhiều đội IT chỉ nhìn vào một mốc ngày đó. Thực tế, vòng đời hỗ trợ Cisco Contact Center còn phụ thuộc vào Windows, SQL Server, VMware và các hệ thống tích hợp xung quanh. Bài viết này giải thích các mốc cần hiểu và bốn thời điểm nên chủ động rà soát, để kế hoạch nâng cấp không bị dồn vào phút cuối.</p>
+<h2>Vòng đời hỗ trợ Cisco Contact Center gồm những mốc nào?</h2>
+<p>Mỗi phiên bản phần mềm Cisco đi qua một chuỗi mốc cố định. Hiểu đúng từng mốc giúp phân biệt "vẫn chạy được" với "vẫn được hỗ trợ".</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Mốc</th>
+<th>Ý nghĩa</th>
+<th>Bản 12.5/12.6 on-premise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EoL Announcement</td>
+<td>Ngày Cisco công bố lịch dừng bán và dừng hỗ trợ</td>
+<td>30/06/2025</td>
+</tr>
+<tr>
+<td>End-of-Sale (EoS)</td>
+<td>Ngày cuối đặt mua</td>
+<td>31/12/2025</td>
+</tr>
+<tr>
+<td>End of Change/Renewal</td>
+<td>Ngày cuối gia hạn hoặc bổ sung subscription</td>
+<td>31/12/2026</td>
+</tr>
+<tr>
+<td>Last Date of Support (LDoS)</td>
+<td>Sau ngày này không còn hỗ trợ, sản phẩm coi như lỗi thời</td>
+<td>31/12/2027</td>
+</tr>
+</tbody>
+</table></div>
+<p>Theo <a href="https://www.cisco.com/c/en/us/products/eos-eol-policy.html" target="_blank" rel="noopener">chính sách End-of-Life của Cisco</a>, thông báo thường được đưa ra khoảng 6 tháng trước ngày EoS. Với phần mềm ứng dụng, TAC hỗ trợ 2 năm kể từ EoS; bản vá lỗi nghiêm trọng có trong năm đầu và có thể kéo thêm một năm nếu có sẵn.</p>
+<p>Với dòng Contact Center Enterprise, <a href="https://www.cisco.com/c/en/us/products/collateral/customer-collaboration/unified-contact-center-enterprise/bulletin-c25-744954.html" target="_blank" rel="noopener">bản tin vòng đời phát hành năm 2021</a> chia hai loại phiên bản:</p>
+<ul>
+<li><strong>Long-Term Release (LTR)</strong>, đánh số X.0 hoặc X.5 như 12.5, 15.0: dành cho tổ chức muốn ít lần nâng cấp, chủ yếu nhận bản sửa lỗi.</li>
+<li><strong>Dynamic Release (DR)</strong>, các số còn lại như 12.6: nhận tính năng mới thường xuyên hơn nhưng giai đoạn bảo trì phần mềm ngắn hơn.</li>
+</ul>
+<p>Lưu ý: bản tin 2021 ghi LDoS là 3 năm sau EoS, trong khi chính sách hiện hành và thông báo EOL15603 cho thấy 2 năm. Khi lập kế hoạch, hãy lấy ngày trong thông báo EoL cụ thể của phiên bản mình đang dùng.</p>
+<h2>Thời điểm 1: Khi Cisco công bố End-of-Life cho phiên bản đang chạy</h2>
+<p>Ngày công bố EoL là lúc nên rà soát đầu tiên, không phải ngày LDoS. Từ công bố đến LDoS của bản 12.5/12.6 là khoảng 2 năm rưỡi. Một dự án nâng cấp Contact Center trong ngân hàng thường cần đi qua phê duyệt ngân sách, mua sắm, kiểm thử UAT và lên lịch cửa sổ bảo trì, nên khoảng thời gian này không dư dả như con số gợi ý.</p>
+<p>Việc cần làm ngay khi có thông báo:</p>
+<ol>
+<li>Lập danh sách phiên bản của từng thành phần: Router, Logger, AW/HDS, PG, CVP, VVB, Finesse, CUIC, ECE.</li>
+<li>Ghi lại mức Engineering Special (ES) hoặc Service Update (SU) đang cài.</li>
+<li>Đối chiếu từng thành phần với thông báo EoL và ma trận tương thích.</li>
+<li>Xác định hợp đồng hỗ trợ hoặc subscription hiện tại hết hạn khi nào, so với các mốc ở bảng trên.</li>
+</ol>
+<p>Bản thay thế được Cisco khuyến nghị cho dòng 12.x là phiên bản 15 trở lên. <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/release/guide/rcct_b_1501_cce-solutions-rns.html" target="_blank" rel="noopener">Release notes bản 15.0(1)</a> được công bố cuối tháng 4/2025, và đến nay đã có bản <a href="https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-enterprise/products-release-notes-list.html" target="_blank" rel="noopener">15.0(1) SU2/ES202607</a>. Việc có SU giúp đánh giá độ ổn định của bản đích trước khi lên kế hoạch.</p>
+<h2>Thời điểm 2: Khi Windows, SQL Server hoặc VMware sắp hết hỗ trợ</h2>
+<p>Cisco CCE chạy trên Windows Server và SQL Server, thường được ảo hóa trên VMware. Vì vậy vòng đời của lớp nền bên dưới cũng quyết định khi nào phải nâng cấp.</p>
+<p>Theo <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/ucce_compatibility/matrix/rcct_b_12_6_solution_compatibility_matrix.html" target="_blank" rel="noopener">ma trận tương thích CCE 12.6(x)</a>, bản 12.6 hỗ trợ Windows Server 2016/2019 và SQL Server 2017/2019, không hỗ trợ kết hợp chéo như Windows 2016 với SQL 2019. Bản 15.0(1) thay đổi đáng kể:</p>
+<ul>
+<li>Hỗ trợ cặp Windows Server 2019 + SQL Server 2019 hoặc Windows Server 2022 + SQL Server 2022.</li>
+<li>Bỏ hẳn Windows Server 2016 và SQL Server 2017.</li>
+<li>Đưa Windows Server 2019 và SQL Server 2019 vào danh sách deprecated, tức vẫn chạy nhưng sẽ bị loại ở bản sau.</li>
+</ul>
+<p>Ở lớp ảo hóa, <a href="https://knowledge.broadcom.com/external/article/415405/end-of-general-support-for-vsphere.html" target="_blank" rel="noopener">Broadcom xác nhận</a> ESXi 7.x và vCenter 7.x đã hết hỗ trợ chung từ 02/10/2025. Hệ thống nào vẫn chạy trên vSphere 7 thì đang có một lớp không còn nhận bản vá bảo mật.</p>
+<p>Nếu nhiều lớp cùng gần hết hỗ trợ, gộp chúng vào một đợt nâng cấp thường ít rủi ro hơn nâng từng lớp riêng lẻ. Với ngân hàng, <a href="https://luatminhkhue.vn/van-ban/thong-tu-09-2020-tt-nhnn.aspx" target="_blank" rel="noopener">Thông tư 09/2020/TT-NHNN</a> (Điều 41) yêu cầu hệ thống từ cấp độ 3 trở lên phải kiểm tra, đánh giá tác động khi thay đổi hệ điều hành, hệ quản trị cơ sở dữ liệu hoặc phiên bản, và phải có phương án phục hồi nếu thay đổi không thành công.</p>
+<h2>Thời điểm 3: Trước khi thêm kênh, mở rộng quy mô hoặc tích hợp mới</h2>
+<p>Mỗi dự án mở rộng là dịp nên kiểm tra phiên bản, vì tính năng mới thường chỉ có ở bản mới và một số thành phần cũ đã bị loại. Rà soát vòng đời lúc này giúp tránh việc xây tích hợp mới trên một nền tảng sắp phải thay.</p>
+<p>Bản 15.0(1) có hỗ trợ WhatsApp, Facebook Messenger và Apple Messages for Business qua Webex Connect, cùng Cisco AI Assistant và Webex AI Agent ở dạng beta. Ngược lại, bản này loại bỏ CTI OS, Unified CCE System PG và Avaya PG dùng giao diện TSAPI; IP IVR chỉ còn được hỗ trợ đến hết dòng 15.0. Hệ thống nào còn dùng các thành phần này cần tính phương án thay thế trước.</p>
+<p>Hai ví dụ từ thị trường Việt Nam cho thấy nhu cầu mở rộng xuất hiện thế nào:</p>
+<ul>
+<li><strong>Mcredit:</strong> theo <a href="https://blogs.cisco.com/partner/a-call-center-with-more-bang-for-your-buck/" target="_blank" rel="noopener">Cisco Blog năm 2019</a>, công ty tài chính này thay hệ thống mã nguồn mở phải quay số thủ công bằng Cisco PCCE cho hơn 750 nhân viên, xử lý thoại, email, chat và video, đồng thời tích hợp với các hệ thống nghiệp vụ lõi. Mỗi tích hợp như vậy là một phụ thuộc cần kiểm tra lại khi đổi phiên bản.</li>
+<li><strong>VietinBank:</strong> theo <a href="https://thitruongtaichinhtiente.vn/vietinbank-dat-giai-thuong-trung-tam-dich-vu-khach-hang-sang-tao-doi-moi-2024-61803.html" target="_blank" rel="noopener">Tạp chí Thị trường Tài chính Tiền tệ (08/2024)</a>, ngân hàng đã nâng cấp tổng đài đa kênh, đưa chatbot phục vụ 24/7 và năng lực phục vụ 6 tháng đầu 2024 tăng 148,2% so với cùng kỳ. Ngân hàng cũng công bố kế hoạch sinh trắc học giọng nói, callbot và QC ảo bằng AI. Bài báo không nêu nền tảng tổng đài, nhưng cho thấy nhu cầu tính năng mới đến nhanh hơn chu kỳ thay hệ thống.</li>
+</ul>
+<h2>Thời điểm 4: Rà soát định kỳ hằng năm, gắn với ngân sách và quy định</h2>
+<p>Ngoài các sự kiện trên, nên có một lần rà soát cố định mỗi năm, tốt nhất là trước kỳ lập ngân sách. Lý do đơn giản: một hệ thống Contact Center thường dùng lâu hơn nhiều so với vòng đời hỗ trợ của một phiên bản phần mềm.</p>
+<p><a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2011/m03/cisco-improves-customer-service-at-seabank-in-vietnam.html" target="_blank" rel="noopener">Cisco công bố năm 2011</a> việc SeABank triển khai Cisco Unified Contact Center Express. Tính đến nay, một hệ thống từ giai đoạn đó đã đi qua nhiều thế hệ phiên bản và nhiều mốc EoL. Đây chỉ là minh họa về độ dài vòng đời; bài viết không có thông tin về hiện trạng hệ thống của ngân hàng này.</p>
+<p>Với tổ chức tín dụng, rà soát định kỳ cũng khớp với yêu cầu quản lý tài sản CNTT trong Thông tư 09/2020/TT-NHNN:</p>
+<ul>
+<li>Điều 7: danh sách tài sản CNTT phải được rà soát, cập nhật hằng năm.</li>
+<li>Điều 10: danh sách tài sản phần mềm phải có thông tin phiên bản và phải định kỳ cập nhật bản vá bảo mật.</li>
+<li>Điều 43: phải thường xuyên cập nhật thông tin về lỗ hổng và có kế hoạch xử lý.</li>
+</ul>
+<p>Thông tư này đang được xem xét sửa đổi: <a href="https://vnba.org.vn/vi/vnba-lay-y-kien-hoi-vien-ve-sua-doi-thong-tu-09-lien-quan-an-toan-he-thong-thong-tin-21222.htm" target="_blank" rel="noopener">Hiệp hội Ngân hàng Việt Nam</a> đã lấy ý kiến hội viên vào tháng 3/2026 theo đề nghị của NHNN. Bộ phận phụ trách nên theo dõi bản sửa đổi khi ban hành.</p>
+<h2>Kết luận</h2>
+<p>Ngày LDoS là mốc muộn nhất, không phải mốc bắt đầu. Rà soát vòng đời hỗ trợ Cisco Contact Center hiệu quả nhất khi gắn với bốn thời điểm: lúc Cisco công bố EoL, lúc lớp hạ tầng thay đổi, trước mỗi dự án mở rộng và trong kỳ rà soát hằng năm.</p>
+<p>Một bước nhỏ có thể làm ngay trong tuần này: lập bảng gồm tên từng thành phần, phiên bản, mức ES/SU, hệ điều hành, SQL Server và ESXi đang dùng, rồi đối chiếu với <a href="https://www.cisco.com/c/en/us/products/contact-center/unified-contact-center-enterprise/eos-eol-notice-listing.html" target="_blank" rel="noopener">danh sách thông báo EoL chính thức của Cisco</a>. Bảng này là đầu vào cần thiết cho mọi trao đổi tiếp theo về nâng cấp, dù làm với đội nội bộ hay đối tác.</p>
+  </article>
+
+  <section class="sources" aria-label="Nguồn / Sources">
+    <h2><span data-l="vi">Nguồn tham khảo</span><span data-l="en">Sources</span></h2>
+    <p>Các thông tin về phiên bản, ngày hỗ trợ và quy định được kiểm tra ngày 26/10/2026.</p>
+    <ol>
+      <li><a href="https://www.cisco.com/c/en/us/products/collateral/unified-communications/cisco-collaboration-flex-plan/v12-5-12-6-ucce-pcce-uccx-cvp-eol.html" target="_blank" rel="noopener">Cisco – End-of-Sale and End-of-Life Announcement for Version 12.5/12.6 On-Premises Contact Center (EOL15603)</a></li>
+      <li><a href="https://www.cisco.com/c/en/us/products/eos-eol-policy.html" target="_blank" rel="noopener">Cisco – End-of-Life Policy</a></li>
+      <li><a href="https://www.cisco.com/c/en/us/products/collateral/customer-collaboration/unified-contact-center-enterprise/bulletin-c25-744954.html" target="_blank" rel="noopener">Cisco – Contact Center Enterprise Software Release and Sustaining Lifecycle Product Bulletin</a></li>
+      <li><a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/release/guide/rcct_b_1501_cce-solutions-rns.html" target="_blank" rel="noopener">Cisco – Release notes for Contact Center Enterprise Solutions, Release 15.0(1)</a></li>
+      <li><a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/ucce_compatibility/matrix/rcct_b_12_6_solution_compatibility_matrix.html" target="_blank" rel="noopener">Cisco – Contact Center Enterprise Solution Compatibility Matrix, Release 12.6(x)</a></li>
+      <li><a href="https://knowledge.broadcom.com/external/article/415405/end-of-general-support-for-vsphere.html" target="_blank" rel="noopener">Broadcom – End of General Support for vSphere 7.0</a></li>
+      <li><a href="https://luatminhkhue.vn/van-ban/thong-tu-09-2020-tt-nhnn.aspx" target="_blank" rel="noopener">Thông tư 09/2020/TT-NHNN về an toàn hệ thống thông tin trong hoạt động ngân hàng</a></li>
+    </ol>
+  </section>
+
+  <aside class="author" aria-label="Tác giả / Author">
+    <div class="av" aria-hidden="true">TT</div>
+    <div>
+      <p class="name">Trương Mạnh Tùng</p>
+      <p class="sub"><span data-l="vi">Account Manager tại BaseBS, đồng hành cùng ngân hàng, tài chính, bảo hiểm trong xây dựng và vận hành Contact Center.</span><span data-l="en">Account Manager at BaseBS, helping banks, finance and insurance companies build and run their Contact Centers.</span></p>
+      <div class="acts">
+        <a class="btn primary" href="https://zalo.me/0915306688" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo</span><span data-l="en">Message on Zalo</span></a>
+        <a class="btn" href="mailto:tungtm@basebs.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/tungtm141" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+  <p class="disclaimer"><span data-l="vi">Bài viết thể hiện góc nhìn cá nhân của tác giả, không phải quan điểm chính thức của BaseBS hay khách hàng được nhắc tới.</span><span data-l="en">Views are the author's own and do not represent BaseBS or any client mentioned.</span></p>
+
+  <nav class="post-nav"><a href="/blog/"><span data-l="vi">← Tất cả bài viết</span><span data-l="en">← All posts</span></a></nav>
+</main>
+
+<footer><div class="wrap">© 2026 Trương Mạnh Tùng · <a href="/">truongmanhtung.com</a></div></footer>
+<script src="/assets/blog.js" defer></script>
+</body>
+</html>

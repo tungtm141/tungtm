@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "slug": "ra-soat-vong-doi-ho-tro-cisco-contact-center",
+    "date": "2026-10-26",
+    "minutes": 8,
+    "title": {
+      "vi": "Khi nào nên rà soát vòng đời hỗ trợ Cisco Contact Center?"
+    },
+    "summary": {
+      "vi": "Các mốc EoS, LDoS của UCCE/PCCE 12.5/12.6 và bốn thời điểm nên chủ động rà soát phiên bản, để kế hoạch nâng cấp không dồn vào phút cuối."
+    },
+    "tags": [
+      {
+        "vi": "Contact Center",
+        "en": "Contact Center"
+      }
+    ]
+  }
+]

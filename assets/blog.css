@@ -81,7 +81,8 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 .prose figure{margin:28px 0;max-width:100%}
 .prose figcaption{font-size:.88rem;color:var(--muted);margin-top:8px}
 .prose .table{overflow-x:auto;margin:0 0 22px;max-width:100%}
-.prose table{border-collapse:collapse;width:100%;font-size:.95rem;min-width:480px}
+.prose table{border-collapse:collapse;width:100%;font-size:.95rem}
+@media (max-width:560px){.prose table{font-size:.88rem}.prose th,.prose td{padding:8px 6px}}
 .prose th,.prose td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
 .prose th{font-weight:600;background:var(--surface)}
 .prose .callout{background:var(--signal-soft);border-radius:6px;padding:16px 20px;margin:0 0 22px}
