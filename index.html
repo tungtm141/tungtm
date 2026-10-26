@@ -226,6 +226,17 @@ h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.02em;line-height:1.15;m
 @media (max-width:760px){.steps{grid-template-columns:1fr;border-top:0;border-left:2px solid var(--line);gap:22px}.steps li{padding:0 0 0 24px}.steps li::before{top:6px;left:-7px}}
 .about p{max-width:68ch;color:var(--muted);margin:0;font-size:1.08rem}
 footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
+.post-list{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.post-card{display:flex;flex-direction:column;height:100%;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px 24px;transition:border-color .2s}
+.post-card>span{display:flex;flex-direction:column;height:100%}
+.post-card:hover{border-color:var(--signal)}
+.post-card h3{margin:8px 0 8px;font-size:1.1rem;line-height:1.35;letter-spacing:-.01em}
+.post-card p{margin:0;color:var(--muted);font-size:.97rem;flex:1}
+.post-card .meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.85rem;color:var(--muted);align-items:center}
+.post-card .tag{background:var(--signal-soft);color:var(--signal);font-weight:600;font-size:.78rem;padding:2px 10px;border-radius:20px}
+.post-card .more{margin-top:12px;color:var(--signal);font-weight:600;font-size:.92rem}
+.all-posts{color:var(--signal);font-weight:600;text-decoration:none}
+@media (max-width:860px){.post-list{grid-template-columns:1fr}}
 
 @media print{
   header.top,.btns{display:none}
@@ -246,6 +257,7 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
         <a href="#bai-toan"><span data-l="vi">Bài toán</span><span data-l="en">Challenges</span></a>
         <a href="#giai-phap"><span data-l="vi">Giải pháp</span><span data-l="en">Solutions</span></a>
         <a href="#du-an"><span data-l="vi">Dự án</span><span data-l="en">Projects</span></a>
+        <a href="/blog/" data-if-posts hidden><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a>
         <a href="#lien-he"><span data-l="vi">Liên hệ</span><span data-l="en">Contact</span></a>
       </nav>
       <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
@@ -266,7 +278,6 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
         <p class="lead" data-l="en">I work with banks, consumer finance, insurance and securities companies to build and run their Contact Centers. My experience deploying Cisco and Calabrio solutions, alongside CRM, autodialer and AI platforms, is proven by systems that have run stably and continuously for years. Every solution starts with listening to the client's own needs and ideas, so that what we build truly fits the way they operate.</p>
         <div class="btns">
           <a class="btn cta-ai" href="/chatbot-demo"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg><span class="lbl"><span class="t"><span data-l="vi">Trải nghiệm ngay Chatbot AI</span><span data-l="en">Try the AI chatbot now</span></span><span class="s"><span data-l="vi">Không cần đăng ký · Mở là dùng</span><span data-l="en">No sign-up · Opens right away</span></span></span></a>
-          <a class="btn primary" href="/cisco-eos"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Cisco EOS/EOL Checker</a>
           <a class="btn" href="#lien-he"><span data-l="vi">Trao đổi với tôi</span><span data-l="en">Talk to me</span></a>
         </div>
       </div>
@@ -377,6 +388,15 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
     </div>
   </section>
 
+  <section id="bai-viet" data-if-posts hidden>
+    <div class="wrap">
+      <h2><span data-l="vi">Bài viết mới</span><span data-l="en">Latest insights</span></h2>
+      <p class="intro"><span data-l="vi">Góc nhìn về Contact Center, CRM và AI trong ngân hàng, tài chính, bảo hiểm.</span><span data-l="en">Perspectives on Contact Center, CRM and AI in banking, finance and insurance.</span></p>
+      <ul class="post-list" data-post-list data-max="3" data-heading="h3"></ul>
+      <a class="all-posts" href="/blog/"><span data-l="vi">Xem tất cả bài viết →</span><span data-l="en">See all posts →</span></a>
+    </div>
+  </section>
+
   <section id="lien-he">
     <div class="wrap">
       <h2><span data-l="vi">Trao đổi về bài toán của bạn</span><span data-l="en">Let's talk about your challenge</span></h2>
@@ -449,5 +469,6 @@ nodes.forEach((n,i)=>{
 document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=>pick(a.dataset.go)));
 setLang('vi');
 </script>
+<script src="/assets/blog.js" defer></script>
 </body>
 </html>
