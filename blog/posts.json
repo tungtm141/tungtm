@@ -1,5 +1,22 @@
 [
   {
+    "slug": "tich-hop-crm-contact-center-du-lieu-hien-thi",
+    "date": "2026-10-27",
+    "minutes": 7,
+    "title": {
+      "vi": "Tích hợp CRM với Contact Center: dữ liệu nào nên hiển thị?"
+    },
+    "summary": {
+      "vi": "Tích hợp CRM với Contact Center: chọn 5 nhóm dữ liệu hiển thị khi nhận cuộc gọi, theo luồng nghiệp vụ và yêu cầu bảo mật BFSI."
+    },
+    "tags": [
+      {
+        "vi": "CRM",
+        "en": "CRM"
+      }
+    ]
+  },
+  {
     "slug": "ra-soat-vong-doi-ho-tro-cisco-contact-center",
     "date": "2026-10-26",
     "minutes": 8,
