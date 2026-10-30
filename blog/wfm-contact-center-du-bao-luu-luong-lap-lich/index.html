@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" data-title-vi="WFM trong contact center: từ dự báo lưu lượng đến lập lịch — Trương Mạnh Tùng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WFM trong contact center: từ dự báo lưu lượng đến lập lịch — Trương Mạnh Tùng</title>
+<meta name="description" content="WFM trong contact center: cách dự báo lưu lượng, tính nhân sự bằng Erlang C, lập lịch ca và điều chỉnh trong ngày, kèm ví dụ ngân hàng Việt Nam.">
+<link rel="canonical" href="https://truongmanhtung.com/blog/wfm-contact-center-du-bao-luu-luong-lap-lich/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://truongmanhtung.com/blog/wfm-contact-center-du-bao-luu-luong-lap-lich/">
+<meta property="og:title" content="WFM trong contact center: từ dự báo lưu lượng đến lập lịch">
+<meta property="og:description" content="WFM trong contact center: cách dự báo lưu lượng, tính nhân sự bằng Erlang C, lập lịch ca và điều chỉnh trong ngày, kèm ví dụ ngân hàng Việt Nam.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://truongmanhtung.com/blog/wfm-contact-center-du-bao-luu-luong-lap-lich/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-10-30">
+<meta property="article:author" content="https://www.linkedin.com/in/tungtm141">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+ "headline":"WFM trong contact center: từ dự báo lưu lượng đến lập lịch","description":"WFM trong contact center: cách dự báo lưu lượng, tính nhân sự bằng Erlang C, lập lịch ca và điều chỉnh trong ngày, kèm ví dụ ngân hàng Việt Nam.",
+ "datePublished":"2026-10-30","dateModified":"2026-10-30","inLanguage":"vi",
+ "image":"https://truongmanhtung.com/blog/wfm-contact-center-du-bao-luu-luong-lap-lich/og.jpg",
+ "mainEntityOfPage":"https://truongmanhtung.com/blog/wfm-contact-center-du-bao-luu-luong-lap-lich/",
+ "author":{"@type":"Person","name":"Trương Mạnh Tùng","url":"https://truongmanhtung.com/"}}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="navlink hide-sm" href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap narrow">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/"><span data-l="vi">Trang chủ</span><span data-l="en">Home</span></a> / <a href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a></nav>
+
+  <header class="post-head">
+    <div class="meta">
+      <time datetime="2026-10-30"><span data-l="vi">30/10/2026</span><span data-l="en">30 Oct 2026</span></time>
+      <span>· <span data-l="vi">8 phút đọc</span><span data-l="en">8 min read</span></span>
+      <span class="tag"><span data-l="vi">WFM</span><span data-l="en">WFM</span></span>
+    </div>
+    <h1>WFM trong contact center: từ dự báo lưu lượng đến lập lịch</h1>
+  </header>
+
+  <p class="lang-note" data-l="en">This article is currently available in Vietnamese only.</p>
+
+  <article class="prose" lang="vi">
+<p>Lao động tuyến đầu chiếm khoảng 65–75% chi phí vận hành một contact center, theo <a href="https://www.icmi.com/resources/2021/troubleshooting-staffing" target="_blank" rel="noopener">ICMI (2021)</a>. Xếp thừa vài người mỗi ca là tốn tiền; xếp thiếu vài người lúc cao điểm là khách phải chờ. WFM trong contact center (Workforce Management – quản lý nguồn lực) giúp trả lời bài toán này bằng dữ liệu thay vì cảm tính. Bài viết đi qua năm bước, từ dự báo lưu lượng đến lập lịch và theo dõi trong ngày, kèm số liệu minh hoạ và ví dụ từ ngân hàng Việt Nam.</p>
+<h2>WFM trong contact center là một vòng lặp, không phải một bảng ca</h2>
+<p>Nhiều nơi hiểu WFM là "phần mềm xếp ca". Thực tế, xếp ca chỉ là một khâu. <a href="https://www.nice.com/blog/workforce-management-basics-in-todays-contact-center-part-1" target="_blank" rel="noopener">NICE (cập nhật 2024)</a> chia WFM thành dự báo, lập lịch, quản lý trong ngày và gắn kết nhân viên. <a href="https://www.cxtoday.com/workforce-engagement-management/contact-center-workforce-management-wfm-tools/" target="_blank" rel="noopener">CX Today (2025)</a> mô tả tương tự, thêm khâu rà soát kết quả.</p>
+<p>Vòng lặp gồm năm bước:</p>
+<ol>
+<li><strong>Dự báo:</strong> bao nhiêu tương tác sẽ đến, ở kênh nào, khung giờ nào, mỗi tương tác mất bao lâu.</li>
+<li><strong>Tính nhu cầu nhân sự:</strong> cần bao nhiêu người trực ở mỗi khung giờ để đạt mục tiêu dịch vụ.</li>
+<li><strong>Lập lịch:</strong> xếp ca, giờ nghỉ, đào tạo để số người có mặt khớp nhu cầu.</li>
+<li><strong>Điều hành trong ngày:</strong> so dự báo với thực tế, điều chỉnh sớm.</li>
+<li><strong>Rút kinh nghiệm:</strong> đưa sai lệch quay lại cải thiện dự báo chu kỳ sau.</li>
+</ol>
+<p>Điểm yếu thường nằm ở bước 5. Thiếu vòng phản hồi, dự báo tháng sau lặp lại lỗi của tháng trước.</p>
+<h2>Dự báo lưu lượng cuộc gọi theo khung 15–30 phút</h2>
+<p>Dự báo theo ngày là chưa đủ. Tổng số cuộc gọi đúng dự báo vẫn có thể vỡ hàng chờ lúc 9 giờ và dư người lúc 15 giờ. Đơn vị dự báo nên là khung 15 hoặc 30 phút.</p>
+<p><strong>Dữ liệu cần có:</strong></p>
+<ul>
+<li>Lưu lượng và thời gian xử lý trung bình (AHT) theo khung giờ, hàng chờ, kênh.</li>
+<li>Các ngày đặc biệt trong quá khứ như lễ, Tết, ngày nghỉ bù. <a href="https://www.ringcentral.com/us/en/blog/workforce-management-forecasting/" target="_blank" rel="noopener">RingCentral (2025)</a> khuyên ghi lại thời điểm, tần suất của các ngày này để đặt trọng số phù hợp.</li>
+<li>Sự kiện nội bộ sắp tới: ra mắt sản phẩm, đổi biểu phí, chiến dịch tin nhắn, bảo trì hệ thống. Dữ liệu lịch sử không tự biết những điều này. Nền tảng như <a href="https://aws.amazon.com/blogs/contact-center/elevate-your-contact-center-workforce-management-using-the-new-amazon-connect-forecasting-capacity-planning-and-scheduling-features-2025-q2/" target="_blank" rel="noopener">Amazon Connect (2025)</a> cho phép chỉnh tay dự báo theo phần trăm hoặc con số cụ thể cho các trường hợp này.</li>
+<li>Xu hướng dài hạn. Năm 2018, <a href="https://vneconomy.vn/vietinbank-dan-dau-ve-dich-vu-cham-soc-khach-hang.htm" target="_blank" rel="noopener">VietinBank</a> cho biết lượng khách liên hệ tổng đài năm sau gấp đôi năm trước. Tăng trưởng cỡ này thuộc về kế hoạch tuyển dụng, không chỉ lịch ca.</li>
+</ul>
+<p><strong>Đừng quên kênh số.</strong> <a href="https://vneconomy.vn/5-nam-lien-tiep-vietinbank-giu-vung-vi-the-dan-dau-trong-nganh-cham-soc-khach-hang.htm" target="_blank" rel="noopener">VietinBank</a> ghi nhận khoảng 2 triệu lượt tương tác trong 5 tháng đầu năm 2022; tương tác qua Fanpage tăng bình quân hơn 20% mỗi tháng. Nếu chỉ dự báo kênh thoại, nhu cầu nhân sự sẽ bị đánh giá thấp.</p>
+<p><strong>Đo độ chính xác.</strong> Theo <a href="https://www.nice.com/guide/wfo/workforce-forecasting" target="_blank" rel="noopener">NICE</a>, gần 1/5 contact center không đo độ chính xác dự báo; gần 40% đơn vị có đo ghi nhận sai lệch ±6–20%. Cách đơn giản: mỗi tuần so dự báo với thực tế theo khung giờ, ghi nguyên nhân các chênh lệch lớn.</p>
+<h2>Từ lưu lượng ra số người: Erlang C và shrinkage</h2>
+<p>Có lưu lượng và AHT, bước tiếp theo là tính số người. <a href="https://www.icmi.com/resources/2021/troubleshooting-staffing" target="_blank" rel="noopener">ICMI</a> xếp Erlang C cùng công thức thời gian phản hồi và mô phỏng vào nhóm cách tính nền. Đầu vào của Erlang C gồm lưu lượng trong khung giờ, AHT và mục tiêu Service Level, ví dụ 80% cuộc gọi được trả lời trong 20 giây (<a href="https://soon.works/blog/erlang-c-traffic-model-for-non-mathematicians" target="_blank" rel="noopener">Soon.works</a>).</p>
+<p>Bảng dưới theo ví dụ của <a href="https://www.lorikeetcx.ai/articles/call-center-staffing-erlang-c-2026" target="_blank" rel="noopener">Lorikeet (2026)</a>: khung 30 phút, AHT 5 phút, mục tiêu 80/20. Chúng tôi đã tính lại bằng Erlang C và ra cùng kết quả.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Cuộc gọi / 30 phút</th>
+<th>Số người cần trực</th>
+<th>Tỷ lệ bận (occupancy)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>21</td>
+<td>79%</td>
+</tr>
+<tr>
+<td>200</td>
+<td>39</td>
+<td>86%</td>
+</tr>
+<tr>
+<td>400</td>
+<td>74</td>
+<td>90%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nhu cầu không tăng tuyến tính: gấp 4 lưu lượng chỉ cần khoảng 3,5 lần số người. Nhưng occupancy 90% là quá cao để duy trì lâu; với ngưỡng 85%, mức 400 cuộc gọi cần 79 người.</p>
+<p><strong>AHT là biến nhạy nhất.</strong> Cùng 100 cuộc gọi, AHT tăng từ 5 lên 6 phút đẩy nhu cầu từ 21 lên 25 người. Ví dụ thực tế: <a href="https://www.vpbank.com.vn/tin-tuc/thong-cao-bao-chi/2021/vpbank-nhan-dang-khach-hang-qua-giong-noi-chua-den-12-giay" target="_blank" rel="noopener">VPBank (2021)</a> đưa xác thực giọng nói vào tổng đài, tiết kiệm 45–50 giây thao tác mỗi cuộc gọi. Cùng năm, ngân hàng xử lý khoảng 300.000 yêu cầu mỗi tháng (<a href="https://vnba.org.vn/vi/vpbank-co--choi-troi--trong-cuoc-dua-so-hoa-dich-vu-khach-hang-2312.htm" target="_blank" rel="noopener">Hiệp hội Ngân hàng Việt Nam</a>). Giả sử AHT giảm từ 5 phút xuống khoảng 4 phút 13 giây, Erlang C cho khung 100 cuộc gọi giảm từ 21 xuống 18 người.</p>
+<p><strong>Shrinkage quyết định số người phải xếp lịch.</strong> Đó là thời gian có lương nhưng không nhận cuộc gọi: nghỉ giải lao, họp, đào tạo, nghỉ phép. <a href="https://www.nice.com/guide/wfo/workforce-forecasting" target="_blank" rel="noopener">NICE</a> cho biết shrinkage có thể chiếm tới 35% thời gian. Cách tính là chia, không phải nhân: 21 ÷ (1 − 30%) = 30 người. Ví dụ của <a href="https://pyworkforce.readthedocs.io/en/stable/tutorials/erlangc_example.html" target="_blank" rel="noopener">pyworkforce</a> cũng ra 14 người trực thành 20 người xếp lịch ở mức 30%.</p>
+<p><strong>Giới hạn.</strong> Erlang C giả định khách không bỏ máy và mọi nhân viên như nhau (<a href="https://www.callcentrehelper.com/an-introduction-to-erlang-calculations-79806.htm" target="_blank" rel="noopener">Call Centre Helper</a>). Tổng đài nhiều kỹ năng, nhiều kênh nên dùng mô phỏng trong phần mềm WFM.</p>
+<h2>Lập lịch nhân sự tổng đài khớp đường cong nhu cầu</h2>
+<p>Lập lịch là dựng các ca để đường "người có mặt" bám sát đường "người cần". Phần này khó nhất vì phải cân bằng dịch vụ, luật lao động và đời sống nhân viên.</p>
+<ul>
+<li><strong>Lập lịch theo khung 15 phút.</strong> <a href="https://www.cxtoday.com/wfo/contact-center-wfm-a-best-practice-guide/" target="_blank" rel="noopener">CX Today (2024)</a> dẫn dữ liệu của Assembled: chuyển từ khung 30–60 phút sang 15 phút có thể cải thiện Service Level tới 10%. Đây là số liệu nhà cung cấp công bố, nên xem là tham khảo.</li>
+<li><strong>Đa dạng loại ca.</strong> Ca 8 tiếng xen ca 4–6 tiếng giúp phủ đỉnh sáng và đỉnh đầu giờ chiều mà không dư người giữa trưa.</li>
+<li><strong>Xếp nghỉ, đào tạo vào thấp điểm.</strong> Dời giờ nghỉ 15 phút là cách điều chỉnh rẻ nhất.</li>
+<li><strong>Cho nhân viên tham gia.</strong> Đổi ca, đăng ký ca và duyệt nghỉ phép nhanh cho thấy tổ chức tôn trọng thời gian của nhân viên (<a href="https://www.nice.com/blog/workforce-management-basics-in-todays-contact-center-part-2" target="_blank" rel="noopener">NICE</a>).</li>
+</ul>
+<p><strong>Làm phẳng đỉnh.</strong> Ví dụ thực tế: <a href="https://baoquocte.vn/vietcombank-gianh-giai-thuong-asian-experience-awards-2024-cho-giai-phap-call-api-289557.html" target="_blank" rel="noopener">Vietcombank (2024)</a> cho khách gọi tổng đài ngay trong ứng dụng VCB Digibank; khi tổng đài bận, khách có thể đăng ký gọi lại hoặc chuyển sang chatbot. Ngân hàng cho biết thời gian xử lý có thể giảm tới 30% nhờ bỏ bước hỏi xác thực. Cuộc gọi lại có thể dời sang thấp điểm, nhưng cần được dự báo như một luồng nhu cầu riêng.</p>
+<p>Môi trường BFSI còn có bài toán kỹ năng. <a href="https://thitruongtaichinhtiente.vn/vietinbank-ra-mat-hotline-moi-phuc-vu-khach-hang-uu-tien-va-khach-hang-doanh-nghiep-46618.html" target="_blank" rel="noopener">VietinBank (2023)</a> mở hotline riêng cho khách hàng ưu tiên và doanh nghiệp. Mỗi hàng chờ tách riêng cần được dự báo, xếp lịch riêng, hoặc gộp bằng định tuyến đa kỹ năng.</p>
+<h2>Theo dõi trong ngày và khép vòng dự báo</h2>
+<p>Lịch nào cũng lệch khi gặp sự cố hệ thống, chiến dịch không báo trước hay nhân viên nghỉ đột xuất. <a href="https://www.nice.com/blog/workforce-management-basics-in-todays-contact-center-part-2" target="_blank" rel="noopener">NICE</a> cho biết khoảng 70% vấn đề trong ngày vẫn xử lý thủ công.</p>
+<ol>
+<li><strong>Theo dõi dự báo – thực tế theo khung giờ:</strong> lưu lượng, AHT, ASA, Service Level.</li>
+<li><strong>Dự báo lại phần còn lại của ngày.</strong> <a href="https://blog.peopleware.com/intraday-management/three-tips-to-improve-your-real-time-adherence" target="_blank" rel="noopener">Peopleware</a> đưa ví dụ: tới 11 giờ lưu lượng cao hơn dự báo 15% thì tăng nhân sự phần còn lại của ngày khoảng 7%. Chưa chắc đợt tăng kéo dài thì chỉ điều chỉnh một phần.</li>
+<li><strong>Có sẵn kịch bản một trang:</strong> dời giờ nghỉ, hoãn đào tạo, gọi thêm ca khi Service Level lệch mục tiêu.</li>
+</ol>
+<p><strong>Tuân thủ lịch (schedule adherence)</strong> đo mức nhân viên làm đúng hoạt động đã xếp. Khảo sát SWPP do <a href="https://www.nice.com/blog/wfm-the-value-of-measuring-schedule-adherence-2434" target="_blank" rel="noopener">NICE</a> dẫn lại cho thấy 35% đơn vị không theo dõi chỉ số này. Dù vậy, mục tiêu quá cứng có thể khiến nhân viên cắt ngắn cuộc gọi (<a href="https://www.cxtoday.com/wfo/contact-center-wfm-a-best-practice-guide/" target="_blank" rel="noopener">CX Today</a>).</p>
+<p>Mọi sai lệch cần được ghi kèm nguyên nhân để làm đầu vào cho dự báo chu kỳ sau.</p>
+<h2>Kết luận</h2>
+<p>WFM trong contact center hiệu quả khi dự báo, tính nhân sự, lập lịch và điều hành trong ngày nối thành một vòng lặp có đo lường. Có thể bắt đầu mà chưa cần phần mềm mới: tuần này, hãy xuất dữ liệu cuộc gọi 8 tuần gần nhất theo khung 30 phút, đặt cạnh số người thực tế có mặt, rồi đánh dấu ba khung thiếu người và ba khung dư người lớn nhất. Đó là điểm khởi đầu cho lần chỉnh lịch tiếp theo.</p>
+<p>Bài liên quan: <a href="/blog/tich-hop-crm-contact-center-du-lieu-hien-thi/">Tích hợp CRM với Contact Center – dữ liệu nào nên hiển thị khi điện thoại viên nhận cuộc gọi</a>.</p>
+  </article>
+
+  <section class="sources" aria-label="Nguồn / Sources">
+    <h2><span data-l="vi">Nguồn tham khảo</span><span data-l="en">Sources</span></h2>
+    <p>Tất cả nguồn đã mở đọc ngày 26/10/2026.</p>
+    <ol>
+      <li><a href="https://www.icmi.com/resources/2021/troubleshooting-staffing" target="_blank" rel="noopener">ICMI – Do You Have the Right Process to Staff Your Contact Center Properly?</a></li>
+      <li><a href="https://www.nice.com/blog/workforce-management-basics-in-todays-contact-center-part-1" target="_blank" rel="noopener">NICE – Workforce Management Basics in Today&#x27;s Contact Center, Part 1</a></li>
+      <li><a href="https://www.cxtoday.com/workforce-engagement-management/contact-center-workforce-management-wfm-tools/" target="_blank" rel="noopener">CX Today – The Top 10 Contact Center WFM Tools for 2025</a></li>
+      <li><a href="https://www.ringcentral.com/us/en/blog/workforce-management-forecasting/" target="_blank" rel="noopener">RingCentral – 8 tips for workforce management forecasting</a></li>
+      <li><a href="https://aws.amazon.com/blogs/contact-center/elevate-your-contact-center-workforce-management-using-the-new-amazon-connect-forecasting-capacity-planning-and-scheduling-features-2025-q2/" target="_blank" rel="noopener">AWS – Amazon Connect forecasting, capacity planning and scheduling features</a></li>
+      <li><a href="https://vneconomy.vn/vietinbank-dan-dau-ve-dich-vu-cham-soc-khach-hang.htm" target="_blank" rel="noopener">VnEconomy – VietinBank dẫn đầu về dịch vụ chăm sóc khách hàng</a></li>
+      <li><a href="https://vneconomy.vn/5-nam-lien-tiep-vietinbank-giu-vung-vi-the-dan-dau-trong-nganh-cham-soc-khach-hang.htm" target="_blank" rel="noopener">VnEconomy – VietinBank 5 năm liên tiếp dẫn đầu ngành chăm sóc khách hàng</a></li>
+      <li><a href="https://www.nice.com/guide/wfo/workforce-forecasting" target="_blank" rel="noopener">NICE – The Art and Science of Workforce Forecasting</a></li>
+      <li><a href="https://soon.works/blog/erlang-c-traffic-model-for-non-mathematicians" target="_blank" rel="noopener">Soon.works – Erlang C traffic model for non-mathematicians</a></li>
+      <li><a href="https://www.lorikeetcx.ai/articles/call-center-staffing-erlang-c-2026" target="_blank" rel="noopener">Lorikeet – Call Center Staffing: the Erlang C formula explained</a></li>
+      <li><a href="https://www.vpbank.com.vn/tin-tuc/thong-cao-bao-chi/2021/vpbank-nhan-dang-khach-hang-qua-giong-noi-chua-den-12-giay" target="_blank" rel="noopener">VPBank – Nhận dạng khách hàng qua giọng nói chưa đến 12 giây</a></li>
+      <li><a href="https://vnba.org.vn/vi/vpbank-co--choi-troi--trong-cuoc-dua-so-hoa-dich-vu-khach-hang-2312.htm" target="_blank" rel="noopener">Hiệp hội Ngân hàng Việt Nam – VPBank có &quot;chơi trội&quot; trong cuộc đua số hóa dịch vụ khách hàng?</a></li>
+      <li><a href="https://pyworkforce.readthedocs.io/en/stable/tutorials/erlangc_example.html" target="_blank" rel="noopener">pyworkforce – Solving Queue Problems with ErlangC</a></li>
+      <li><a href="https://www.callcentrehelper.com/an-introduction-to-erlang-calculations-79806.htm" target="_blank" rel="noopener">Call Centre Helper – Erlang Calculation: An Introduction</a></li>
+      <li><a href="https://www.cxtoday.com/wfo/contact-center-wfm-a-best-practice-guide/" target="_blank" rel="noopener">CX Today – Contact Center WFM: A Best Practice Guide</a></li>
+      <li><a href="https://www.nice.com/blog/workforce-management-basics-in-todays-contact-center-part-2" target="_blank" rel="noopener">NICE – Workforce Management Basics in Today&#x27;s Contact Center, Part 2</a></li>
+      <li><a href="https://baoquocte.vn/vietcombank-gianh-giai-thuong-asian-experience-awards-2024-cho-giai-phap-call-api-289557.html" target="_blank" rel="noopener">Báo Quốc tế – Vietcombank giành giải thưởng Asian Experience Awards 2024 cho giải pháp Call API</a></li>
+      <li><a href="https://thitruongtaichinhtiente.vn/vietinbank-ra-mat-hotline-moi-phuc-vu-khach-hang-uu-tien-va-khach-hang-doanh-nghiep-46618.html" target="_blank" rel="noopener">Thị trường Tài chính Tiền tệ – VietinBank ra mắt hotline mới phục vụ khách hàng ưu tiên và doanh nghiệp</a></li>
+      <li><a href="https://blog.peopleware.com/intraday-management/three-tips-to-improve-your-real-time-adherence" target="_blank" rel="noopener">Peopleware – 3 tips to improve real-time adherence in WFM</a></li>
+      <li><a href="https://www.nice.com/blog/wfm-the-value-of-measuring-schedule-adherence-2434" target="_blank" rel="noopener">NICE – WFM: The Value of Measuring Schedule Adherence</a></li>
+    </ol>
+  </section>
+
+  <section class="sources" aria-label="Bài viết liên quan / Related">
+    <h2><span data-l="vi">Bài viết liên quan</span><span data-l="en">Related</span></h2>
+    <ul>
+      <li><a href="/blog/tich-hop-crm-contact-center-du-lieu-hien-thi/">Tích hợp CRM với Contact Center: dữ liệu nào nên hiển thị khi nhận cuộc gọi?</a></li>
+    </ul>
+  </section>
+
+  <aside class="author" aria-label="Tác giả / Author">
+    <div class="av" aria-hidden="true">TT</div>
+    <div>
+      <p class="name">Trương Mạnh Tùng</p>
+      <p class="sub"><span data-l="vi">Account Manager tại BaseBS, đồng hành cùng ngân hàng, tài chính, bảo hiểm trong xây dựng và vận hành Contact Center.</span><span data-l="en">Account Manager at BaseBS, helping banks, finance and insurance companies build and run their Contact Centers.</span></p>
+      <div class="acts">
+        <a class="btn primary" href="https://zalo.me/0915306688" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo</span><span data-l="en">Message on Zalo</span></a>
+        <a class="btn" href="mailto:tungtm@basebs.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/tungtm141" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+  <p class="disclaimer"><span data-l="vi">Bài viết thể hiện góc nhìn cá nhân của tác giả, không phải quan điểm chính thức của BaseBS hay khách hàng được nhắc tới.</span><span data-l="en">Views are the author's own and do not represent BaseBS or any client mentioned.</span></p>
+
+  <nav class="post-nav"><a href="/blog/"><span data-l="vi">← Tất cả bài viết</span><span data-l="en">← All posts</span></a></nav>
+</main>
+
+<footer><div class="wrap">© 2026 Trương Mạnh Tùng · <a href="/">truongmanhtung.com</a></div></footer>
+<script src="/assets/blog.js" defer></script>
+</body>
+</html>
