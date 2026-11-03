@@ -1,5 +1,22 @@
 [
   {
+    "slug": "voicebot-chatbot-nen-bat-dau-tu-bai-toan-nao",
+    "date": "2026-11-03",
+    "minutes": 7,
+    "title": {
+      "vi": "Voicebot và chatbot: nên bắt đầu từ bài toán nào?"
+    },
+    "summary": {
+      "vi": "Chọn bài toán đầu tiên cho voicebot, chatbot trong tổng đài ngân hàng, tài chính: theo dữ liệu lý do liên hệ, mức rủi ro và độ khó tích hợp."
+    },
+    "tags": [
+      {
+        "vi": "AI",
+        "en": "AI"
+      }
+    ]
+  },
+  {
     "slug": "wfm-contact-center-du-bao-luu-luong-lap-lich",
     "date": "2026-10-30",
     "minutes": 8,
