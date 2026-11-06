@@ -1,5 +1,22 @@
 [
   {
+    "slug": "omnichannel-multichannel-khac-nhau-du-lieu-quy-trinh",
+    "date": "2026-11-06",
+    "minutes": 7,
+    "title": {
+      "vi": "Omnichannel và multichannel: khác nhau ở dữ liệu và quy trình"
+    },
+    "summary": {
+      "vi": "Omnichannel và multichannel khác nhau ở dữ liệu, quy trình, trải nghiệm. Xem 2 ví dụ ngân hàng Việt Nam và 5 câu hỏi tự kiểm tra."
+    },
+    "tags": [
+      {
+        "vi": "CRM",
+        "en": "CRM"
+      }
+    ]
+  },
+  {
     "slug": "voicebot-chatbot-nen-bat-dau-tu-bai-toan-nao",
     "date": "2026-11-03",
     "minutes": 7,
