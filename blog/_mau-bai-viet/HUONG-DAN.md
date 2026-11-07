@@ -30,7 +30,8 @@
 ```
    - Bài chỉ có tiếng Việt: bỏ `en` trong title/summary (thẻ sẽ ghi "Vietnamese only" khi xem bằng EN).
    - `"draft": true` để tạm ẩn bài khỏi danh sách mà không xoá.
-5. Kiểm tra desktop, mobile, dark mode, cả VI và EN, rồi push.
+5. Chạy `python3 _scripts/build-sitemap.py` ở thư mục gốc repo để cập nhật `/sitemap.xml` (đọc `posts.json`, bỏ bài `draft`). Commit cả `sitemap.xml` cùng bài.
+6. Kiểm tra desktop, mobile, dark mode, cả VI và EN, rồi push.
 
 ## Nguyên tắc nội dung
 - Có nguồn cho mọi số liệu, quy định, mốc thời gian; ghi ở mục "Nguồn tham khảo".
