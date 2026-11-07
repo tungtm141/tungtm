@@ -8,7 +8,7 @@ Chạy ở thư mục gốc repo sau khi thêm/sửa bài:
 - lastmod của bài = "date" trong posts.json.
 - lastmod của /blog/ = ngày bài mới nhất.
 - Trang chủ lấy lastmod = ngày bài mới nhất (trang chủ có mục "Bài viết mới").
-- Không đưa vào: /about-me, /chatbot-demo, /cisco-eos, blog/_mau-bai-viet (đều noindex).
+- Không đưa vào: /about-me, /chatbot-demo, blog/_mau-bai-viet (đều noindex).
 """
 import json
 import pathlib
