@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" data-title-vi="EOS và EOL: khác nhau ở điểm nào và đọc mốc hết hỗ trợ ra sao — Trương Mạnh Tùng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EOS và EOL: khác nhau ở điểm nào và đọc mốc hết hỗ trợ ra sao — Trương Mạnh Tùng</title>
+<meta name="description" content="EOS và EOL khác nhau thế nào? Cách đọc mốc hết hỗ trợ của Cisco, Microsoft, Red Hat, kèm 2 ví dụ Việt Nam và bảng mốc cho hệ thống.">
+<link rel="canonical" href="https://truongmanhtung.com/blog/eos-eol-khac-nhau-doc-moc-het-ho-tro/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://truongmanhtung.com/blog/eos-eol-khac-nhau-doc-moc-het-ho-tro/">
+<meta property="og:title" content="EOS và EOL: khác nhau ở điểm nào và đọc mốc hết hỗ trợ ra sao">
+<meta property="og:description" content="EOS và EOL khác nhau thế nào? Cách đọc mốc hết hỗ trợ của Cisco, Microsoft, Red Hat, kèm 2 ví dụ Việt Nam và bảng mốc cho hệ thống.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://truongmanhtung.com/blog/eos-eol-khac-nhau-doc-moc-het-ho-tro/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-11-13">
+<meta property="article:author" content="https://www.linkedin.com/in/tungtm141">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+ "headline":"EOS và EOL: khác nhau ở điểm nào và đọc mốc hết hỗ trợ ra sao","description":"EOS và EOL khác nhau thế nào? Cách đọc mốc hết hỗ trợ của Cisco, Microsoft, Red Hat, kèm 2 ví dụ Việt Nam và bảng mốc cho hệ thống.",
+ "datePublished":"2026-11-13","dateModified":"2026-11-13","inLanguage":"vi",
+ "image":"https://truongmanhtung.com/blog/eos-eol-khac-nhau-doc-moc-het-ho-tro/og.jpg",
+ "mainEntityOfPage":"https://truongmanhtung.com/blog/eos-eol-khac-nhau-doc-moc-het-ho-tro/",
+ "author":{"@type":"Person","name":"Trương Mạnh Tùng","url":"https://truongmanhtung.com/"}}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="navlink hide-sm" href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap narrow">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/"><span data-l="vi">Trang chủ</span><span data-l="en">Home</span></a> / <a href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a></nav>
+
+  <header class="post-head">
+    <div class="meta">
+      <time datetime="2026-11-13"><span data-l="vi">13/11/2026</span><span data-l="en">13 Nov 2026</span></time>
+      <span>· <span data-l="vi">7 phút đọc</span><span data-l="en">7 min read</span></span>
+      <span class="tag"><span data-l="vi">Contact Center</span><span data-l="en">Contact Center</span></span>
+    </div>
+    <h1>EOS và EOL: khác nhau ở điểm nào và đọc mốc hết hỗ trợ ra sao</h1>
+  </header>
+
+  <p class="lang-note" data-l="en">This article is currently available in Vietnamese only.</p>
+
+  <article class="prose" lang="vi">
+<p>Theo <a href="https://learn.microsoft.com/en-us/lifecycle/faq/extended-security-updates" target="_blank" rel="noopener">Microsoft (câu hỏi thường gặp về ESU, cập nhật 24/08/2026)</a>, ESU là lựa chọn trả phí cuối cùng, kéo dài tối đa 3 năm sau khi hết Extended Support, và mỗi năm tính bằng 100% giá license. Cái giá đó cho thấy việc không đọc đúng mốc vòng đời sẽ đắt như thế nào.</p>
+<p>Vấn đề là EOS và EOL được dùng lẫn lộn, và mỗi hãng định nghĩa một kiểu. Bài này giải thích EOS và EOL khác nhau ở đâu, vì sao "hết hỗ trợ" thực ra là một chuỗi mốc, và cách lập bảng mốc cho hệ thống contact center của bạn, kèm hai ví dụ từ ngân hàng và doanh nghiệp Việt Nam.</p>
+<h2>EOS và EOL: hai thuật ngữ, nhiều cách hiểu</h2>
+<p><a href="https://www.flexera.com/flexera-one/glossary/end-of-life-end-of-support" target="_blank" rel="noopener">Flexera</a> tóm tắt: EOL là lúc nhà cung cấp ngừng bán hoặc ngừng gia hạn sản phẩm, còn EOS là lúc kết thúc bảo trì và hỗ trợ chính thức. Nhưng Flexera cũng lưu ý các hãng định nghĩa khác nhau.</p>
+<p>Cisco là ví dụ. Trong <a href="https://www.cisco.com/c/en/us/products/eos-eol-policy.html" target="_blank" rel="noopener">chính sách EoL của Cisco</a>, EOL là một quy trình gồm nhiều mốc, trong đó EoS là End-of-Sale (ngừng bán), còn hỗ trợ kéo dài đến LDoS, tức ngày cuối cùng được hỗ trợ theo hợp đồng còn hiệu lực. Cùng viết tắt "EoS" nhưng với Cisco là ngừng bán, với Flexera là ngừng hỗ trợ.</p>
+<p>Quy tắc thực dụng: gặp EOS hoặc EOL trong tài liệu, hãy tìm ngày cụ thể và đọc định nghĩa của chính hãng đó, không suy ra từ tên gọi.</p>
+<h2>Kết thúc hỗ trợ là một chuỗi mốc, không phải một ngày</h2>
+<p>Cisco công bố thông báo ngừng bán thường khoảng 6 tháng trước ngày ngừng bán. Với thông báo từ ngày 29/09/2022 trở đi, chính sách này nêu thời gian hỗ trợ TAC kể từ mốc ngừng bán: 5 năm cho phần cứng, 3 năm cho phần mềm hệ điều hành và 2 năm cho phần mềm ứng dụng. Có thể bổ sung hợp đồng hỗ trợ tối đa 1 năm sau mốc ngừng bán, và việc gia hạn không vượt quá LDoS.</p>
+<p>Ví dụ cụ thể: theo <a href="https://www.cisco.com/c/en/us/products/collateral/unified-communications/cisco-collaboration-flex-plan/v12-5-12-6-ucce-pcce-uccx-cvp-eol.html" target="_blank" rel="noopener">thông báo EOL15603 (cập nhật 30/06/2025)</a>, UCCE, PCCE, UCCX và CVP bản 12.5 và 12.6 tại chỗ có các mốc sau.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Mốc</th>
+<th>Ngày</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thông báo EoL</td>
+<td>30/06/2025</td>
+</tr>
+<tr>
+<td>End-of-Sale</td>
+<td>31/12/2025</td>
+</tr>
+<tr>
+<td>End of Change/Renewal</td>
+<td>31/12/2026</td>
+</tr>
+<tr>
+<td>Last Date of Support (LDoS)</td>
+<td>31/12/2027</td>
+</tr>
+</tbody>
+</table></div>
+<p>Microsoft có cách chia khác. Theo <a href="https://learn.microsoft.com/lifecycle/policies/fixed" target="_blank" rel="noopener">Fixed Lifecycle Policy</a>, sản phẩm có ít nhất 5 năm Mainstream Support, một số có thêm Extended Support. Mainstream gồm cả bản cập nhật không phải bảo mật; Extended chỉ có bản vá bảo mật và hỗ trợ trả phí, không thay đổi thiết kế. Trang <a href="https://learn.microsoft.com/vi-vn/lifecycle/end-of-support/end-of-support-2025" target="_blank" rel="noopener">Microsoft Lifecycle tiếng Việt về các mốc năm 2025</a> (cập nhật 14/11/2024) cho thấy khác biệt này: SQL Server 2019 chuyển từ Mainstream sang Extended ngày 28/02/2025, trong khi Windows Server 2012 và 2012 R2 kết thúc năm ESU thứ hai ngày 14/10/2025. Chuyển pha không phải hết hỗ trợ, nhưng nó đổi loại hỗ trợ bạn nhận được.</p>
+<h2>"Hết hỗ trợ" trên thực tế có nghĩa là gì</h2>
+<p>Hậu quả khác nhau theo hãng. Theo Microsoft, ESU chỉ gồm bản vá bảo mật mức Critical và Important, không kéo dài vòng đời, không có hỗ trợ kỹ thuật chung hay tính năng mới. Khách dùng Windows Server 2012 mà không mua ESU thì không mở được ticket hỗ trợ. Với Windows Server 2012 và 2012 R2, năm ESU thứ ba kết thúc ngày 13/10/2026.</p>
+<p>Red Hat <a href="https://access.redhat.com/support/policy/updates/errata" target="_blank" rel="noopener">chia vòng đời RHEL 8, 9 và 10</a> thành 10 năm gồm Full Support và Maintenance Support, rồi đến Extended Life Phase, nơi không còn bản sửa lỗi hay bản vá bảo mật và hỗ trợ bị giới hạn; muốn kéo dài phải mua gói bổ sung.</p>
+<p>Phần ảo hóa cũng có mốc riêng. Theo <a href="https://knowledge.broadcom.com/external/article/415405/end-of-general-support-for-vsphere.html" target="_blank" rel="noopener">Broadcom</a>, vSphere 7.x (ESXi, vCenter, vSAN) hết General Support ngày 02/10/2025. Một contact center chạy trên nền đó có thể đã hết hạn dù ứng dụng phía trên vẫn còn hỗ trợ.</p>
+<h2>Hai ví dụ Việt Nam: chạy tiếp trên nền đã hết hỗ trợ</h2>
+<p><strong>Windows XP và máy ATM, 2014.</strong> Theo <a href="https://giaoduc.net.vn/kinh-te/microsoft-dung-ho-tro-windows-xp-atm-tai-viet-nam-co-an-toan-post143447.gd" target="_blank" rel="noopener">Báo Giáo dục Việt Nam (23/04/2014)</a>, cả nước có khoảng 13.000 máy ATM, khoảng 60% do NCR sản xuất. Ngân hàng Nhà nước cho biết hệ thống đang ổn định và chưa gặp rủi ro bảo mật do Windows XP, nhưng yêu cầu các tổ chức tín dụng sớm nâng cấp và áp dụng thêm biện pháp kỹ thuật, hành chính trong lúc chờ. <a href="https://bizhub.vietnamnews.vn/atm-systems-are-unaffected-by-microsoft-decision-sbv-post5408.html" target="_blank" rel="noopener">Bizhub (23/04/2014)</a> ghi nhận cùng nội dung, gồm kết nối ATM được kiểm soát chặt, có giải pháp chống xâm nhập trái phép và mã độc, giám sát và cảnh báo. Bài học: khi chưa kịp nâng cấp, kiểm soát bù trừ là cách duy nhất để giảm rủi ro, và nó cần được định nghĩa trước.</p>
+<p><strong>Windows Server 2003, 2015.</strong> Theo <a href="https://bizhub.vn/microsoft-to-end-support-for-windows-server-2003-post9510.html" target="_blank" rel="noopener">bizhub</a>, Microsoft Việt Nam cảnh báo hỗ trợ Windows Server 2003 kết thúc vào tháng 7/2015, nhắc lại Windows XP đã kết thúc ngày 08/04/2014 và khuyến nghị tổ chức nâng cấp hoặc chuyển lên đám mây; hãng cũng cung cấp bản đồ ước tính số máy chủ còn dùng loại này. Bài báo không nêu kết quả cuối cùng của từng doanh nghiệp, nên đây là ví dụ về việc cảnh báo đến sớm mà việc kiểm kê vẫn là của từng tổ chức.</p>
+<p>Với ngân hàng, kiểm kê này không chỉ là thói quen tốt. <a href="https://thitruongtaichinhtiente.vn/print/32429.html" target="_blank" rel="noopener">Thông tư 09/2020/TT-NHNN</a> yêu cầu quy chế an toàn thông tin bao gồm quản lý tài sản công nghệ thông tin, quản lý sự cố và duy trì hoạt động liên tục. Không có danh mục tài sản kèm mốc vòng đời thì khó chứng minh cả ba điều này.</p>
+<h2>Lập bảng mốc cho hệ thống của bạn</h2>
+<p>Bài <a href="/blog/ra-soat-vong-doi-ho-tro-cisco-contact-center/">rà soát vòng đời hỗ trợ Cisco Contact Center</a> đã đi sâu vào phần Cisco. Ở mức chung, một bảng mốc đủ dùng gồm các lớp sau.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Lớp</th>
+<th>Cần ghi</th>
+<th>Nguồn tra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ứng dụng contact center</td>
+<td>Phiên bản, ngày ngừng bán, LDoS</td>
+<td>Thông báo EOL của hãng</td>
+</tr>
+<tr>
+<td>Hệ điều hành</td>
+<td>Phiên bản, pha hiện tại, ngày hết Extended</td>
+<td>Chính sách vòng đời của hãng OS</td>
+</tr>
+<tr>
+<td>Cơ sở dữ liệu</td>
+<td>Phiên bản, pha hiện tại, ESU nếu có</td>
+<td>Chính sách vòng đời của hãng DB</td>
+</tr>
+<tr>
+<td>Ảo hóa, phần cứng</td>
+<td>Phiên bản, ngày hết General Support</td>
+<td>Thông báo của hãng</td>
+</tr>
+<tr>
+<td>Hợp đồng hỗ trợ</td>
+<td>Ngày hết hạn, có vượt LDoS không</td>
+<td>Hợp đồng</td>
+</tr>
+</tbody>
+</table></div>
+<p>Khi điền xong, hãy lấy mốc gần nhất trong từng hàng làm hạn thật của cả hệ thống, vì một lớp hết hỗ trợ là đủ để cả cụm mất sự hỗ trợ đầy đủ. Sau đó sắp theo thứ tự thời gian và gắn từng dòng với một quyết định: nâng cấp, mua ESU hay chấp nhận rủi ro có kiểm soát.</p>
+<h2>Kết luận</h2>
+<p>EOS và EOL không phải một ngày mà là một chuỗi mốc, và cùng một viết tắt có thể mang nghĩa khác nhau ở mỗi hãng. Cái cần quản lý là các ngày cụ thể ở từng lớp của hệ thống.</p>
+<p>Việc làm được ngay: mở bảng tài sản, chọn 5 thành phần của một hệ thống contact center đang chạy, điền phiên bản và ngày hết hỗ trợ theo thông báo chính thức của từng hãng, rồi đánh dấu thành phần nào có mốc trong 18 tháng tới.</p>
+  </article>
+
+  <section class="sources" aria-label="Nguồn / Sources">
+    <h2><span data-l="vi">Nguồn tham khảo</span><span data-l="en">Sources</span></h2>
+    <p>Nguồn được tác giả mở đọc khi viết bài (10–11/2026).</p>
+    <ol>
+      <li><a href="https://giaoduc.net.vn/kinh-te/microsoft-dung-ho-tro-windows-xp-atm-tai-viet-nam-co-an-toan-post143447.gd" target="_blank" rel="noopener">Báo Giáo dục Việt Nam – Microsoft dừng hỗ trợ Windows XP, ATM tại Việt Nam có an toàn?</a></li>
+      <li><a href="https://learn.microsoft.com/vi-vn/lifecycle/end-of-support/end-of-support-2025" target="_blank" rel="noopener">Microsoft Lifecycle (tiếng Việt) – Kết thúc hỗ trợ vào năm 2025</a></li>
+      <li><a href="https://thitruongtaichinhtiente.vn/print/32429.html" target="_blank" rel="noopener">Thị trường Tài chính Tiền tệ – Thông tư 09/2020/TT-NHNN</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/lifecycle/faq/extended-security-updates" target="_blank" rel="noopener">Microsoft – Extended Security Updates FAQ</a></li>
+      <li><a href="https://learn.microsoft.com/lifecycle/policies/fixed" target="_blank" rel="noopener">Microsoft – Fixed Lifecycle Policy</a></li>
+      <li><a href="https://www.cisco.com/c/en/us/products/collateral/unified-communications/cisco-collaboration-flex-plan/v12-5-12-6-ucce-pcce-uccx-cvp-eol.html" target="_blank" rel="noopener">Cisco – EOL15603 (UCCE/PCCE/UCCX/CVP 12.5, 12.6)</a></li>
+      <li><a href="https://knowledge.broadcom.com/external/article/415405/end-of-general-support-for-vsphere.html" target="_blank" rel="noopener">Broadcom – End of General Support for vSphere 7.x</a></li>
+      <li><a href="https://access.redhat.com/support/policy/updates/errata" target="_blank" rel="noopener">Red Hat – Enterprise Linux life cycle</a></li>
+      <li><a href="https://www.flexera.com/flexera-one/glossary/end-of-life-end-of-support" target="_blank" rel="noopener">Flexera – End of life and end of support</a></li>
+      <li><a href="https://bizhub.vn/microsoft-to-end-support-for-windows-server-2003-post9510.html" target="_blank" rel="noopener">Bizhub – Microsoft to end support for Windows Server 2003</a></li>
+      <li><a href="https://www.cisco.com/c/en/us/products/eos-eol-policy.html" target="_blank" rel="noopener">Cisco – End-of-Sale and End-of-Life Policy</a></li>
+      <li><a href="https://bizhub.vietnamnews.vn/atm-systems-are-unaffected-by-microsoft-decision-sbv-post5408.html" target="_blank" rel="noopener">Bizhub – ATM systems unaffected by Microsoft decision: SBV</a></li>
+    </ol>
+  </section>
+
+  <section class="sources" aria-label="Bài viết liên quan / Related">
+    <h2><span data-l="vi">Bài viết liên quan</span><span data-l="en">Related</span></h2>
+    <ul>
+      <li><a href="/blog/ra-soat-vong-doi-ho-tro-cisco-contact-center/">Khi nào nên rà soát vòng đời hỗ trợ Cisco Contact Center?</a></li>
+      <li><a href="/blog/checklist-danh-gia-giai-phap-contact-center-ngan-hang/">Checklist đánh giá giải pháp contact center cho ngân hàng</a></li>
+      <li><a href="/blog/tich-hop-crm-contact-center-du-lieu-hien-thi/">Tích hợp CRM với Contact Center: dữ liệu nào nên hiển thị?</a></li>
+    </ul>
+  </section>
+
+  <aside class="author" aria-label="Tác giả / Author">
+    <div class="av" aria-hidden="true">TT</div>
+    <div>
+      <p class="name">Trương Mạnh Tùng</p>
+      <p class="sub"><span data-l="vi">Account Manager tại BaseBS, đồng hành cùng ngân hàng, tài chính, bảo hiểm trong xây dựng và vận hành Contact Center.</span><span data-l="en">Account Manager at BaseBS, helping banks, finance and insurance companies build and run their Contact Centers.</span></p>
+      <div class="acts">
+        <a class="btn primary" href="https://zalo.me/0915306688" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo</span><span data-l="en">Message on Zalo</span></a>
+        <a class="btn" href="mailto:tungtm@basebs.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/tungtm141" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+  <p class="disclaimer"><span data-l="vi">Bài viết thể hiện góc nhìn cá nhân của tác giả, không phải quan điểm chính thức của BaseBS hay khách hàng được nhắc tới.</span><span data-l="en">Views are the author's own and do not represent BaseBS or any client mentioned.</span></p>
+
+  <nav class="post-nav"><a href="/blog/"><span data-l="vi">← Tất cả bài viết</span><span data-l="en">← All posts</span></a></nav>
+</main>
+
+<footer><div class="wrap">© 2026 Trương Mạnh Tùng · <a href="/">truongmanhtung.com</a></div></footer>
+<script src="/assets/blog.js" defer></script>
+</body>
+</html>

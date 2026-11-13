@@ -1,5 +1,22 @@
 [
   {
+    "slug": "eos-eol-khac-nhau-doc-moc-het-ho-tro",
+    "date": "2026-11-13",
+    "minutes": 6,
+    "title": {
+      "vi": "EOS và EOL: khác nhau ở điểm nào và đọc mốc hết hỗ trợ ra sao"
+    },
+    "summary": {
+      "vi": "EOS và EOL khác nhau thế nào? Cách đọc mốc hết hỗ trợ của Cisco, Microsoft, Red Hat, kèm 2 ví dụ Việt Nam và bảng mốc cho hệ thống."
+    },
+    "tags": [
+      {
+        "vi": "Contact Center",
+        "en": "Contact Center"
+      }
+    ]
+  },
+  {
     "slug": "checklist-danh-gia-giai-phap-contact-center-ngan-hang",
     "date": "2026-11-10",
     "minutes": 7,
