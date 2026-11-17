@@ -1,5 +1,22 @@
 [
   {
+    "slug": "ke-hoach-nang-cap-contact-center-5-hang-muc-can-kiem-tra",
+    "date": "2026-11-17",
+    "minutes": 6,
+    "title": {
+      "vi": "Kế hoạch nâng cấp contact center: 5 hạng mục cần kiểm tra trước"
+    },
+    "summary": {
+      "vi": "Trước khi lập kế hoạch nâng cấp contact center, hãy kiểm tra 5 hạng mục: phiên bản đích, kiểm kê, hạ tầng, cửa sổ thay đổi, quay lui."
+    },
+    "tags": [
+      {
+        "vi": "Contact Center",
+        "en": "Contact Center"
+      }
+    ]
+  },
+  {
     "slug": "eos-eol-khac-nhau-doc-moc-het-ho-tro",
     "date": "2026-11-13",
     "minutes": 6,
