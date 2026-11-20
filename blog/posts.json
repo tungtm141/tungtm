@@ -1,5 +1,22 @@
 [
   {
+    "slug": "nang-cap-tong-dai-5-phu-thuoc-ky-thuat-de-bi-bo-sot",
+    "date": "2026-11-20",
+    "minutes": 6,
+    "title": {
+      "vi": "Nâng cấp hệ thống tổng đài: 5 phụ thuộc kỹ thuật dễ bị bỏ sót"
+    },
+    "summary": {
+      "vi": "Nâng cấp hệ thống tổng đài: 5 nhóm phụ thuộc kỹ thuật hay bị bỏ sót, từ phiên bản, ảo hóa, TLS đến đối tác ngoài, kèm ví dụ ngân hàng Việt Nam."
+    },
+    "tags": [
+      {
+        "vi": "Contact Center",
+        "en": "Contact Center"
+      }
+    ]
+  },
+  {
     "slug": "ke-hoach-nang-cap-contact-center-5-hang-muc-can-kiem-tra",
     "date": "2026-11-17",
     "minutes": 6,
