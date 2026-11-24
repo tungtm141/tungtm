@@ -1,5 +1,22 @@
 [
   {
+    "slug": "on-premise-cloud-hybrid-contact-center-bfsi-chon-sao",
+    "date": "2026-11-24",
+    "minutes": 7,
+    "title": {
+      "vi": "On-premise, cloud hay hybrid: Contact Center BFSI chọn sao?"
+    },
+    "summary": {
+      "vi": "On-premise, cloud hay hybrid cho contact center BFSI: ba mô hình, yếu tố dữ liệu, quy định, chi phí và phương án quay lui cần đánh giá trước khi chọn."
+    },
+    "tags": [
+      {
+        "vi": "Contact Center",
+        "en": "Contact Center"
+      }
+    ]
+  },
+  {
     "slug": "nang-cap-tong-dai-5-phu-thuoc-ky-thuat-de-bi-bo-sot",
     "date": "2026-11-20",
     "minutes": 6,
