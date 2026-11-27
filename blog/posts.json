@@ -1,5 +1,22 @@
 [
   {
+    "slug": "ke-hoach-rollback-vi-sao-can-co-truoc-khi-thay-doi-he-thong",
+    "date": "2026-11-27",
+    "minutes": 7,
+    "title": {
+      "vi": "Kế hoạch rollback: vì sao cần có trước khi thay đổi hệ thống?"
+    },
+    "summary": {
+      "vi": "Kế hoạch rollback cần điều kiện kích hoạt, người quyết định, điểm quay về và bản sao lưu đã thử khôi phục. Khung, bài học và việc cần làm trước go-live."
+    },
+    "tags": [
+      {
+        "vi": "Contact Center",
+        "en": "Contact Center"
+      }
+    ]
+  },
+  {
     "slug": "on-premise-cloud-hybrid-contact-center-bfsi-chon-sao",
     "date": "2026-11-24",
     "minutes": 7,

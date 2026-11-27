@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" data-title-vi="Kế hoạch rollback: vì sao cần có trước khi thay đổi hệ thống? — Trương Mạnh Tùng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kế hoạch rollback: vì sao cần có trước khi thay đổi hệ thống? — Trương Mạnh Tùng</title>
+<meta name="description" content="Kế hoạch rollback cần điều kiện kích hoạt, người quyết định, điểm quay về và bản sao lưu đã thử khôi phục. Khung, bài học và việc cần làm trước go-live.">
+<link rel="canonical" href="https://truongmanhtung.com/blog/ke-hoach-rollback-vi-sao-can-co-truoc-khi-thay-doi-he-thong/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://truongmanhtung.com/blog/ke-hoach-rollback-vi-sao-can-co-truoc-khi-thay-doi-he-thong/">
+<meta property="og:title" content="Kế hoạch rollback: vì sao cần có trước khi thay đổi hệ thống?">
+<meta property="og:description" content="Kế hoạch rollback cần điều kiện kích hoạt, người quyết định, điểm quay về và bản sao lưu đã thử khôi phục. Khung, bài học và việc cần làm trước go-live.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://truongmanhtung.com/blog/ke-hoach-rollback-vi-sao-can-co-truoc-khi-thay-doi-he-thong/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-11-27">
+<meta property="article:author" content="https://www.linkedin.com/in/tungtm141">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+ "headline":"Kế hoạch rollback: vì sao cần có trước khi thay đổi hệ thống?","description":"Kế hoạch rollback cần điều kiện kích hoạt, người quyết định, điểm quay về và bản sao lưu đã thử khôi phục. Khung, bài học và việc cần làm trước go-live.",
+ "datePublished":"2026-11-27","dateModified":"2026-11-27","inLanguage":"vi",
+ "image":"https://truongmanhtung.com/blog/ke-hoach-rollback-vi-sao-can-co-truoc-khi-thay-doi-he-thong/og.jpg",
+ "mainEntityOfPage":"https://truongmanhtung.com/blog/ke-hoach-rollback-vi-sao-can-co-truoc-khi-thay-doi-he-thong/",
+ "author":{"@type":"Person","name":"Trương Mạnh Tùng","url":"https://truongmanhtung.com/"}}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="navlink hide-sm" href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap narrow">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/"><span data-l="vi">Trang chủ</span><span data-l="en">Home</span></a> / <a href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a></nav>
+
+  <header class="post-head">
+    <div class="meta">
+      <time datetime="2026-11-27"><span data-l="vi">27/11/2026</span><span data-l="en">27 Nov 2026</span></time>
+      <span>· <span data-l="vi">7 phút đọc</span><span data-l="en">7 min read</span></span>
+      <span class="tag"><span data-l="vi">Contact Center</span><span data-l="en">Contact Center</span></span>
+    </div>
+    <h1>Kế hoạch rollback: vì sao cần có trước khi thay đổi hệ thống?</h1>
+  </header>
+
+  <p class="lang-note" data-l="en">This article is currently available in Vietnamese only.</p>
+
+  <article class="prose" lang="vi">
+<p>Từ tháng 1/2023 đến tháng 2/2025, chín ngân hàng và tổ chức tín dụng nhà ở lớn nhất nước Anh ghi nhận <a href="https://www.ibtimes.co.uk/terrifying-experience-mps-reveal-uk-banks-had-33-days-it-failures-its-getting-worse-1770719" target="_blank" rel="noopener">ít nhất 158 sự cố CNTT, tương đương hơn 33 ngày gián đoạn ngoài kế hoạch</a>, theo Treasury Committee. Nguyên nhân gồm nhà cung cấp bên thứ ba, thay đổi hệ thống và lỗi phần mềm nội bộ.</p>
+<p>Nâng cấp core banking, đổi phiên bản CRM hay chuyển hạ tầng contact center gần như không tránh được, nên kế hoạch rollback và phương án dự phòng quyết định mức thiệt hại khi sự cố xảy ra. Bài này đi qua rủi ro của thay đổi, các thành phần của một kế hoạch rollback đủ dùng, bài học từ những ca đã xảy ra, bối cảnh Việt Nam và danh sách việc nên kiểm tra trước ngày go-live.</p>
+<h2>Thay đổi hệ thống là rủi ro vận hành cần tính trước</h2>
+<p>Theo báo cáo State of Observability for Financial Services and Insurance của New Relic, <a href="https://itbrief.news/story/financial-services-face-outages-costing-usd-2-2-million-per-hour" target="_blank" rel="noopener">sự cố có tác động lớn trong ngành tài chính và bảo hiểm tốn trung vị 2,2 triệu USD mỗi giờ</a>, cao hơn 16% so với trung vị của mọi ngành. Khoảng 48% người được hỏi gặp sự cố ảnh hưởng đáng kể ít nhất mỗi tuần. New Relic bán công cụ giám sát, nên các con số này nên được xem như một tham chiếu của nhà cung cấp, không phải thống kê độc lập.</p>
+<p>Bài viết của AWS về <a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/ops_mit_deploy_risks_plan_for_unsucessful_changes.html" target="_blank" rel="noopener">lập kế hoạch cho thay đổi không thành công</a> nêu những sai lầm quen thuộc. Một đội ngại quay lui bản lỗi vì người dùng đang trên hệ thống, nên tình trạng bất ổn kéo dài. Một đội khác gặp lỗi một phần và không quyết được nên quay lui toàn bộ hay sửa tiếp. Một đội không đo thời gian gián đoạn, nên không có cơ sở để cải thiện quy trình. Cả ba đều là chuyện của quyết định, và quyết định tốt nhất được chốt trước khi sự cố xảy ra.</p>
+<h2>Một kế hoạch rollback đủ dùng gồm những gì?</h2>
+<p>Các nguồn về quản lý thay đổi khá thống nhất về khung. Bảng dưới gom lại các câu hỏi cần có câu trả lời bằng văn bản trước ngày thay đổi:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Hạng mục</th>
+<th>Câu hỏi cần trả lời trước</th>
+<th>Nguồn gợi ý</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Điều kiện kích hoạt</td>
+<td>Ngưỡng lỗi, độ trễ hay thời gian nào thì quay lui? Khi nào được phép sửa tiếp?</td>
+<td>AWS</td>
+</tr>
+<tr>
+<td>Người quyết định</td>
+<td>Ai được ra lệnh rollback, trong bao lâu?</td>
+<td>Command Prompt</td>
+</tr>
+<tr>
+<td>Điểm quay về</td>
+<td>Bản sao lưu, cấu hình và phiên bản nào là trạng thái tốt đã biết?</td>
+<td>InvGate</td>
+</tr>
+<tr>
+<td>Kiểm thử</td>
+<td>Đã thử khôi phục thật chưa?</td>
+<td>Command Prompt</td>
+</tr>
+<tr>
+<td>Giám sát sau thay đổi</td>
+<td>Chỉ số nào cho biết thay đổi đã thành công hay hỏng?</td>
+<td>AWS</td>
+</tr>
+<tr>
+<td>Truyền thông</td>
+<td>Ai được báo trước, ai được báo sau khi xong?</td>
+<td>Manifestly</td>
+</tr>
+</tbody>
+</table></div>
+<p>Phần kiểm thử hay bị bỏ qua nhất. <a href="https://commandprompt.com/blog/essential-role-of-rollback-plans-part-2" target="_blank" rel="noopener">Command Prompt (12/2024)</a> dẫn lời một chuyên gia: cách duy nhất để biết bản sao lưu dùng được là khôi phục thử. <a href="https://blog.invgate.com/rollback-plan" target="_blank" rel="noopener">InvGate (11/2023)</a> cũng coi việc diễn tập quay lui trước các kịch bản lỗi giả lập là điều kiện để tin vào kế hoạch.</p>
+<p>Cần nhớ cả giới hạn. Theo <a href="https://www.lenovo.com/be/fr/glossary/rollback/" target="_blank" rel="noopener">Lenovo</a>, rollback không phải giải pháp vạn năng: nó có thể gây gián đoạn với mọi người dùng và không dùng để lấy lại tệp đã xóa. AWS khuyên thu nhỏ quy mô mỗi lần thay đổi để việc đảo ngược nhanh và ít rủi ro hơn. Một <a href="https://www.manifest.ly/use-cases/systems-administration/rollback-plan-checklist" target="_blank" rel="noopener">checklist của Manifestly</a> cũng cảnh báo bản sao lưu cũ hoặc thiếu có thể biến một lần quay lui xử lý được thành thảm họa.</p>
+<h2>Bài học từ những ca thay đổi lớn thiếu đường lui rõ ràng</h2>
+<p>Ca được phân tích kỹ nhất là TSB. Theo <a href="https://itpro.com/business-strategy/digital-transformation/354155/tsbs-it-disaster-pinned-on-big-bang-approach-to" target="_blank" rel="noopener">ITPro (11/2019)</a>, ngân hàng này định chuyển khoảng năm triệu hồ sơ khách hàng trong một cuối tuần cuối tháng 4/2018. Báo cáo của Slaughter and May cho thấy họ không cân nhắc phương án thay thế hay cách giảm rủi ro của hướng "big bang". Theo <a href="https://www.computerweekly.com/news/252474170/TSB-programme-pulled-apart-in-report-on-IT-meltdown" target="_blank" rel="noopener">Computer Weekly</a>, IBM nhận xét ngân hàng chưa áp dụng bộ tiêu chí go-live chặt chẽ, và đối chiếu với một cuộc chuyển đổi tốt, nơi nhiều đợt chạy thử đã được thực hiện, quay lui rồi khắc phục trước khi chính thức ra mắt.</p>
+<p><a href="https://finextra.com/newsarticle/34795/tsb-and-banco-sabadell-slammed-in-meltdown-post-mortem" target="_blank" rel="noopener">Finextra</a> ghi lại báo cáo cho rằng quyết định không kiểm thử trung tâm dữ liệu dự phòng là một nguyên nhân chính. TSB không đồng ý với một số kết luận. Khi báo cáo công bố, chi phí phát sinh sau chuyển đổi của TSB đã gần 370 triệu bảng Anh.</p>
+<p>Ở khu vực Trung Đông, <a href="https://www.arabianbusiness.com/gcc/uae/450610-emirates-nbd-apologises-after-upgrade-teething-issues-causes-service-chaos" target="_blank" rel="noopener">Emirates NBD (2020)</a> xin lỗi khách hàng khi dịch vụ ngân hàng trực tuyến và di động gián đoạn cả cuối tuần sau khi nâng cấp core banking. Năm 2024, <a href="https://gulfnews.com/amp/business/banking/dubai-islamic-bank-offers-compensation-discounts-after-system-update-disruptions-1.1721542346989" target="_blank" rel="noopener">Dubai Islamic Bank</a> miễn phí phạt trả chậm và séc bị trả lại do lỗi hệ thống trong giai đoạn chuyển đổi core banking. Hai nguồn này không nêu kế hoạch quay lui của ngân hàng.</p>
+<h2>Bối cảnh Việt Nam: quy định dự phòng và các đợt nâng cấp gần đây</h2>
+<p>Về quy định, <a href="https://thitruongtaichinhtiente.vn/tang-cuong-bao-dam-an-toan-thong-tin-mang-va-hoat-dong-lien-tuc-doi-voi-he-thong-thong-tin-58264.html" target="_blank" rel="noopener">Công văn 2704/NHNN-CNTT (5/4/2024)</a>, theo bài đăng ngày 10/4/2024, đặt ra yêu cầu cho hệ thống từ cấp độ 3 trở lên và hệ thống xử lý thông tin cá nhân. Sao lưu phải tự động, bản sao lưu lưu ngoài hệ thống nguồn, việc khôi phục từ phương tiện offline phải được thử tối thiểu một lần mỗi năm, và hệ thống dự phòng phải thay thế được hệ thống chính trong 4 giờ với hệ thống cấp độ 3 trở lên. Công văn dẫn chiếu Thông tư 09/2020/TT-NHNN. Quy định có thể đã được cập nhật, nên tổ chức cần đối chiếu văn bản hiện hành.</p>
+<p>Về thực tế, đêm 11/12 đến 12/12/2024, TPBank gián đoạn chuyển tiền trên ứng dụng, internet banking và một số giao dịch thẻ, ATM. Theo <a href="https://vietnamfinance.vn/he-thong-giao-dich-bi-gian-doan-tpbank-noi-gi-d120054.html" target="_blank" rel="noopener">VietnamFinance</a>, thông báo đầu tiên của ngân hàng nêu lý do là nâng cấp cập nhật hệ thống. <a href="https://vnba.org.vn/vi/tpbank-khac-phuc-xong-loi-core-banking--da-giao-dich-tro-lai-16225.htm" target="_blank" rel="noopener">VNBA (13/12/2024)</a> ghi ứng dụng hoạt động bình thường trở lại lúc 15h30 ngày 12/12. Các bài báo không nêu chi tiết kỹ thuật, nên không thể kết luận về việc ngân hàng đã quay lui hay sửa tiếp.</p>
+<p>Hai đợt nâng cấp gần đây cho thấy phần truyền thông của kế hoạch. <a href="https://vnba.org.vn/vi/seabank-nang-cap-core-banking-t24-len-phien-ban-r25-23303.htm" target="_blank" rel="noopener">SeABank</a> nâng cấp T24 lên R25 từ 17h ngày 28/8 đến 24h ngày 30/8/2026, công bố hai khung giờ ngừng dịch vụ e-banking, thẻ, ATM/POS và lưu ý thời gian có thể thay đổi theo tiến độ. <a href="https://doanhnhan.baophapluat.vn/techcombank-thong-bao-ve-ke-hoach-nang-cap-he-thong-phuc-vu-trai-nghiem-khach-hang.html" target="_blank" rel="noopener">Techcombank</a> thông báo nâng cấp Core Banking từ 19h ngày 07/11 đến 8h ngày 08/11/2026, nêu rõ POS và giao dịch thẻ tín dụng không bị ảnh hưởng. Cả hai đều báo trước, nêu khung giờ và hotline; kế hoạch rollback nội bộ của họ không được công bố.</p>
+<h2>Áp vào contact center và CRM: những mốc nên kiểm tra trước go-live</h2>
+<p>Ở Anh, <a href="https://www.bankofengland.co.uk/prudential-regulation/publication/2021/march/operational-resilience-impact-tolerances-for-important-business-services-ss" target="_blank" rel="noopener">PRA yêu cầu</a> các tổ chức đặt ngưỡng chịu đựng gián đoạn (impact tolerance) cho từng dịch vụ quan trọng. Bản hiện hành của SS1/21 có hiệu lực từ 31/3/2022. Cách nghĩ này dùng được cho contact center: có những luồng như báo mất thẻ hay khóa thẻ mà thời gian gián đoạn chấp nhận được rất ngắn.</p>
+<p>Danh sách dưới đây là gợi ý của người viết, ghép từ các nguồn trên và kinh nghiệm triển khai, không phải chuẩn bắt buộc:</p>
+<ol>
+<li>Xác định dịch vụ không được gián đoạn và thời gian tối đa chấp nhận được cho từng dịch vụ.</li>
+<li>Viết ngưỡng quay lui bằng con số (tỷ lệ cuộc gọi lỗi, thời gian xử lý, số ticket tồn) thay vì cảm tính.</li>
+<li>Giữ cấu hình định tuyến, IVR và kết nối thoại cũ ở trạng thái khôi phục được trong thời gian đã định.</li>
+<li>Thử khôi phục bản sao lưu CRM và dữ liệu ghi âm trên môi trường không phải production.</li>
+<li>Ghi rõ điểm không thể quay lại, ví dụ sau khi dữ liệu hai chiều giữa các hệ thống đã bắt đầu ghi đè.</li>
+<li>Chốt phiên họp go/no-go với người có quyền ra lệnh rollback có mặt.</li>
+</ol>
+<h2>Kết luận</h2>
+<p>Kế hoạch rollback không phải thủ tục phụ của dự án mà là một phần của quyết định thay đổi: nó nói rõ thế nào là hỏng, ai quyết định và đường về ở đâu. Việc đầu tiên có thể làm ngay là chọn một thay đổi sắp tới, viết lên một trang ba thứ gồm ngưỡng quay lui, người ra quyết định, bản sao lưu cần khôi phục, rồi thử khôi phục bản sao lưu đó trước ngày thay đổi.</p>
+  </article>
+
+  <section class="sources" aria-label="Nguồn / Sources">
+    <h2><span data-l="vi">Nguồn tham khảo</span><span data-l="en">Sources</span></h2>
+    <p>Nguồn được tác giả mở đọc khi viết bài (10–11/2026).</p>
+    <ol>
+      <li><a href="https://www.ibtimes.co.uk/terrifying-experience-mps-reveal-uk-banks-had-33-days-it-failures-its-getting-worse-1770719" target="_blank" rel="noopener">MPs reveal UK banks had 33 days of IT failures (IBTimes)</a></li>
+      <li><a href="https://itbrief.news/story/financial-services-face-outages-costing-usd-2-2-million-per-hour" target="_blank" rel="noopener">Financial services face outages costing USD 2.2 million per hour (IT Brief)</a></li>
+      <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/ops_mit_deploy_risks_plan_for_unsucessful_changes.html" target="_blank" rel="noopener">OPS06-BP01 Plan for unsuccessful changes (AWS)</a></li>
+      <li><a href="https://commandprompt.com/blog/essential-role-of-rollback-plans-part-2" target="_blank" rel="noopener">The essential role of rollback plans, part 2 (Command Prompt)</a></li>
+      <li><a href="https://blog.invgate.com/rollback-plan" target="_blank" rel="noopener">Rollback plan (InvGate)</a></li>
+      <li><a href="https://www.lenovo.com/be/fr/glossary/rollback/" target="_blank" rel="noopener">Qu'est-ce que le Rollback ? (Lenovo)</a></li>
+      <li><a href="https://www.manifest.ly/use-cases/systems-administration/rollback-plan-checklist" target="_blank" rel="noopener">Rollback plan checklist (Manifestly)</a></li>
+      <li><a href="https://itpro.com/business-strategy/digital-transformation/354155/tsbs-it-disaster-pinned-on-big-bang-approach-to" target="_blank" rel="noopener">TSB's IT disaster pinned on 'big bang' approach (ITPro)</a></li>
+      <li><a href="https://www.computerweekly.com/news/252474170/TSB-programme-pulled-apart-in-report-on-IT-meltdown" target="_blank" rel="noopener">TSB programme pulled apart in report on IT meltdown (Computer Weekly)</a></li>
+      <li><a href="https://finextra.com/newsarticle/34795/tsb-and-banco-sabadell-slammed-in-meltdown-post-mortem" target="_blank" rel="noopener">TSB and Banco Sabadell slammed in meltdown post-mortem (Finextra)</a></li>
+      <li><a href="https://www.arabianbusiness.com/gcc/uae/450610-emirates-nbd-apologises-after-upgrade-teething-issues-causes-service-chaos" target="_blank" rel="noopener">Emirates NBD apologises after upgrade teething issues (Arabian Business)</a></li>
+      <li><a href="https://gulfnews.com/amp/business/banking/dubai-islamic-bank-offers-compensation-discounts-after-system-update-disruptions-1.1721542346989" target="_blank" rel="noopener">Dubai Islamic Bank offers compensation after system update disruptions (Gulf News)</a></li>
+      <li><a href="https://thitruongtaichinhtiente.vn/tang-cuong-bao-dam-an-toan-thong-tin-mang-va-hoat-dong-lien-tuc-doi-voi-he-thong-thong-tin-58264.html" target="_blank" rel="noopener">Tăng cường bảo đảm an toàn thông tin mạng và hoạt động liên tục (Thị trường tài chính tiền tệ)</a></li>
+      <li><a href="https://vietnamfinance.vn/he-thong-giao-dich-bi-gian-doan-tpbank-noi-gi-d120054.html" target="_blank" rel="noopener">TPBank gián đoạn giao dịch (VietnamFinance)</a></li>
+      <li><a href="https://vnba.org.vn/vi/tpbank-khac-phuc-xong-loi-core-banking--da-giao-dich-tro-lai-16225.htm" target="_blank" rel="noopener">TPBank khắc phục xong lỗi core banking (VNBA)</a></li>
+      <li><a href="https://vnba.org.vn/vi/seabank-nang-cap-core-banking-t24-len-phien-ban-r25-23303.htm" target="_blank" rel="noopener">SeABank nâng cấp core banking T24 lên R25 (VNBA)</a></li>
+      <li><a href="https://doanhnhan.baophapluat.vn/techcombank-thong-bao-ve-ke-hoach-nang-cap-he-thong-phuc-vu-trai-nghiem-khach-hang.html" target="_blank" rel="noopener">Techcombank thông báo nâng cấp hệ thống (Báo Pháp luật)</a></li>
+      <li><a href="https://www.bankofengland.co.uk/prudential-regulation/publication/2021/march/operational-resilience-impact-tolerances-for-important-business-services-ss" target="_blank" rel="noopener">SS1/21 Operational resilience: impact tolerances (Bank of England)</a></li>
+    </ol>
+  </section>
+
+  <section class="sources" aria-label="Bài viết liên quan / Related">
+    <h2><span data-l="vi">Bài viết liên quan</span><span data-l="en">Related</span></h2>
+    <ul>
+      <li><a href="/blog/nang-cap-tong-dai-5-phu-thuoc-ky-thuat-de-bi-bo-sot/">Nâng cấp hệ thống tổng đài: 5 phụ thuộc kỹ thuật dễ bị bỏ sót</a></li>
+      <li><a href="/blog/on-premise-cloud-hybrid-contact-center-bfsi-chon-sao/">On-premise, cloud hay hybrid: Contact Center BFSI chọn sao?</a></li>
+      <li><a href="/blog/ke-hoach-nang-cap-contact-center-5-hang-muc-can-kiem-tra/">Kế hoạch nâng cấp contact center: 5 hạng mục cần kiểm tra trước</a></li>
+    </ul>
+  </section>
+
+  <aside class="author" aria-label="Tác giả / Author">
+    <div class="av" aria-hidden="true">TT</div>
+    <div>
+      <p class="name">Trương Mạnh Tùng</p>
+      <p class="sub"><span data-l="vi">Account Manager tại BaseBS, đồng hành cùng ngân hàng, tài chính, bảo hiểm trong xây dựng và vận hành Contact Center.</span><span data-l="en">Account Manager at BaseBS, helping banks, finance and insurance companies build and run their Contact Centers.</span></p>
+      <div class="acts">
+        <a class="btn primary" href="https://zalo.me/0915306688" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo</span><span data-l="en">Message on Zalo</span></a>
+        <a class="btn" href="mailto:tungtm@basebs.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/tungtm141" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+  <p class="disclaimer"><span data-l="vi">Bài viết thể hiện góc nhìn cá nhân của tác giả, không phải quan điểm chính thức của BaseBS hay khách hàng được nhắc tới.</span><span data-l="en">Views are the author's own and do not represent BaseBS or any client mentioned.</span></p>
+
+  <nav class="post-nav"><a href="/blog/"><span data-l="vi">← Tất cả bài viết</span><span data-l="en">← All posts</span></a></nav>
+</main>
+
+<footer><div class="wrap">© 2026 Trương Mạnh Tùng · <a href="/">truongmanhtung.com</a></div></footer>
+<script src="/assets/blog.js" defer></script>
+</body>
+</html>
