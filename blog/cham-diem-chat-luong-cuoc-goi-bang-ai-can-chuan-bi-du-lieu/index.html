@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" data-title-vi="Chấm điểm chất lượng cuộc gọi bằng AI: cần chuẩn bị dữ liệu gì? — Trương Mạnh Tùng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chấm điểm chất lượng cuộc gọi bằng AI: cần chuẩn bị dữ liệu gì? — Trương Mạnh Tùng</title>
+<meta name="description" content="Chấm điểm chất lượng cuộc gọi bằng AI cần năm nhóm dữ liệu: bản ghi âm, văn bản tiếng Việt, tiêu chí, mẫu đối chiếu của QA và quyền xử lý dữ liệu.">
+<link rel="canonical" href="https://truongmanhtung.com/blog/cham-diem-chat-luong-cuoc-goi-bang-ai-can-chuan-bi-du-lieu/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://truongmanhtung.com/blog/cham-diem-chat-luong-cuoc-goi-bang-ai-can-chuan-bi-du-lieu/">
+<meta property="og:title" content="Chấm điểm chất lượng cuộc gọi bằng AI: cần chuẩn bị dữ liệu gì?">
+<meta property="og:description" content="Chấm điểm chất lượng cuộc gọi bằng AI cần năm nhóm dữ liệu: bản ghi âm, văn bản tiếng Việt, tiêu chí, mẫu đối chiếu của QA và quyền xử lý dữ liệu.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://truongmanhtung.com/blog/cham-diem-chat-luong-cuoc-goi-bang-ai-can-chuan-bi-du-lieu/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:author" content="https://www.linkedin.com/in/tungtm141">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+ "headline":"Chấm điểm chất lượng cuộc gọi bằng AI: cần chuẩn bị dữ liệu gì?","description":"Chấm điểm chất lượng cuộc gọi bằng AI cần năm nhóm dữ liệu: bản ghi âm, văn bản tiếng Việt, tiêu chí, mẫu đối chiếu của QA và quyền xử lý dữ liệu.","inLanguage":"vi",
+ "image":"https://truongmanhtung.com/blog/cham-diem-chat-luong-cuoc-goi-bang-ai-can-chuan-bi-du-lieu/og.jpg",
+ "mainEntityOfPage":"https://truongmanhtung.com/blog/cham-diem-chat-luong-cuoc-goi-bang-ai-can-chuan-bi-du-lieu/",
+ "author":{"@type":"Person","name":"Trương Mạnh Tùng","url":"https://truongmanhtung.com/"}}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="navlink hide-sm" href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap narrow">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/"><span data-l="vi">Trang chủ</span><span data-l="en">Home</span></a> / <a href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a> / <a href="/blog/#ai-cham-soc-khach-hang"><span data-l="vi">AI trong CSKH</span><span data-l="en">AI in customer care</span></a></nav>
+
+  <header class="post-head">
+    <div class="meta">
+      <span class="tag"><span data-l="vi">AI trong CSKH</span><span data-l="en">AI in customer care</span></span>
+      <span><span data-l="vi">7 phút đọc</span><span data-l="en">7 min read</span></span>
+    </div>
+    <h1>Chấm điểm chất lượng cuộc gọi bằng AI: cần chuẩn bị dữ liệu gì?</h1>
+  </header>
+
+  <p class="lang-note" data-l="en">This article is currently available in Vietnamese only.</p>
+
+  <article class="prose" lang="vi">
+<p>1% đến 5% là tỷ lệ cuộc gọi mà đội QA thủ công thường nghe lại, theo <a href="https://www.gladia.io/blog/call-center-quality-monitoring-how-it-works-and-where-speech-to-text-fits" target="_blank" rel="noopener">bài của Gladia</a> (tháng 7/2026) dẫn nguồn Leaptree; <a href="https://cresta.com/guides/automated-quality-monitoring" target="_blank" rel="noopener">Cresta</a> và <a href="https://enthu.ai/blog/how-to-automate-call-quality-monitoring/" target="_blank" rel="noopener">Enthu.AI</a> đưa ra khoảng 2–5%. Đây đều là nhà cung cấp phần mềm, nên con số nên đọc như một ước lượng ngành, không phải số đo độc lập. Phần còn lại, tức 95% trở lên, không ai nghe.</p>
+<p>Phân tích hội thoại hứa hẹn chấm điểm toàn bộ cuộc gọi. Nhưng chấm điểm chất lượng cuộc gọi chỉ đáng tin khi dữ liệu đầu vào đủ tốt, và phần lớn rủi ro nằm ở đó chứ không ở mô hình. Bài này đi qua năm nhóm dữ liệu cần chuẩn bị, từ bản ghi âm đến quyền xử lý dữ liệu, để bạn biết cần hỏi gì trước khi chạy thử.</p>
+<h2>Bản ghi âm: định dạng, kênh và tách người nói</h2>
+<p>Mọi điểm số đều bắt đầu từ file ghi âm. Theo Gladia, âm thanh điện thoại chuẩn là 8kHz băng hẹp (G.711, dải 0–4kHz), trong khi nhiều mô hình được huấn luyện trên âm thanh 16kHz trở lên, nên tỷ lệ lỗi từ tăng khi chạy trên tổng đài. Bài này cũng nêu một ví dụ: âm thanh 8kHz làm méo câu thông báo bắt buộc và dẫn đến cảnh báo tuân thủ sai. Đây là bài của nhà cung cấp, nhưng ví dụ cho thấy cách lỗi âm thanh biến thành lỗi điểm số.</p>
+<p>Gladia cũng nhấn mạnh phải tách được người nói (diarization), vì muốn biết ai đã nói câu thông báo bắt buộc thì phải phân biệt điện thoại viên với khách. Enthu.AI liệt kê dữ liệu tối thiểu gồm bản ghi, bản chuyển văn bản, nhãn người nói và mốc thời gian gắn với âm thanh.</p>
+<p>Câu hỏi cho IT: hệ thống đang ghi âm theo định dạng gì, một hay hai kênh, lưu ở đâu, và lấy ra bằng cách nào (SIP, SIPREC hoặc xuất file)? Những câu này nghe kỹ thuật nhưng quyết định trần chất lượng của mọi bước sau.</p>
+<h2>Bản chuyển văn bản tiếng Việt: đo trên chính dữ liệu của bạn</h2>
+<p>Gladia viết rằng mọi điểm số phía sau đều bị chặn trên bởi độ chính xác của bước chuyển giọng nói thành văn bản. Từ bị bỏ sót sẽ thành lỗi âm tính giả ("không thấy câu thông báo"). Vì vậy, cần đo tỷ lệ lỗi từ (WER) trên file ghi âm của mình thay vì tin vào benchmark chung.</p>
+<p>Với tiếng Việt, dữ liệu công khai còn mỏng ở mảng hội thoại. Bài báo <a href="https://arxiv.org/html/2603.01894" target="_blank" rel="noopener">VietSuperSpeech</a> (arXiv, tháng 3/2026) cho rằng các bộ dữ liệu tiếng Việt hiện có chủ yếu là giọng đọc, tin tức hoặc sách nói, chưa có bộ nào nhắm vào hội thoại thông thường. Bộ dữ liệu của họ lấy từ bốn kênh YouTube chứ không phải cuộc gọi tổng đài, và bài không đo WER trên file ghi âm tổng đài. Nói cách khác, chưa có con số công khai nào để bạn mượn.</p>
+<p>Các nhà cung cấp đưa ra nhiều ngưỡng khác nhau: Cresta nói nền tảng tốt nhất đạt 92% trở lên, Enthu.AI đặt mục tiêu 95%, Gladia nêu WER dưới 5% cho chấm điểm tuân thủ. Cả ba đều không dẫn nguồn độc lập. <a href="https://fpt.ai/solutions/call-center-quality-control/" target="_blank" rel="noopener">FPT.AI</a> tự công bố độ chính xác phiên âm khoảng 90% cho giải pháp kiểm soát chất lượng cuộc gọi, cũng chưa có kiểm chứng. Cách làm thực tế: chọn vài chục cuộc gọi đại diện, nhờ người gõ lại nguyên văn, rồi so với bản máy.</p>
+<h2>Tiêu chí chấm điểm chất lượng cuộc gọi: điều máy kiểm được và điều cần người</h2>
+<p>Tiêu chí chấm điểm cũng là dữ liệu. Gladia khuyên định nghĩa tiêu chí thành các tín hiệu nhị phân kiểm chứng được trên bản chuyển văn bản (ví dụ: đã đọc câu thông báo bắt buộc hay chưa), còn đánh giá chủ quan như mức đồng cảm nên để con người xem. Cresta cũng khuyên thay các thang đo mơ hồ như "chuyên nghiệp" bằng hành vi cụ thể như chào hỏi, lắng nghe, xác nhận bước tiếp theo. Enthu.AI gợi ý khoảng 8–12 tiêu chí gắn với KPI hiện có. <a href="https://nice.com/glossary/ai-driven-qa-in-customer-service" target="_blank" rel="noopener">NiCE</a> liệt kê các chỉ báo thường kiểm: lịch sự, giải quyết vấn đề, giải quyết ngay lần gọi đầu, tuân thủ quy trình và quy định; trang này cũng thừa nhận cần người giám sát với các tình huống phức tạp.</p>
+<p>Theo các tài liệu này, tiêu chí tuân thủ thường có trọng số cao ở lĩnh vực tài chính. Gladia nêu khoảng 15–40% cho tuân thủ và lưu ý con số thay đổi theo ngành, nên không nên coi là chuẩn.</p>
+<p><a href="https://mpt.com.vn/en/omiqa/" target="_blank" rel="noopener">MPT</a> giới thiệu giải pháp Omiqa của họ: nghe tự động các cuộc gọi đã ghi, chuyển cuộc gọi không đạt chuẩn cho quản lý xem và chấm. Họ tự công bố tiết kiệm trên 50% chi phí so với đánh giá thủ công và hơn 100 doanh nghiệp sử dụng; trang không liệt kê tiêu chí chấm điểm. Hai câu cần hỏi của bạn: những tiêu chí nào đã có sẵn trong phiếu chấm hiện tại, và tiêu chí nào chưa ai định nghĩa đủ rõ để máy làm?</p>
+<h2>Mẫu đối chiếu của QA: để biết điểm máy có đáng tin không</h2>
+<p>Không có mẫu so sánh thì không biết máy chấm đúng hay sai. Cresta mô tả quy trình: lập điểm nền do người chấm, huấn luyện trên mẫu đã được xác nhận, so điểm máy với điểm người, rồi chỉnh ngưỡng; cuộc gọi có độ tin cậy thấp được chuyển cho người xem. Enthu.AI đề xuất hiệu chỉnh định kỳ (hằng quý) và theo dõi mức đồng thuận giữa máy và người, cùng số lần nhân viên khiếu nại điểm. Gladia lấy ví dụ ngưỡng lệch trên 20 điểm để đưa cuộc gọi vào xem lại hằng tháng; đây là ví dụ minh họa của họ, không phải chuẩn.</p>
+<p>Theo <a href="https://www.dmgconsult.com/wp-content/uploads/2024/07/DMG-2024-CA-Report-example-RFP-questions.pdf" target="_blank" rel="noopener">DMG Consulting</a> (5/2024), nhiều nhà cung cấp hiển thị phiếu chấm cạnh bản chuyển văn bản, cho phép người xem sửa điểm và thêm nhận xét. Điều này kéo theo một việc nội bộ ít người nhắc: phiếu chấm hiện tại có nhất quán giữa các QA hay không. Nếu hai người chấm cùng một cuộc gọi cho ra hai điểm khác nhau, mô hình học từ họ cũng sẽ nhận tín hiệu lẫn lộn.</p>
+<h2>Quyền xử lý dữ liệu: đồng ý, lưu trữ và nơi xử lý</h2>
+<p>Đây là nhóm dữ liệu dễ bị để sau. Theo <a href="https://thitruongtaichinhtiente.vn/nhung-diem-chinh-can-luu-y-tai-luat-bao-ve-du-lieu-ca-nhan-chinh-thuc-co-hieu-luc-tu-ngay-1-1-2026-75881.html" target="_blank" rel="noopener">Thị trường Tài chính Tiền tệ</a> (3/1/2026), Luật Bảo vệ dữ liệu cá nhân (Luật số 91/2025/QH15) có hiệu lực từ 1/1/2026; bài nêu quyền được biết, đồng ý hoặc rút lại đồng ý của chủ thể dữ liệu, mức phạt tối đa 3 tỷ đồng cho nhiều vi phạm và đến 5% doanh thu năm trước liền kề với chuyển dữ liệu xuyên biên giới của tổ chức. Bài không nêu thời hạn lưu trữ hay điều kiện cụ thể khi ghi âm cuộc gọi, nên cần đối chiếu văn bản luật.</p>
+<p>Bản tin của <a href="https://www.ey.com/content/dam/ey-unified-site/ey-com/vi-vn/technical/tax/documents/ey-vietnam-legal-alert-march-2026-decree-no356-2025-nd-cp-providing-detailed-guidance-for-implementation-of-personal-data-protection-law-viet.pdf" target="_blank" rel="noopener">EY Việt Nam</a> (3/2026) về Nghị định 356/2025/NĐ-CP, có hiệu lực từ 1/1/2026, nêu rằng sự đồng ý phải rõ ràng và kiểm chứng được, có ghi lại thời điểm và phạm vi, và chấp nhận cả cuộc gọi được ghi âm; hồ sơ đánh giá tác động xử lý dữ liệu và chuyển dữ liệu ra nước ngoài cần được cơ quan có thẩm quyền xem xét; dữ liệu nhạy cảm gồm cả thông tin tài khoản, thẻ và lịch sử giao dịch. Bản tin không nói về AI hay thời hạn lưu trữ bản ghi, và không định nghĩa giọng nói; việc áp dụng cho phân tích hội thoại là suy luận cần pháp chế xác nhận. <a href="https://sbv.gov.vn/en/w/tri%E1%BB%83n-khai-thi-h%C3%A0nh-lu%E1%BA%ADt-b%E1%BA%A3o-v%E1%BB%87-d%E1%BB%AF-li%E1%BB%87u-c%C3%A1-nh%C3%A2n-1" target="_blank" rel="noopener">Trang hướng dẫn của NHNN</a> nhắc lại Điều 27 Luật 91/2025 với lĩnh vực tài chính, ngân hàng.</p>
+<p>Về phía nhà cung cấp, Gladia lưu ý việc che dữ liệu nhạy cảm phải được cấu hình chủ động trước khi dữ liệu thẻ đi vào, và gói Starter của họ có thể dùng dữ liệu để huấn luyện mô hình theo mặc định. Hai câu nên đưa vào bảng câu hỏi gửi nhà cung cấp.</p>
+<h2>Kết luận</h2>
+<p>Chấm điểm chất lượng cuộc gọi tự động không bắt đầu bằng chọn công cụ mà bằng năm nhóm dữ liệu: bản ghi, bản chuyển văn bản, tiêu chí, mẫu đối chiếu của QA và quyền xử lý. Nhóm nào chưa rõ thì nhóm đó là rủi ro lớn nhất.</p>
+<p>Việc làm được ngay: lấy khoảng 50 cuộc gọi đã được QA chấm tay, nhờ hai người chấm độc lập nếu có thể, rồi ghi lại mức lệch giữa họ. Đó là mẫu đối chiếu đầu tiên và cũng là bài kiểm tra xem phiếu chấm hiện tại đã đủ rõ để giao cho máy chưa.</p>  </article>
+
+  <section class="sources" aria-label="Nguồn / Sources">
+    <h2><span data-l="vi">Nguồn tham khảo</span><span data-l="en">Sources</span></h2>
+    <p>Các nguồn được dẫn trong bài.</p>
+    <ol>
+      <li><a href="https://www.gladia.io/blog/call-center-quality-monitoring-how-it-works-and-where-speech-to-text-fits" target="_blank" rel="noopener">bài của Gladia – gladia.io</a></li>
+      <li><a href="https://cresta.com/guides/automated-quality-monitoring" target="_blank" rel="noopener">Cresta – cresta.com</a></li>
+      <li><a href="https://enthu.ai/blog/how-to-automate-call-quality-monitoring/" target="_blank" rel="noopener">Enthu.AI – enthu.ai</a></li>
+      <li><a href="https://arxiv.org/html/2603.01894" target="_blank" rel="noopener">VietSuperSpeech – arxiv.org</a></li>
+      <li><a href="https://fpt.ai/solutions/call-center-quality-control/" target="_blank" rel="noopener">FPT.AI – fpt.ai</a></li>
+      <li><a href="https://nice.com/glossary/ai-driven-qa-in-customer-service" target="_blank" rel="noopener">NiCE – nice.com</a></li>
+      <li><a href="https://mpt.com.vn/en/omiqa/" target="_blank" rel="noopener">MPT – mpt.com.vn</a></li>
+      <li><a href="https://www.dmgconsult.com/wp-content/uploads/2024/07/DMG-2024-CA-Report-example-RFP-questions.pdf" target="_blank" rel="noopener">DMG Consulting – dmgconsult.com</a></li>
+      <li><a href="https://thitruongtaichinhtiente.vn/nhung-diem-chinh-can-luu-y-tai-luat-bao-ve-du-lieu-ca-nhan-chinh-thuc-co-hieu-luc-tu-ngay-1-1-2026-75881.html" target="_blank" rel="noopener">Thị trường Tài chính Tiền tệ – thitruongtaichinhtiente.vn</a></li>
+      <li><a href="https://www.ey.com/content/dam/ey-unified-site/ey-com/vi-vn/technical/tax/documents/ey-vietnam-legal-alert-march-2026-decree-no356-2025-nd-cp-providing-detailed-guidance-for-implementation-of-personal-data-protection-law-viet.pdf" target="_blank" rel="noopener">EY Việt Nam – ey.com</a></li>
+      <li><a href="https://sbv.gov.vn/en/w/tri%E1%BB%83n-khai-thi-h%C3%A0nh-lu%E1%BA%ADt-b%E1%BA%A3o-v%E1%BB%87-d%E1%BB%AF-li%E1%BB%87u-c%C3%A1-nh%C3%A2n-1" target="_blank" rel="noopener">Trang hướng dẫn của NHNN – sbv.gov.vn</a></li>
+    </ol>
+  </section>
+
+  <section class="sources" aria-label="Bài viết liên quan / Related">
+    <h2><span data-l="vi">Bài viết liên quan</span><span data-l="en">Related</span></h2>
+    <ul>
+      <li><a href="/blog/chuyen-tu-ai-sang-nhan-vien-ho-tro-5-tinh-huong-khong-nen-cho/">Chuyển từ AI sang nhân viên hỗ trợ: 5 tình huống không nên chờ</a></li>
+      <li><a href="/blog/danh-gia-ai-contact-center-5-cau-hoi-ve-du-lieu-va-luu-vet/">Đánh giá AI cho Contact Center: 5 câu hỏi về dữ liệu và lưu vết</a></li>
+      <li><a href="/blog/tu-dong-hoa-quy-trinh-cskh-co-nen-lam-hay-chua/">Có nên tự động hóa quy trình CSKH của bạn hay chưa?</a></li>
+    </ul>
+  </section>
+
+  <aside class="author" aria-label="Tác giả / Author">
+    <div class="av" aria-hidden="true">TT</div>
+    <div>
+      <p class="name">Trương Mạnh Tùng</p>
+      <p class="sub"><span data-l="vi">Account Manager tại BaseBS, đồng hành cùng ngân hàng, tài chính, bảo hiểm trong xây dựng và vận hành Contact Center.</span><span data-l="en">Account Manager at BaseBS, helping banks, finance and insurance companies build and run their Contact Centers.</span></p>
+      <div class="acts">
+        <a class="btn primary" href="https://zalo.me/0915306688" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo</span><span data-l="en">Message on Zalo</span></a>
+        <a class="btn" href="mailto:tungtm@basebs.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/tungtm141" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+  <p class="disclaimer"><span data-l="vi">Bài viết thể hiện góc nhìn cá nhân của tác giả, không phải quan điểm chính thức của BaseBS hay khách hàng được nhắc tới.</span><span data-l="en">Views are the author's own and do not represent BaseBS or any client mentioned.</span></p>
+
+  <nav class="post-nav"><a href="/blog/"><span data-l="vi">← Tất cả bài viết</span><span data-l="en">← All posts</span></a></nav>
+</main>
+
+<footer><div class="wrap">© 2026 Trương Mạnh Tùng · <a href="/">truongmanhtung.com</a></div></footer>
+<script src="/assets/blog.js" defer></script>
+</body>
+</html>

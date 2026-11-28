@@ -238,6 +238,17 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
 .post-card .more{margin-top:12px;color:var(--signal);font-weight:600;font-size:.92rem}
 .all-posts{color:var(--signal);font-weight:600;text-decoration:none}
 @media (max-width:860px){.post-list{grid-template-columns:1fr}}
+.topic-grid{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.topic-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px 24px;transition:border-color .2s}
+.topic-card:hover{border-color:var(--signal)}
+.topic-card h3{margin:0 0 6px;font-size:1.15rem;line-height:1.3;letter-spacing:-.01em}
+.topic-desc{margin:0 0 12px;color:var(--muted);font-size:.95rem}
+.topic-links{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:8px;flex:1}
+.topic-links a{color:var(--ink);text-decoration:none;font-size:.95rem;line-height:1.4;display:block;padding-left:14px;position:relative}
+.topic-links a::before{content:"";position:absolute;left:0;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--signal)}
+.topic-links a:hover{color:var(--signal)}
+.topic-card .more{color:var(--signal);font-weight:600;font-size:.92rem;text-decoration:none}
+@media (max-width:860px){.topic-grid{grid-template-columns:1fr}}
 
 @media print{
   header.top,.btns{display:none}
@@ -297,9 +308,9 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
 
   <section id="bai-viet" data-if-posts hidden>
     <div class="wrap">
-      <h2><span data-l="vi">Bài viết mới</span><span data-l="en">Latest insights</span></h2>
-      <p class="intro"><span data-l="vi">Góc nhìn về Contact Center, CRM và AI trong ngân hàng, tài chính, bảo hiểm.</span><span data-l="en">Perspectives on Contact Center, CRM and AI in banking, finance and insurance.</span></p>
-      <ul class="post-list" data-post-list data-max="3" data-heading="h3"></ul>
+      <h2><span data-l="vi">Kiến thức theo chủ đề</span><span data-l="en">Insights by topic</span></h2>
+      <p class="intro"><span data-l="vi">Góc nhìn về Contact Center, CRM và AI trong ngân hàng, tài chính, bảo hiểm, nhóm theo sáu chủ đề.</span><span data-l="en">Perspectives on Contact Center, CRM and AI in banking, finance and insurance, grouped into six topics.</span></p>
+      <ul class="topic-grid" data-topic-grid></ul>
       <a class="all-posts" href="/blog/"><span data-l="vi">Xem tất cả bài viết →</span><span data-l="en">See all posts →</span></a>
     </div>
   </section>

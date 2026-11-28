@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" data-title-vi="Kiểm thử tích hợp và UAT hệ thống CSKH: 6 luồng cần kiểm tra — Trương Mạnh Tùng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiểm thử tích hợp và UAT hệ thống CSKH: 6 luồng cần kiểm tra — Trương Mạnh Tùng</title>
+<meta name="description" content="Kiểm thử tích hợp và UAT hệ thống CSKH nên đi theo luồng nào? Sáu luồng nghiệp vụ, kịch bản mẫu và ví dụ từ ngân hàng Việt Nam.">
+<link rel="canonical" href="https://truongmanhtung.com/blog/kiem-thu-tich-hop-va-uat-he-thong-cskh-6-luong-can-kiem-tra/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://truongmanhtung.com/blog/kiem-thu-tich-hop-va-uat-he-thong-cskh-6-luong-can-kiem-tra/">
+<meta property="og:title" content="Kiểm thử tích hợp và UAT hệ thống CSKH: 6 luồng cần kiểm tra">
+<meta property="og:description" content="Kiểm thử tích hợp và UAT hệ thống CSKH nên đi theo luồng nào? Sáu luồng nghiệp vụ, kịch bản mẫu và ví dụ từ ngân hàng Việt Nam.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://truongmanhtung.com/blog/kiem-thu-tich-hop-va-uat-he-thong-cskh-6-luong-can-kiem-tra/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:author" content="https://www.linkedin.com/in/tungtm141">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+ "headline":"Kiểm thử tích hợp và UAT hệ thống CSKH: 6 luồng cần kiểm tra","description":"Kiểm thử tích hợp và UAT hệ thống CSKH nên đi theo luồng nào? Sáu luồng nghiệp vụ, kịch bản mẫu và ví dụ từ ngân hàng Việt Nam.","inLanguage":"vi",
+ "image":"https://truongmanhtung.com/blog/kiem-thu-tich-hop-va-uat-he-thong-cskh-6-luong-can-kiem-tra/og.jpg",
+ "mainEntityOfPage":"https://truongmanhtung.com/blog/kiem-thu-tich-hop-va-uat-he-thong-cskh-6-luong-can-kiem-tra/",
+ "author":{"@type":"Person","name":"Trương Mạnh Tùng","url":"https://truongmanhtung.com/"}}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="navlink hide-sm" href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap narrow">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/"><span data-l="vi">Trang chủ</span><span data-l="en">Home</span></a> / <a href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a> / <a href="/blog/#tich-hop-lua-chon-giai-phap"><span data-l="vi">Tích hợp &amp; lựa chọn giải pháp</span><span data-l="en">Integration &amp; selection</span></a></nav>
+
+  <header class="post-head">
+    <div class="meta">
+      <span class="tag"><span data-l="vi">Tích hợp &amp; lựa chọn giải pháp</span><span data-l="en">Integration &amp; selection</span></span>
+      <span><span data-l="vi">6 phút đọc</span><span data-l="en">6 min read</span></span>
+    </div>
+    <h1>Kiểm thử tích hợp và UAT hệ thống CSKH: 6 luồng cần kiểm tra</h1>
+  </header>
+
+  <p class="lang-note" data-l="en">This article is currently available in Vietnamese only.</p>
+
+  <article class="prose" lang="vi">
+<p>Hơn một nửa sự cố ở môi trường production xuất phát từ tích hợp, theo số liệu của Cyara (2024) mà <a href="https://justcall.io/blog/call-center-automated-testing.html" target="_blank" rel="noopener">JustCall</a> dẫn lại trong bài đăng 11/05/2026. Đây là số thứ cấp từ nhà cung cấp công cụ kiểm thử, chưa đối chiếu được nguồn gốc, nhưng hướng của nó khớp với kinh nghiệm quen thuộc: hệ thống CSKH ít khi hỏng ở từng chức năng riêng lẻ, mà hỏng ở chỗ nối giữa tổng đài, CRM, ghi âm và báo cáo. Bài này đề xuất cách tổ chức kiểm thử tích hợp và UAT theo sáu luồng nghiệp vụ, kèm kịch bản mẫu từ các tài liệu công khai và ví dụ tại Việt Nam.</p>
+<h2>Kiểm thử tích hợp và UAT khác nhau thế nào, và chia luồng ra sao?</h2>
+<p>Hai loại kiểm thử trả lời hai câu hỏi khác nhau. Theo danh sách go-live của <a href="https://learn.microsoft.com/dynamics365/guidance/implementation-guide/prepare-go-live-checklist" target="_blank" rel="noopener">Microsoft</a> (cập nhật 02/2024), kiểm thử tích hợp hệ thống (SIT) chạy trước UAT và cần mô phỏng cả trường hợp hệ thống bên ngoài bị lỗi; UAT do nghiệp vụ thực hiện, với dữ liệu đã chuyển đổi và trong môi trường gần production nhất. <a href="https://vantagepoint.io/docs/delivery-uat-checklist" target="_blank" rel="noopener">Vantage Point</a> (review 09/10/2026) thêm rằng tester nên là người làm việc hằng ngày với hệ thống, dùng tài khoản có quyền thật, không dùng admin.</p>
+<p>Để mỗi luồng có người chịu trách nhiệm, có thể chia thành sáu luồng:</p>
+<ol>
+<li><strong>Gọi vào và nhận diện khách:</strong> nhận cuộc gọi, hiển thị thông tin, ghép với hồ sơ.</li>
+<li><strong>Xử lý, chuyển và kết thúc:</strong> giữ máy, chuyển, hội nghị, ghi nhận kết quả.</li>
+<li><strong>Gọi ra theo chiến dịch:</strong> nạp danh sách, quay số, trạng thái agent.</li>
+<li><strong>IVR và định tuyến:</strong> menu, hàng đợi, chuyển sang agent.</li>
+<li><strong>Lỗi và chuyển đổi dự phòng:</strong> mất mạng, dừng thành phần, failover.</li>
+<li><strong>Ghi âm, báo cáo và phân quyền:</strong> dữ liệu có đủ, đúng và đúng người xem.</li>
+</ol>
+<p>Chia theo luồng thay vì theo hệ thống giúp bắt được lỗi ở các mối nối, vì mỗi kịch bản đi qua nhiều hệ thống từ đầu đến cuối.</p>
+<h2>Luồng gọi vào, chuyển và kết thúc: bộ kịch bản mẫu</h2>
+<p><a href="https://docs.expertflow.com/siebel/3.4.2.5/user-acceptance-tests-uats" target="_blank" rel="noopener">ExpertFlow</a> công bố bộ UAT cho một bộ kết nối Siebel và tổng đài Cisco Finesse, đánh số đến 74 kịch bản, chia thành 7 nhóm và kèm mẫu biên bản nghiệm thu. Nhóm cuộc gọi bình thường gồm các kịch bản 1 đến 24: screen pop theo số di động hoặc số cơ quan, giữ và tiếp tục, consult, blind transfer, hội nghị, wrap-up kèm reason code, và tạo activity cho contact đã biết, cuộc gọi lạ hoặc nhiều contact trùng số. Trang không ghi năm; đây là tài liệu của nhà cung cấp cho một sản phẩm cụ thể, nên chỉ dùng làm khung tham khảo.</p>
+<p>Phần ghép bản ghi là chỗ dễ sai nhất. Checklist CTI–CRM của <a href="https://revenue.io/blog/salesforce-cti-integration-checklist" target="_blank" rel="noopener">Revenue.io</a> (30/09/2026, cho Salesforce) liệt kê năm tình huống: số có mã quốc gia, số dùng chung của doanh nghiệp, lead trùng, không khớp, và contact có nhiều cơ hội đang mở. Bài cũng yêu cầu kiểm tra quyền của cả nhân viên lẫn giám sát viên, gồm cả giới hạn truy cập, và đặt cổng phát hành: chặn triển khai nếu ghép sai bản ghi hoặc lỗi ghi không phục hồi được. Bài không đưa ngưỡng đạt cụ thể, dự án phải tự đặt.</p>
+<h2>Luồng gọi ra, IVR và ghi nhận kết quả</h2>
+<p>Với chiến dịch gọi ra, ExpertFlow có sáu kịch bản (25 đến 30): nhận cuộc gọi predictive, screen pop khi gọi ra, đổi trạng thái Ready hoặc Not Ready có hoặc không có lý do, và đăng xuất có lý do. Cần thêm kịch bản mà tài liệu này chưa nêu nhưng thực tế hay gặp: nạp danh sách có số trùng, số sai định dạng, và kiểm tra kết quả cuộc gọi quay về đúng trường trong CRM.</p>
+<p>IVR cần được xem như một luồng riêng. Blog của <a href="https://cyara.com/blog/ivr-testing-best-practices/" target="_blank" rel="noopener">Cyara</a> (12/06/2025) khuyên kiểm thử hồi quy sau mỗi thay đổi, kiểm thử tải khi lưu lượng tăng đột biến, và mô phỏng hành trình thực của khách để phát hiện lỗi định tuyến, menu hay lời nhắc. JustCall dẫn số liệu Cyara (2024) rằng lỗi định tuyến chiếm 8 đến 14% cuộc gọi khi không kiểm thử, và dưới 2% khi kiểm thử hằng đêm. Cả hai trang đều của nhà cung cấp công cụ kiểm thử; con số nên đọc là lý do để kiểm thử thường xuyên, không phải kỳ vọng cho hệ thống của mình.</p>
+<h2>Luồng lỗi và chuyển đổi dự phòng: kiểm tra ở từng trạng thái cuộc gọi</h2>
+<p>Đây là luồng thường bị bỏ qua vì khó tạo lỗi có kiểm soát. ExpertFlow dành 34 trong 74 kịch bản cho nhóm này, theo cách đánh số: 11 kịch bản mất mạng, 8 kịch bản thành phần ngừng rồi khởi động lại, và 15 kịch bản failover theo trạng thái cuộc gọi (đổ chuông, đang nói, giữ máy, consult, hội nghị, wrap-up). Điểm đáng học là cách chia theo trạng thái, vì cùng một sự cố ở trạng thái khác nhau cho kết quả khác nhau.</p>
+<p>Lý do cần thử là lỗi thường nằm ở điểm giao giữa nhiều nhà cung cấp. Một bài trên <a href="https://www.cxtoday.com/contact-centre/how-to-pinpoint-cx-journey-failures-and-fix-them-fast/" target="_blank" rel="noopener">CX Today</a> (18/11/2022, bài tài trợ bởi Hammer) cho rằng kiểm thử của từng nhà cung cấp thường không đủ tin cậy vì lỗi xảy ra ở chỗ giao, và dẫn nghiên cứu của chính nhà tài trợ về mức tăng 66% tần suất sự cố trong một năm. Số này có lợi ích thương mại nên chỉ mang tính định hướng. Revenue.io đề xuất mỗi lỗi có kiểm soát (ghi thất bại, mất kết nối, CRM không phản hồi) cần trả lời năm câu hỏi về điều gì xảy ra với cuộc gọi, bản ghi và người dùng; còn Microsoft đòi SIT mô phỏng hệ thống ngoài lỗi.</p>
+<h2>Ví dụ Việt Nam: ưu tiên luồng theo cơ cấu cuộc gọi</h2>
+<p>Ba tư liệu công khai về ngân hàng Việt Nam giúp quyết định luồng nào cần nhiều kịch bản hơn.</p>
+<ul>
+<li><strong>Cơ cấu cuộc gọi:</strong> theo <a href="https://tapchicongthuong.vn/quan-tri-quan-he-khach-hang-cua-trung-tam-ho-tro-khach-hang--ngan-hang-thuong-mai-co-phan-ngoai-thuong-viet-nam-75742.htm" target="_blank" rel="noopener">Tạp chí Công Thương (22/10/2020)</a>, năm 2019 Trung tâm Hỗ trợ khách hàng của Vietcombank có hơn 2 triệu lượt liên hệ; tổng đài 24/7 chiếm 99,8 đến 99,9%, tư vấn khoảng 70%, tra soát và khiếu nại khoảng 7%, ngân hàng điện tử là nhóm sản phẩm được hỏi nhiều nhất (45%). Số liệu đã cũ, nhưng nếu cơ cấu còn gần như vậy thì luồng tư vấn và nhận diện khách đáng được nhiều kịch bản nhất, còn luồng khiếu nại cần kịch bản ít nhưng yêu cầu chặt về lưu vết.</li>
+<li><strong>Phạm vi hệ thống:</strong> theo <a href="https://baodauthau.vn/lien-danh-2-thanh-vien-trung-goi-thau-509-ty-dong-nang-cap-he-thong-contact-center-cua-vietcombank-post211005.html" target="_blank" rel="noopener">Báo Đấu thầu (27/10/2026)</a>, gói nâng cấp và mở rộng Contact Center của Vietcombank (giá trúng 50,679 tỷ đồng) gồm tổng đài PBX, xử lý cuộc gọi SIP, báo cáo, ghi âm, IVR và hệ thống quản trị thông tin khách hàng. Mỗi thành phần này tương ứng một cụm kịch bản ở trên; bài báo không nêu tiêu chí kiểm thử.</li>
+<li><strong>Tích hợp dữ liệu:</strong> <a href="https://thitruongtaichinhtiente.vn/kien-tao-ngan-hang-huong-du-lieu-toi-uu-hoa-von-quan-he-qua-e-crm-tai-viet-nam-79180.html" target="_blank" rel="noopener">Tạp chí Thị trường Tài chính Tiền tệ (09/03/2026)</a> nêu thách thức tích hợp với core banking, đồng bộ dữ liệu từ nhiều nguồn và làm sạch, chuẩn hoá dữ liệu. Vì vậy UAT cần chạy trên dữ liệu đã chuyển đổi, gồm cả hồ sơ trùng và thiếu.</li>
+</ul>
+<p>Cách quy đổi từ cơ cấu cuộc gọi sang số kịch bản là gợi ý của tôi, không phải khuyến nghị của các nguồn trên.</p>
+<h2>Kết luận</h2>
+<p>Kiểm thử tích hợp và UAT hiệu quả khi đi theo luồng nghiệp vụ, mỗi luồng chạy từ lúc khách bấm số đến khi bản ghi CRM, ghi âm và báo cáo cùng có dữ liệu đúng.</p>
+<p>Việc làm được trong tuần này: lấy ba nhóm cuộc gọi chiếm nhiều nhất trong ba tháng gần nhất, viết mỗi nhóm thành một kịch bản đầu-cuối kèm một tình huống lỗi, rồi chạy thử trên môi trường UAT với dữ liệu đã chuyển đổi. Kịch bản nào chưa chạy được là điểm cần chốt với nhà cung cấp trước ngày bắt đầu UAT chính thức.</p>  </article>
+
+  <section class="sources" aria-label="Nguồn / Sources">
+    <h2><span data-l="vi">Nguồn tham khảo</span><span data-l="en">Sources</span></h2>
+    <p>Các nguồn được dẫn trong bài.</p>
+    <ol>
+      <li><a href="https://justcall.io/blog/call-center-automated-testing.html" target="_blank" rel="noopener">JustCall – justcall.io</a></li>
+      <li><a href="https://learn.microsoft.com/dynamics365/guidance/implementation-guide/prepare-go-live-checklist" target="_blank" rel="noopener">Microsoft – learn.microsoft.com</a></li>
+      <li><a href="https://vantagepoint.io/docs/delivery-uat-checklist" target="_blank" rel="noopener">Vantage Point – vantagepoint.io</a></li>
+      <li><a href="https://docs.expertflow.com/siebel/3.4.2.5/user-acceptance-tests-uats" target="_blank" rel="noopener">ExpertFlow – docs.expertflow.com</a></li>
+      <li><a href="https://revenue.io/blog/salesforce-cti-integration-checklist" target="_blank" rel="noopener">Revenue.io – revenue.io</a></li>
+      <li><a href="https://cyara.com/blog/ivr-testing-best-practices/" target="_blank" rel="noopener">Cyara – cyara.com</a></li>
+      <li><a href="https://www.cxtoday.com/contact-centre/how-to-pinpoint-cx-journey-failures-and-fix-them-fast/" target="_blank" rel="noopener">CX Today – cxtoday.com</a></li>
+      <li><a href="https://tapchicongthuong.vn/quan-tri-quan-he-khach-hang-cua-trung-tam-ho-tro-khach-hang--ngan-hang-thuong-mai-co-phan-ngoai-thuong-viet-nam-75742.htm" target="_blank" rel="noopener">Tạp chí Công Thương (22/10/2020) – tapchicongthuong.vn</a></li>
+      <li><a href="https://baodauthau.vn/lien-danh-2-thanh-vien-trung-goi-thau-509-ty-dong-nang-cap-he-thong-contact-center-cua-vietcombank-post211005.html" target="_blank" rel="noopener">Báo Đấu thầu (27/10/2026) – baodauthau.vn</a></li>
+      <li><a href="https://thitruongtaichinhtiente.vn/kien-tao-ngan-hang-huong-du-lieu-toi-uu-hoa-von-quan-he-qua-e-crm-tai-viet-nam-79180.html" target="_blank" rel="noopener">Tạp chí Thị trường Tài chính Tiền tệ (09/03/2026) – thitruongtaichinhtiente.vn</a></li>
+    </ol>
+  </section>
+
+  <section class="sources" aria-label="Bài viết liên quan / Related">
+    <h2><span data-l="vi">Bài viết liên quan</span><span data-l="en">Related</span></h2>
+    <ul>
+      <li><a href="/blog/rui-ro-tich-hop-contact-center-6-diem-can-lam-ro-truoc/">Rủi ro tích hợp Contact Center: 6 điểm cần làm rõ trước</a></li>
+      <li><a href="/blog/chuyen-doi-so-cskh-trong-bfsi-5-buoc-hop-nhat-cac-kenh/">Chuyển đổi số CSKH trong BFSI: 5 bước hợp nhất các kênh</a></li>
+      <li><a href="/blog/checklist-danh-gia-giai-phap-contact-center-ngan-hang/">Checklist đánh giá giải pháp contact center cho ngân hàng</a></li>
+    </ul>
+  </section>
+
+  <aside class="author" aria-label="Tác giả / Author">
+    <div class="av" aria-hidden="true">TT</div>
+    <div>
+      <p class="name">Trương Mạnh Tùng</p>
+      <p class="sub"><span data-l="vi">Account Manager tại BaseBS, đồng hành cùng ngân hàng, tài chính, bảo hiểm trong xây dựng và vận hành Contact Center.</span><span data-l="en">Account Manager at BaseBS, helping banks, finance and insurance companies build and run their Contact Centers.</span></p>
+      <div class="acts">
+        <a class="btn primary" href="https://zalo.me/0915306688" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo</span><span data-l="en">Message on Zalo</span></a>
+        <a class="btn" href="mailto:tungtm@basebs.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/tungtm141" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+  <p class="disclaimer"><span data-l="vi">Bài viết thể hiện góc nhìn cá nhân của tác giả, không phải quan điểm chính thức của BaseBS hay khách hàng được nhắc tới.</span><span data-l="en">Views are the author's own and do not represent BaseBS or any client mentioned.</span></p>
+
+  <nav class="post-nav"><a href="/blog/"><span data-l="vi">← Tất cả bài viết</span><span data-l="en">← All posts</span></a></nav>
+</main>
+
+<footer><div class="wrap">© 2026 Trương Mạnh Tùng · <a href="/">truongmanhtung.com</a></div></footer>
+<script src="/assets/blog.js" defer></script>
+</body>
+</html>

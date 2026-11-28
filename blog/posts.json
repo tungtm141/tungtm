@@ -1,177 +1,6 @@
 [
   {
-    "slug": "ke-hoach-rollback-vi-sao-can-co-truoc-khi-thay-doi-he-thong",
-    "date": "2026-11-27",
-    "minutes": 7,
-    "title": {
-      "vi": "Kế hoạch rollback: vì sao cần có trước khi thay đổi hệ thống?"
-    },
-    "summary": {
-      "vi": "Kế hoạch rollback cần điều kiện kích hoạt, người quyết định, điểm quay về và bản sao lưu đã thử khôi phục. Khung, bài học và việc cần làm trước go-live."
-    },
-    "tags": [
-      {
-        "vi": "Contact Center",
-        "en": "Contact Center"
-      }
-    ]
-  },
-  {
-    "slug": "on-premise-cloud-hybrid-contact-center-bfsi-chon-sao",
-    "date": "2026-11-24",
-    "minutes": 7,
-    "title": {
-      "vi": "On-premise, cloud hay hybrid: Contact Center BFSI chọn sao?"
-    },
-    "summary": {
-      "vi": "On-premise, cloud hay hybrid cho contact center BFSI: ba mô hình, yếu tố dữ liệu, quy định, chi phí và phương án quay lui cần đánh giá trước khi chọn."
-    },
-    "tags": [
-      {
-        "vi": "Contact Center",
-        "en": "Contact Center"
-      }
-    ]
-  },
-  {
-    "slug": "nang-cap-tong-dai-5-phu-thuoc-ky-thuat-de-bi-bo-sot",
-    "date": "2026-11-20",
-    "minutes": 6,
-    "title": {
-      "vi": "Nâng cấp hệ thống tổng đài: 5 phụ thuộc kỹ thuật dễ bị bỏ sót"
-    },
-    "summary": {
-      "vi": "Nâng cấp hệ thống tổng đài: 5 nhóm phụ thuộc kỹ thuật hay bị bỏ sót, từ phiên bản, ảo hóa, TLS đến đối tác ngoài, kèm ví dụ ngân hàng Việt Nam."
-    },
-    "tags": [
-      {
-        "vi": "Contact Center",
-        "en": "Contact Center"
-      }
-    ]
-  },
-  {
-    "slug": "ke-hoach-nang-cap-contact-center-5-hang-muc-can-kiem-tra",
-    "date": "2026-11-17",
-    "minutes": 6,
-    "title": {
-      "vi": "Kế hoạch nâng cấp contact center: 5 hạng mục cần kiểm tra trước"
-    },
-    "summary": {
-      "vi": "Trước khi lập kế hoạch nâng cấp contact center, hãy kiểm tra 5 hạng mục: phiên bản đích, kiểm kê, hạ tầng, cửa sổ thay đổi, quay lui."
-    },
-    "tags": [
-      {
-        "vi": "Contact Center",
-        "en": "Contact Center"
-      }
-    ]
-  },
-  {
-    "slug": "eos-eol-khac-nhau-doc-moc-het-ho-tro",
-    "date": "2026-11-13",
-    "minutes": 6,
-    "title": {
-      "vi": "EOS và EOL: khác nhau ở điểm nào và đọc mốc hết hỗ trợ ra sao"
-    },
-    "summary": {
-      "vi": "EOS và EOL khác nhau thế nào? Cách đọc mốc hết hỗ trợ của Cisco, Microsoft, Red Hat, kèm 2 ví dụ Việt Nam và bảng mốc cho hệ thống."
-    },
-    "tags": [
-      {
-        "vi": "Contact Center",
-        "en": "Contact Center"
-      }
-    ]
-  },
-  {
-    "slug": "checklist-danh-gia-giai-phap-contact-center-ngan-hang",
-    "date": "2026-11-10",
-    "minutes": 7,
-    "title": {
-      "vi": "Checklist đánh giá giải pháp contact center cho ngân hàng"
-    },
-    "summary": {
-      "vi": "Checklist đánh giá giải pháp contact center cho ngân hàng, tài chính: 5 nhóm tiêu chí, 2 ví dụ Việt Nam và bảng chấm điểm dùng ngay."
-    },
-    "tags": [
-      {
-        "vi": "Contact Center",
-        "en": "Contact Center"
-      }
-    ]
-  },
-  {
-    "slug": "omnichannel-multichannel-khac-nhau-du-lieu-quy-trinh",
-    "date": "2026-11-06",
-    "minutes": 7,
-    "title": {
-      "vi": "Omnichannel và multichannel: khác nhau ở dữ liệu và quy trình"
-    },
-    "summary": {
-      "vi": "Omnichannel và multichannel khác nhau ở dữ liệu, quy trình, trải nghiệm. Xem 2 ví dụ ngân hàng Việt Nam và 5 câu hỏi tự kiểm tra."
-    },
-    "tags": [
-      {
-        "vi": "CRM",
-        "en": "CRM"
-      }
-    ]
-  },
-  {
-    "slug": "voicebot-chatbot-nen-bat-dau-tu-bai-toan-nao",
-    "date": "2026-11-03",
-    "minutes": 7,
-    "title": {
-      "vi": "Voicebot và chatbot: nên bắt đầu từ bài toán nào?"
-    },
-    "summary": {
-      "vi": "Chọn bài toán đầu tiên cho voicebot, chatbot trong tổng đài ngân hàng, tài chính: theo dữ liệu lý do liên hệ, mức rủi ro và độ khó tích hợp."
-    },
-    "tags": [
-      {
-        "vi": "AI",
-        "en": "AI"
-      }
-    ]
-  },
-  {
-    "slug": "wfm-contact-center-du-bao-luu-luong-lap-lich",
-    "date": "2026-10-30",
-    "minutes": 8,
-    "title": {
-      "vi": "WFM trong contact center: từ dự báo lưu lượng đến lập lịch"
-    },
-    "summary": {
-      "vi": "WFM trong contact center: cách dự báo lưu lượng, tính nhân sự bằng Erlang C, lập lịch ca và điều chỉnh trong ngày, kèm ví dụ ngân hàng Việt Nam."
-    },
-    "tags": [
-      {
-        "vi": "WFM",
-        "en": "WFM"
-      }
-    ]
-  },
-  {
-    "slug": "tich-hop-crm-contact-center-du-lieu-hien-thi",
-    "date": "2026-10-27",
-    "minutes": 7,
-    "title": {
-      "vi": "Tích hợp CRM với Contact Center: dữ liệu nào nên hiển thị?"
-    },
-    "summary": {
-      "vi": "Tích hợp CRM với Contact Center: chọn 5 nhóm dữ liệu hiển thị khi nhận cuộc gọi, theo luồng nghiệp vụ và yêu cầu bảo mật BFSI."
-    },
-    "tags": [
-      {
-        "vi": "CRM",
-        "en": "CRM"
-      }
-    ]
-  },
-  {
     "slug": "ra-soat-vong-doi-ho-tro-cisco-contact-center",
-    "date": "2026-10-26",
     "minutes": 8,
     "title": {
       "vi": "Khi nào nên rà soát vòng đời hỗ trợ Cisco Contact Center?"
@@ -179,11 +8,437 @@
     "summary": {
       "vi": "Các mốc EoS, LDoS của UCCE/PCCE 12.5/12.6 và bốn thời điểm nên chủ động rà soát phiên bản, để kế hoạch nâng cấp không dồn vào phút cuối."
     },
-    "tags": [
-      {
-        "vi": "Contact Center",
-        "en": "Contact Center"
-      }
-    ]
+    "n": 1,
+    "topic": "A",
+    "lastmod": "2026-10-26"
+  },
+  {
+    "slug": "eos-eol-khac-nhau-doc-moc-het-ho-tro",
+    "minutes": 6,
+    "title": {
+      "vi": "EOS và EOL: khác nhau ở điểm nào và đọc mốc hết hỗ trợ ra sao"
+    },
+    "summary": {
+      "vi": "EOS và EOL khác nhau thế nào? Cách đọc mốc hết hỗ trợ của Cisco, Microsoft, Red Hat, kèm 2 ví dụ Việt Nam và bảng mốc cho hệ thống."
+    },
+    "n": 2,
+    "topic": "A",
+    "lastmod": "2026-11-13"
+  },
+  {
+    "slug": "ke-hoach-nang-cap-contact-center-5-hang-muc-can-kiem-tra",
+    "minutes": 6,
+    "title": {
+      "vi": "Kế hoạch nâng cấp contact center: 5 hạng mục cần kiểm tra trước"
+    },
+    "summary": {
+      "vi": "Trước khi lập kế hoạch nâng cấp contact center, hãy kiểm tra 5 hạng mục: phiên bản đích, kiểm kê, hạ tầng, cửa sổ thay đổi, quay lui."
+    },
+    "n": 3,
+    "topic": "A",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "slug": "nang-cap-tong-dai-5-phu-thuoc-ky-thuat-de-bi-bo-sot",
+    "minutes": 6,
+    "title": {
+      "vi": "Nâng cấp hệ thống tổng đài: 5 phụ thuộc kỹ thuật dễ bị bỏ sót"
+    },
+    "summary": {
+      "vi": "Nâng cấp hệ thống tổng đài: 5 nhóm phụ thuộc kỹ thuật hay bị bỏ sót, từ phiên bản, ảo hóa, TLS đến đối tác ngoài, kèm ví dụ ngân hàng Việt Nam."
+    },
+    "n": 4,
+    "topic": "A",
+    "lastmod": "2026-11-20"
+  },
+  {
+    "slug": "on-premise-cloud-hybrid-contact-center-bfsi-chon-sao",
+    "minutes": 7,
+    "title": {
+      "vi": "On-premise, cloud hay hybrid: Contact Center BFSI chọn sao?"
+    },
+    "summary": {
+      "vi": "On-premise, cloud hay hybrid cho contact center BFSI: ba mô hình, yếu tố dữ liệu, quy định, chi phí và phương án quay lui cần đánh giá trước khi chọn."
+    },
+    "n": 5,
+    "topic": "A",
+    "lastmod": "2026-11-24"
+  },
+  {
+    "slug": "ke-hoach-rollback-vi-sao-can-co-truoc-khi-thay-doi-he-thong",
+    "minutes": 7,
+    "title": {
+      "vi": "Kế hoạch rollback: vì sao cần có trước khi thay đổi hệ thống?"
+    },
+    "summary": {
+      "vi": "Kế hoạch rollback cần điều kiện kích hoạt, người quyết định, điểm quay về và bản sao lưu đã thử khôi phục. Khung, bài học và việc cần làm trước go-live."
+    },
+    "n": 6,
+    "topic": "A",
+    "lastmod": "2026-11-27"
+  },
+  {
+    "slug": "tich-hop-crm-contact-center-du-lieu-hien-thi",
+    "minutes": 7,
+    "title": {
+      "vi": "Tích hợp CRM với Contact Center: dữ liệu nào nên hiển thị?"
+    },
+    "summary": {
+      "vi": "Tích hợp CRM với Contact Center: chọn 5 nhóm dữ liệu hiển thị khi nhận cuộc gọi, theo luồng nghiệp vụ và yêu cầu bảo mật BFSI."
+    },
+    "n": 7,
+    "topic": "B",
+    "lastmod": "2026-10-27"
+  },
+  {
+    "slug": "omnichannel-multichannel-khac-nhau-du-lieu-quy-trinh",
+    "minutes": 7,
+    "title": {
+      "vi": "Omnichannel và multichannel: khác nhau ở dữ liệu và quy trình"
+    },
+    "summary": {
+      "vi": "Omnichannel và multichannel khác nhau ở dữ liệu, quy trình, trải nghiệm. Xem 2 ví dụ ngân hàng Việt Nam và 5 câu hỏi tự kiểm tra."
+    },
+    "n": 8,
+    "topic": "B",
+    "lastmod": "2026-11-06"
+  },
+  {
+    "slug": "lich-su-tuong-tac-khach-hang-3-cach-dung-trong-cham-soc",
+    "n": 9,
+    "topic": "B",
+    "minutes": 6,
+    "title": {
+      "vi": "Lịch sử tương tác khách hàng trong chăm sóc: 3 cách dùng hiệu quả"
+    },
+    "summary": {
+      "vi": "Lịch sử tương tác khách hàng dùng để nhận diện người gọi, xử lý ngay lần đầu và chuyển giao giữa kênh. Ví dụ trong nước, giới hạn dữ liệu và cách bắt đầu."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "ticket-sla-lich-su-cuoc-goi-theo-doi-yeu-cau-ho-tro",
+    "n": 10,
+    "topic": "B",
+    "minutes": 6,
+    "title": {
+      "vi": "Ticket, SLA và lịch sử cuộc gọi: theo dõi yêu cầu hỗ trợ thế nào?"
+    },
+    "summary": {
+      "vi": "Cách nối ticket, SLA và lịch sử cuộc gọi để theo dõi yêu cầu hỗ trợ: chỗ nối CTI, thiết kế đồng hồ SLA, ví dụ và quy định trong nước, sáu bước triển khai."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "dong-bo-ho-so-khach-hang-crm-core-5-van-de-hay-gap",
+    "n": 11,
+    "topic": "B",
+    "minutes": 6,
+    "title": {
+      "vi": "Đồng bộ hồ sơ khách hàng giữa CRM và core: 5 vấn đề hay gặp"
+    },
+    "summary": {
+      "vi": "Năm vấn đề hay gặp khi đồng bộ hồ sơ khách hàng giữa CRM và core: định danh, nguồn sự thật, mapping trường, thứ tự cập nhật và làm sạch dữ liệu."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "tich-hop-contact-center-5-luong-du-lieu-can-lam-ro",
+    "n": 12,
+    "topic": "B",
+    "minutes": 6,
+    "title": {
+      "vi": "Tích hợp Contact Center: 5 luồng dữ liệu cần làm rõ"
+    },
+    "summary": {
+      "vi": "Năm luồng dữ liệu cần làm rõ khi tích hợp Contact Center với hệ thống hiện hữu trong ngân hàng, tài chính: nhận diện, core, CRM, báo cáo và bảng mapping."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "voicebot-chatbot-nen-bat-dau-tu-bai-toan-nao",
+    "minutes": 7,
+    "title": {
+      "vi": "Voicebot và chatbot: nên bắt đầu từ bài toán nào?"
+    },
+    "summary": {
+      "vi": "Chọn bài toán đầu tiên cho voicebot, chatbot trong tổng đài ngân hàng, tài chính: theo dữ liệu lý do liên hệ, mức rủi ro và độ khó tích hợp."
+    },
+    "n": 13,
+    "topic": "C",
+    "lastmod": "2026-11-03"
+  },
+  {
+    "slug": "ai-agent-assist-ho-tro-dien-thoai-vien-o-4-buoc-nao",
+    "n": 14,
+    "topic": "C",
+    "minutes": 6,
+    "title": {
+      "vi": "AI Agent Assist: hỗ trợ điện thoại viên ở 4 bước nào?"
+    },
+    "summary": {
+      "vi": "AI Agent Assist hỗ trợ điện thoại viên ở bốn thời điểm: trước, trong và sau cuộc gọi. Điều kiện, giới hạn và việc nên làm trước khi chọn giải pháp."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "cham-diem-chat-luong-cuoc-goi-bang-ai-can-chuan-bi-du-lieu",
+    "n": 15,
+    "topic": "C",
+    "minutes": 7,
+    "title": {
+      "vi": "Chấm điểm chất lượng cuộc gọi bằng AI: cần chuẩn bị dữ liệu gì?"
+    },
+    "summary": {
+      "vi": "Chấm điểm chất lượng cuộc gọi bằng AI cần năm nhóm dữ liệu: bản ghi âm, văn bản tiếng Việt, tiêu chí, mẫu đối chiếu của QA và quyền xử lý dữ liệu."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "chuyen-tu-ai-sang-nhan-vien-ho-tro-5-tinh-huong-khong-nen-cho",
+    "n": 16,
+    "topic": "C",
+    "minutes": 6,
+    "title": {
+      "vi": "Chuyển từ AI sang nhân viên hỗ trợ: 5 tình huống không nên chờ"
+    },
+    "summary": {
+      "vi": "Năm nhóm tình huống nên chuyển từ AI sang nhân viên hỗ trợ ngay: yêu cầu gặp người, bot lặp lại, khiếu nại, cảm xúc và cách chuyển giao đủ ngữ cảnh."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "danh-gia-ai-contact-center-5-cau-hoi-ve-du-lieu-va-luu-vet",
+    "n": 17,
+    "topic": "C",
+    "minutes": 6,
+    "title": {
+      "vi": "Đánh giá AI cho Contact Center: 5 câu hỏi về dữ liệu và lưu vết"
+    },
+    "summary": {
+      "vi": "Năm nhóm câu hỏi về dữ liệu, quyền truy cập và lưu vết khi đánh giá AI cho Contact Center, để gửi nhà cung cấp và đội nội bộ trước khi thử nghiệm."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "tu-dong-hoa-quy-trinh-cskh-co-nen-lam-hay-chua",
+    "n": 18,
+    "topic": "C",
+    "minutes": 6,
+    "title": {
+      "vi": "Có nên tự động hóa quy trình CSKH của bạn hay chưa?"
+    },
+    "summary": {
+      "vi": "Năm câu hỏi giúp đánh giá tự động hóa quy trình CSKH có phù hợp không, kèm ví dụ từ ngân hàng Việt Nam. Lập bảng đánh giá ngay."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "wfm-contact-center-du-bao-luu-luong-lap-lich",
+    "minutes": 8,
+    "title": {
+      "vi": "WFM trong contact center: từ dự báo lưu lượng đến lập lịch"
+    },
+    "summary": {
+      "vi": "WFM trong contact center: cách dự báo lưu lượng, tính nhân sự bằng Erlang C, lập lịch ca và điều chỉnh trong ngày, kèm ví dụ ngân hàng Việt Nam."
+    },
+    "n": 19,
+    "topic": "D",
+    "lastmod": "2026-10-30"
+  },
+  {
+    "slug": "chi-so-tong-dai-service-level-asa-aht-fcr-tra-loi-cau-hoi-nao",
+    "n": 20,
+    "topic": "D",
+    "minutes": 6,
+    "title": {
+      "vi": "Chỉ số tổng đài: Service Level, ASA, AHT, FCR trả lời câu hỏi nào?"
+    },
+    "summary": {
+      "vi": "Giải thích Service Level, ASA, AHT, FCR: mỗi chỉ số tổng đài đo gì, tính thế nào và đọc ra sao. Lập trang thống nhất công thức ngay hôm nay."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "vi-sao-chi-theo-doi-aht-chua-du-danh-gia-chat-luong-cskh",
+    "n": 21,
+    "topic": "D",
+    "minutes": 5,
+    "title": {
+      "vi": "Vì sao chỉ theo dõi AHT chưa đủ để đánh giá chất lượng CSKH?"
+    },
+    "summary": {
+      "vi": "Vì sao chỉ theo dõi AHT chưa đủ để đánh giá chất lượng CSKH? Xem AHT đo gì, nên đặt cạnh chỉ số nào và thêm hai cột vào báo cáo tuần này."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "khung-cham-diem-chat-luong-cuoc-goi-yeu-to-can-thong-nhat",
+    "n": 22,
+    "topic": "D",
+    "minutes": 6,
+    "title": {
+      "vi": "Khung chấm điểm chất lượng cuộc gọi: những yếu tố cần thống nhất"
+    },
+    "summary": {
+      "vi": "Khung chấm điểm chất lượng cuộc gọi cần thống nhất những gì: tiêu chí, trọng số, lấy mẫu, hiệu chỉnh. Thử chấm 20 cuộc gọi để kiểm tra ngay."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "ket-hop-du-lieu-van-hanh-va-chat-luong-tim-nguyen-nhan-van-de-dich-vu",
+    "n": 23,
+    "topic": "D",
+    "minutes": 6,
+    "title": {
+      "vi": "Kết hợp dữ liệu vận hành và dữ liệu chất lượng để tìm nguyên nhân của vấn đề dịch vụ"
+    },
+    "summary": {
+      "vi": "Cách kết hợp dữ liệu vận hành và dữ liệu chất lượng để tìm nguyên nhân vấn đề dịch vụ: khoá nối, ghép chỉ số, truy ngược. Thử với 30 cuộc gọi."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "autodialer-la-gi-so-sanh-goi-thu-cong-va-cach-chon-che-do",
+    "n": 24,
+    "topic": "E",
+    "minutes": 6,
+    "title": {
+      "vi": "Autodialer là gì? So sánh với gọi thủ công và cách chọn chế độ"
+    },
+    "summary": {
+      "vi": "Autodialer là gì? Phân biệt preview, progressive, predictive, xem số liệu so với gọi thủ công và các lưu ý tuân thủ khi gọi ra."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "danh-gia-hieu-qua-chien-dich-goi-ra-cac-chi-so-can-theo-doi",
+    "n": 25,
+    "topic": "E",
+    "minutes": 6,
+    "title": {
+      "vi": "Đánh giá hiệu quả chiến dịch gọi ra: các chỉ số cần theo dõi"
+    },
+    "summary": {
+      "vi": "Đánh giá hiệu quả chiến dịch gọi ra theo chuỗi nghe máy, RPC, kết quả và chi phí: công thức, mẫu số cần thống nhất và ví dụ từ Việt Nam."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "chat-luong-du-lieu-dau-vao-anh-huong-the-nao-den-cuoc-goi-ra",
+    "n": 26,
+    "topic": "E",
+    "minutes": 7,
+    "title": {
+      "vi": "Chất lượng dữ liệu đầu vào ảnh hưởng thế nào đến cuộc gọi ra?"
+    },
+    "summary": {
+      "vi": "Chất lượng dữ liệu đầu vào quyết định bao nhiêu cuộc gọi đến đúng người: số liệu dữ liệu xuống cấp, bước làm sạch và ví dụ từ Việt Nam."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "ket-noi-chien-dich-goi-ra-voi-crm-6-diem-can-thong-nhat-truoc",
+    "n": 27,
+    "topic": "E",
+    "minutes": 6,
+    "title": {
+      "vi": "Kết nối chiến dịch gọi ra với CRM: 6 điểm cần thống nhất trước"
+    },
+    "summary": {
+      "vi": "Kết nối chiến dịch gọi ra với CRM cần thống nhất hướng dữ liệu, mã kết quả, log, định nghĩa báo cáo và cách chạy thử; kèm ví dụ ngân hàng Việt Nam."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "checklist-danh-gia-giai-phap-contact-center-ngan-hang",
+    "minutes": 7,
+    "title": {
+      "vi": "Checklist đánh giá giải pháp contact center cho ngân hàng"
+    },
+    "summary": {
+      "vi": "Checklist đánh giá giải pháp contact center cho ngân hàng, tài chính: 5 nhóm tiêu chí, 2 ví dụ Việt Nam và bảng chấm điểm dùng ngay."
+    },
+    "n": 28,
+    "topic": "F",
+    "lastmod": "2026-11-10"
+  },
+  {
+    "slug": "cau-hoi-trong-rfp-contact-center-5-nhom-nen-co",
+    "n": 29,
+    "topic": "F",
+    "minutes": 6,
+    "title": {
+      "vi": "Câu hỏi trong RFP Contact Center: 5 nhóm nên có"
+    },
+    "summary": {
+      "vi": "Câu hỏi trong RFP Contact Center nên chia thành nhóm nào? Gợi ý từ hướng dẫn quốc tế, RFP ngân hàng và hai gói thầu tại Việt Nam."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "danh-gia-tco-contact-center-ngoai-ban-quyen-con-khoan-nao",
+    "n": 30,
+    "topic": "F",
+    "minutes": 6,
+    "title": {
+      "vi": "Đánh giá TCO Contact Center: ngoài bản quyền còn khoản nào?"
+    },
+    "summary": {
+      "vi": "Đánh giá TCO Contact Center cần tính những khoản nào ngoài bản quyền? Sáu nhóm chi phí, số liệu tham khảo và ví dụ gói thầu tại Việt Nam."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "tieu-chi-nghiem-thu-crm-contact-center-5-nhom-can-chot-truoc",
+    "n": 31,
+    "topic": "F",
+    "minutes": 6,
+    "title": {
+      "vi": "Tiêu chí nghiệm thu CRM Contact Center: 5 nhóm cần chốt trước"
+    },
+    "summary": {
+      "vi": "Tiêu chí nghiệm thu CRM Contact Center nên gồm những nhóm nào? Gợi ý ngưỡng kiểm thử, mốc thanh toán và tư liệu công khai về Vietcombank."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "kiem-thu-tich-hop-va-uat-he-thong-cskh-6-luong-can-kiem-tra",
+    "n": 32,
+    "topic": "F",
+    "minutes": 6,
+    "title": {
+      "vi": "Kiểm thử tích hợp và UAT hệ thống CSKH: 6 luồng cần kiểm tra"
+    },
+    "summary": {
+      "vi": "Kiểm thử tích hợp và UAT hệ thống CSKH nên đi theo luồng nào? Sáu luồng nghiệp vụ, kịch bản mẫu và ví dụ từ ngân hàng Việt Nam."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "rui-ro-tich-hop-contact-center-6-diem-can-lam-ro-truoc",
+    "n": 33,
+    "topic": "F",
+    "minutes": 6,
+    "title": {
+      "vi": "Rủi ro tích hợp Contact Center: 6 điểm cần làm rõ trước"
+    },
+    "summary": {
+      "vi": "Rủi ro tích hợp Contact Center với hệ thống dữ liệu hiện hữu gồm những gì? Sáu điểm cần làm rõ, từ core banking, API đến dữ liệu cá nhân."
+    },
+    "lastmod": "2026-11-28"
+  },
+  {
+    "slug": "chuyen-doi-so-cskh-trong-bfsi-5-buoc-hop-nhat-cac-kenh",
+    "n": 34,
+    "topic": "F",
+    "minutes": 7,
+    "title": {
+      "vi": "Chuyển đổi số CSKH trong BFSI: 5 bước hợp nhất các kênh"
+    },
+    "summary": {
+      "vi": "Chuyển đổi số CSKH trong BFSI nên bắt đầu từ đâu? Góc nhìn từ chiến lược ngành, ví dụ Techcombank, VIB và 5 bước hợp nhất các kênh."
+    },
+    "lastmod": "2026-11-28"
   }
 ]

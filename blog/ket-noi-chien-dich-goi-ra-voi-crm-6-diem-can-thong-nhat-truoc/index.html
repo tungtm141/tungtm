@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" data-title-vi="Kết nối chiến dịch gọi ra với CRM: 6 điểm cần thống nhất trước — Trương Mạnh Tùng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kết nối chiến dịch gọi ra với CRM: 6 điểm cần thống nhất trước — Trương Mạnh Tùng</title>
+<meta name="description" content="Kết nối chiến dịch gọi ra với CRM cần thống nhất hướng dữ liệu, mã kết quả, log, định nghĩa báo cáo và cách chạy thử; kèm ví dụ ngân hàng Việt Nam.">
+<link rel="canonical" href="https://truongmanhtung.com/blog/ket-noi-chien-dich-goi-ra-voi-crm-6-diem-can-thong-nhat-truoc/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://truongmanhtung.com/blog/ket-noi-chien-dich-goi-ra-voi-crm-6-diem-can-thong-nhat-truoc/">
+<meta property="og:title" content="Kết nối chiến dịch gọi ra với CRM: 6 điểm cần thống nhất trước">
+<meta property="og:description" content="Kết nối chiến dịch gọi ra với CRM cần thống nhất hướng dữ liệu, mã kết quả, log, định nghĩa báo cáo và cách chạy thử; kèm ví dụ ngân hàng Việt Nam.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://truongmanhtung.com/blog/ket-noi-chien-dich-goi-ra-voi-crm-6-diem-can-thong-nhat-truoc/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:author" content="https://www.linkedin.com/in/tungtm141">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+ "headline":"Kết nối chiến dịch gọi ra với CRM: 6 điểm cần thống nhất trước","description":"Kết nối chiến dịch gọi ra với CRM cần thống nhất hướng dữ liệu, mã kết quả, log, định nghĩa báo cáo và cách chạy thử; kèm ví dụ ngân hàng Việt Nam.","inLanguage":"vi",
+ "image":"https://truongmanhtung.com/blog/ket-noi-chien-dich-goi-ra-voi-crm-6-diem-can-thong-nhat-truoc/og.jpg",
+ "mainEntityOfPage":"https://truongmanhtung.com/blog/ket-noi-chien-dich-goi-ra-voi-crm-6-diem-can-thong-nhat-truoc/",
+ "author":{"@type":"Person","name":"Trương Mạnh Tùng","url":"https://truongmanhtung.com/"}}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="navlink hide-sm" href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap narrow">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/"><span data-l="vi">Trang chủ</span><span data-l="en">Home</span></a> / <a href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a> / <a href="/blog/#campaign-autodialer"><span data-l="vi">Campaign &amp; Autodialer</span><span data-l="en">Campaign &amp; Autodialer</span></a></nav>
+
+  <header class="post-head">
+    <div class="meta">
+      <span class="tag"><span data-l="vi">Campaign &amp; Autodialer</span><span data-l="en">Campaign &amp; Autodialer</span></span>
+      <span><span data-l="vi">6 phút đọc</span><span data-l="en">6 min read</span></span>
+    </div>
+    <h1>Kết nối chiến dịch gọi ra với CRM: 6 điểm cần thống nhất trước</h1>
+  </header>
+
+  <p class="lang-note" data-l="en">This article is currently available in Vietnamese only.</p>
+
+  <article class="prose" lang="vi">
+<p>Nhân viên bán hàng dành tới 21% thời gian cho việc nhập liệu thủ công, theo số liệu của Salesforce (2025) mà <a href="https://frejun.com/crm-calling-integration-guide/" target="_blank" rel="noopener">FreJun</a> dẫn lại trong hướng dẫn tích hợp đăng tháng 12/2025. Đây là số thứ cấp từ một nhà cung cấp, nhưng nó chỉ ra lý do phổ biến để kết nối chiến dịch gọi ra với CRM: tránh để agent nhập lại điều dialer đã biết. Bài này liệt kê những điểm cần thống nhất giữa vận hành, CRM và IT trước khi cấu hình: hướng dữ liệu đi, mã kết quả, cách ghi log, định nghĩa báo cáo và cách chạy thử.</p>
+<h2>Vì sao phải thống nhất trước khi kết nối chiến dịch gọi ra với CRM?</h2>
+<p>Tích hợp kỹ thuật thường làm được trong vài ngày. FreJun nêu mức 24 đến 48 giờ với đội nhỏ và 3 đến 5 ngày làm việc với đội lớn hoặc định tuyến phức tạp; đây là số của nhà cung cấp, thiên về nền tảng SaaS nhẹ, không áp dụng nguyên cho hệ thống ngân hàng. Phần mất thời gian là những quyết định không nằm trong tài liệu kỹ thuật: ai là nguồn dữ liệu gốc, kết quả nào được ghi, báo cáo nào dùng chung.</p>
+<p>Khi thiếu các quyết định này, dữ liệu phân mảnh. <a href="https://www.destinationcrm.com/ReportsandResearch/13993-Beyond-basic-integration-Unify-your-CRM-system-and-contact-center.htm" target="_blank" rel="noopener">Destination CRM</a> lưu ý rằng nếu không có một điểm điều phối trung tâm, dữ liệu có thể tản mát và trải nghiệm khách hàng khó nhất quán (bài không ghi ngày đăng và không có số liệu). Tại Việt Nam, <a href="https://thitruongtaichinhtiente.vn/kien-tao-ngan-hang-huong-du-lieu-toi-uu-hoa-von-quan-he-qua-e-crm-tai-viet-nam-79180.html" target="_blank" rel="noopener">Tạp chí Thị trường Tài chính Tiền tệ (09/03/2026)</a> nêu thách thức của ngân hàng là các kênh chạy trên nhiều nền tảng, khó tích hợp vào một hệ thống E-CRM thống nhất, và dữ liệu thiếu, sai hoặc trùng lặp làm hệ thống cho thông tin không chính xác.</p>
+<h2>Điểm 1 và 2: hướng dữ liệu đi và cách kích hoạt chiến dịch</h2>
+<p><strong>Điểm 1: dùng CRM trong dialer hay đưa dialer vào CRM.</strong> <a href="https://www.elisiontec.com/what-is-call-center-crm-integration-how-it-works.md" target="_blank" rel="noopener">Elision</a> (đăng 2018, cập nhật 2023) mô tả hai cách. Cách thứ nhất đưa CRM vào phần mềm tổng đài: có cuộc gọi thì hiện popup thông tin lead, thay đổi tự cập nhật về CRM. Cách thứ hai nhúng bộ điều khiển dialer vào CRM với click-to-call, và hộp disposition xuất hiện sau cuộc gọi. Lựa chọn nên dựa trên cách đội đang dùng hai hệ thống, vì nó quyết định agent làm việc chủ yếu ở đâu.</p>
+<p><strong>Điểm 2: dữ liệu nào kích hoạt chiến dịch.</strong> Tài liệu của <a href="https://docs.voiso.com/docs/crm-integration-overview.md" target="_blank" rel="noopener">Voiso</a> liệt kê bốn thành phần: click-to-call, calling list import (lấy số được chọn từ CRM nạp vào chiến dịch dialer), screen pop và call history. Tài liệu này không mô tả đồng bộ danh bạ hai chiều hay cách mapping trường, và chỉ ghi rằng cần hỏi riêng nhà cung cấp. Đó cũng là điều nên hỏi trong mọi dự án: ai được sửa số điện thoại, bản ghi nào thắng khi hai hệ thống khác nhau, và bao lâu đồng bộ một lần.</p>
+<p>Với lead đến từ web, <a href="https://www.callcentrehelper.com/telephony-integrations-made-easy-94086.htm" target="_blank" rel="noopener">Call Centre Helper (2016, cập nhật 2018)</a> nêu ví dụ gọi lại lead trong vòng 5 giây kể từ khi khách nhấn gửi, qua API đẩy thẳng vào dialer. Bài thuộc thời điểm cũ và mang tính quảng cáo cho nền tảng của Interactive Intelligence, nên cần kiểm tra lại tính năng hiện hành.</p>
+<h2>Điểm 3: mã kết quả cuộc gọi và mapping</h2>
+<p>Mã kết quả (call disposition) là phần dễ lệch nhất. <a href="https://justcall.io/blog/what-is-call-disposition-and-how-does-it-benefit-your-business.html" target="_blank" rel="noopener">JustCall</a> (đăng 11/2022) định nghĩa đó là nhãn ngắn, chuẩn hoá, agent chọn ngay sau cuộc gọi, và gợi ý quy trình thiết kế:</p>
+<ul>
+<li>liệt kê mọi kết quả thực tế, gộp mã tương tự, dùng nhãn hai đến bốn ký tự;</li>
+<li>xác định hành động tiếp theo cho từng mã, ví dụ đặt lịch gọi lại hoặc gửi SMS;</li>
+<li>map từng mã vào đúng trường trong CRM, huấn luyện agent và theo dõi trong hai tuần đầu;</li>
+<li>rà soát danh sách mã ít nhất mỗi quý.</li>
+</ul>
+<p>Cùng bài, tỷ lệ ghi nhận mã dưới 90% được coi là đáng lo; đó là ngưỡng khuyến nghị của tác giả, không phải chuẩn thị trường. Khi mã không sang được CRM, nguyên nhân thường là cấu hình. <a href="https://help.cloudtalk.io/en/articles/13192280-call-dispositions-or-outcomes-not-syncing-to-crm" target="_blank" rel="noopener">CloudTalk</a> (cập nhật 04/2026) liệt kê năm lý do: disposition để "No Mapping", loại (type) không khớp cách cuộc gọi kết thúc, mapping không áp dụng hồi tố cho cuộc gọi cũ, quy tắc export loại bỏ cuộc gọi nhỡ hoặc voicemail, và tài khoản CRM đã xác thực thiếu quyền tạo hoặc cập nhật activity. FreJun thêm một điểm: nếu không map kết quả cuộc gọi sang giai đoạn deal, dữ liệu báo cáo sẽ mất.</p>
+<h2>Điểm 4 và 5: cách ghi log và định nghĩa báo cáo</h2>
+<p><strong>Điểm 4: bản ghi nào được tạo cho mỗi cuộc gọi.</strong> FreJun mô tả log gồm thời lượng, kết quả, link ghi âm và ghi chú của agent, ghi vào contact hoặc deal trong vòng 60 giây sau cuộc gọi. CloudTalk khuyên khi cần hỗ trợ phải chuẩn bị Call ID, thời gian cuộc gọi kèm múi giờ và tên CRM, nên mỗi cuộc gọi cần có mã định danh duy nhất để đối chiếu giữa hai hệ thống. Cũng cần chốt cuộc gọi nhỡ và voicemail có được ghi hay không, vì quy tắc export ảnh hưởng thẳng đến tỷ lệ nghe máy trong báo cáo.</p>
+<p><strong>Điểm 5: một định nghĩa cho mỗi chỉ số.</strong> <a href="https://www.callcentrehelper.com/key-outbound-call-centre-metrics-252339.htm" target="_blank" rel="noopener">Call Centre Helper (02/2025)</a> liệt kê 13 chỉ số outbound, từ conversion rate, right-party contact đến handle time và occupancy. Trước khi dựng dashboard, nên ghi rõ mỗi chỉ số lấy từ hệ thống nào (số cuộc quay từ dialer, kết quả kinh doanh từ CRM), tử số và mẫu số, múi giờ, và quy tắc xử lý bản ghi trùng. Cùng một "tỷ lệ thành công" có thể ra hai con số khác nhau nếu dialer và CRM đếm khác nhau.</p>
+<h2>Điểm 6: ví dụ Việt Nam và cách chạy thử</h2>
+<p>Ba trường hợp trong nước cho thấy tích hợp CRM với tổng đài thường là bài toán nhiều kênh.</p>
+<ul>
+<li><strong>VIB:</strong> theo <a href="https://www.theasianbanker.com/press-releases/vietnam-international-commercial-joint-stock-bank-vib-deploys-salesforce-crm-platform-across-retail-banking-operations" target="_blank" rel="noopener">The Asian Banker (17/06/2026)</a>, ngân hàng triển khai Salesforce CRM cho mảng bán lẻ, phục vụ hơn 7 triệu khách hàng, trên 200 chi nhánh và điểm giao dịch tại 33 tỉnh thành; kênh gồm số, chi nhánh, tổng đài và đội bán hàng. Bài không nêu chỉ số kết quả.</li>
+<li><strong>Vietcombank:</strong> theo Tạp chí Thị trường Tài chính Tiền tệ, ngân hàng khởi động dự án CRM trên nền Salesforce vào năm 2025, nhưng bài không nêu ngân sách, tiến độ hay kết quả.</li>
+<li><strong>MB:</strong> <a href="https://vietnamnet.vn/viettel-trien-khai-he-thong-quan-ly-quan-he-khach-hang-cho-mb-i382381.html" target="_blank" rel="noopener">VietNamNet (10/12/2013)</a> đưa tin Viettel triển khai CRM hỗ trợ 8 kênh giao tiếp, và theo bài chi phí triển khai thấp hơn khoảng một phần ba so với giải pháp nước ngoài. Đây là tin cũ và mô tả lợi ích dự kiến, nên chỉ dùng làm bối cảnh.</li>
+</ul>
+<p>Về cách làm, <a href="https://amis.misa.vn/99493/tong-dai-ao-tich-hop-crm/" target="_blank" rel="noopener">AMIS</a> (04/02/2025) đề xuất quy trình bảy bước, trong đó có đào tạo nhân viên và chạy thử với nhóm nhỏ trước khi triển khai chính thức. Với chiến dịch gọi ra, có thể áp dụng bằng một chiến dịch thí điểm: chọn vài trăm bản ghi, gọi thử đủ các mã kết quả, rồi đối chiếu từng cuộc gọi giữa dialer và CRM trước khi mở rộng.</p>
+<h2>Kết luận</h2>
+<p>Kết nối chiến dịch gọi ra với CRM thành công khi sáu điểm trên được viết ra: hướng dữ liệu, cách kích hoạt chiến dịch, mã kết quả, bản ghi log, định nghĩa báo cáo và kế hoạch thí điểm.</p>
+<p>Việc làm được trong tuần này: lập bảng một trang cho chiến dịch sắp chạy, mỗi dòng ghi một quyết định kèm tên người chịu trách nhiệm, bắt đầu bằng danh sách mã kết quả và trường CRM tương ứng. Nếu có dòng chưa ai nhận, đó là việc cần chốt trước buổi cấu hình đầu tiên.</p>  </article>
+
+  <section class="sources" aria-label="Nguồn / Sources">
+    <h2><span data-l="vi">Nguồn tham khảo</span><span data-l="en">Sources</span></h2>
+    <p>Các nguồn được dẫn trong bài.</p>
+    <ol>
+      <li><a href="https://frejun.com/crm-calling-integration-guide/" target="_blank" rel="noopener">FreJun – frejun.com</a></li>
+      <li><a href="https://www.destinationcrm.com/ReportsandResearch/13993-Beyond-basic-integration-Unify-your-CRM-system-and-contact-center.htm" target="_blank" rel="noopener">Destination CRM – destinationcrm.com</a></li>
+      <li><a href="https://thitruongtaichinhtiente.vn/kien-tao-ngan-hang-huong-du-lieu-toi-uu-hoa-von-quan-he-qua-e-crm-tai-viet-nam-79180.html" target="_blank" rel="noopener">Tạp chí Thị trường Tài chính Tiền tệ (09/03/2026) – thitruongtaichinhtiente.vn</a></li>
+      <li><a href="https://www.elisiontec.com/what-is-call-center-crm-integration-how-it-works.md" target="_blank" rel="noopener">Elision – elisiontec.com</a></li>
+      <li><a href="https://docs.voiso.com/docs/crm-integration-overview.md" target="_blank" rel="noopener">Voiso – docs.voiso.com</a></li>
+      <li><a href="https://www.callcentrehelper.com/telephony-integrations-made-easy-94086.htm" target="_blank" rel="noopener">Call Centre Helper (2016, cập nhật 2018) – callcentrehelper.com</a></li>
+      <li><a href="https://justcall.io/blog/what-is-call-disposition-and-how-does-it-benefit-your-business.html" target="_blank" rel="noopener">JustCall – justcall.io</a></li>
+      <li><a href="https://help.cloudtalk.io/en/articles/13192280-call-dispositions-or-outcomes-not-syncing-to-crm" target="_blank" rel="noopener">CloudTalk – help.cloudtalk.io</a></li>
+      <li><a href="https://www.callcentrehelper.com/key-outbound-call-centre-metrics-252339.htm" target="_blank" rel="noopener">Call Centre Helper (02/2025) – callcentrehelper.com</a></li>
+      <li><a href="https://www.theasianbanker.com/press-releases/vietnam-international-commercial-joint-stock-bank-vib-deploys-salesforce-crm-platform-across-retail-banking-operations" target="_blank" rel="noopener">The Asian Banker (17/06/2026) – theasianbanker.com</a></li>
+      <li><a href="https://vietnamnet.vn/viettel-trien-khai-he-thong-quan-ly-quan-he-khach-hang-cho-mb-i382381.html" target="_blank" rel="noopener">VietNamNet (10/12/2013) – vietnamnet.vn</a></li>
+      <li><a href="https://amis.misa.vn/99493/tong-dai-ao-tich-hop-crm/" target="_blank" rel="noopener">AMIS – amis.misa.vn</a></li>
+    </ol>
+  </section>
+
+  <section class="sources" aria-label="Bài viết liên quan / Related">
+    <h2><span data-l="vi">Bài viết liên quan</span><span data-l="en">Related</span></h2>
+    <ul>
+      <li><a href="/blog/autodialer-la-gi-so-sanh-goi-thu-cong-va-cach-chon-che-do/">Autodialer là gì? So sánh với gọi thủ công và cách chọn chế độ</a></li>
+      <li><a href="/blog/danh-gia-hieu-qua-chien-dich-goi-ra-cac-chi-so-can-theo-doi/">Đánh giá hiệu quả chiến dịch gọi ra: các chỉ số cần theo dõi</a></li>
+      <li><a href="/blog/chat-luong-du-lieu-dau-vao-anh-huong-the-nao-den-cuoc-goi-ra/">Chất lượng dữ liệu đầu vào ảnh hưởng thế nào đến cuộc gọi ra?</a></li>
+    </ul>
+  </section>
+
+  <aside class="author" aria-label="Tác giả / Author">
+    <div class="av" aria-hidden="true">TT</div>
+    <div>
+      <p class="name">Trương Mạnh Tùng</p>
+      <p class="sub"><span data-l="vi">Account Manager tại BaseBS, đồng hành cùng ngân hàng, tài chính, bảo hiểm trong xây dựng và vận hành Contact Center.</span><span data-l="en">Account Manager at BaseBS, helping banks, finance and insurance companies build and run their Contact Centers.</span></p>
+      <div class="acts">
+        <a class="btn primary" href="https://zalo.me/0915306688" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo</span><span data-l="en">Message on Zalo</span></a>
+        <a class="btn" href="mailto:tungtm@basebs.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/tungtm141" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+  <p class="disclaimer"><span data-l="vi">Bài viết thể hiện góc nhìn cá nhân của tác giả, không phải quan điểm chính thức của BaseBS hay khách hàng được nhắc tới.</span><span data-l="en">Views are the author's own and do not represent BaseBS or any client mentioned.</span></p>
+
+  <nav class="post-nav"><a href="/blog/"><span data-l="vi">← Tất cả bài viết</span><span data-l="en">← All posts</span></a></nav>
+</main>
+
+<footer><div class="wrap">© 2026 Trương Mạnh Tùng · <a href="/">truongmanhtung.com</a></div></footer>
+<script src="/assets/blog.js" defer></script>
+</body>
+</html>

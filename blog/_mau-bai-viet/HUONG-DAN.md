@@ -2,7 +2,7 @@
 
 ## Cấu trúc
 - `/blog/index.html`: trang danh sách. Tự đọc `/blog/posts.json`, không sửa tay danh sách.
-- `/blog/posts.json`: **nguồn duy nhất** của danh sách bài (trang Blog, mục "Bài viết mới" và nút menu trên trang chủ đều đọc file này).
+- `/blog/posts.json`: **nguồn duy nhất** của danh sách bài (trang Blog, mục "Kiến thức theo chủ đề" và nút menu trên trang chủ đều đọc file này).
 - `/blog/<slug>/index.html`: một bài viết → URL `https://truongmanhtung.com/blog/<slug>/`.
 - `/blog/<slug>/og.jpg`: ảnh chia sẻ 1200×630 (khuyến nghị). Chưa có thì trỏ og:image về `/og-image.jpg`.
 - `/assets/blog.css`, `/assets/blog.js`: giao diện và logic dùng chung.
@@ -20,14 +20,19 @@
 [
   {
     "slug": "cisco-12-5-het-ho-tro",
-    "date": "2026-11-02",
+    "n": 35,
+    "topic": "A",
     "minutes": 6,
-    "title":   { "vi": "Tiêu đề tiếng Việt", "en": "English title" },
-    "summary": { "vi": "Tóm tắt 1–2 câu.", "en": "One or two sentence summary." },
-    "tags": [ { "vi": "Contact Center", "en": "Contact Center" } ]
+    "title":   { "vi": "Tiêu đề tiếng Việt" },
+    "summary": { "vi": "Tóm tắt 1–2 câu." },
+    "lastmod": "2026-11-28"
   }
 ]
 ```
+   - **Không hiển thị ngày đăng** ở bất kỳ đâu (trang bài, thẻ, OG, JSON-LD). `lastmod` chỉ dùng cho `sitemap.xml`.
+   - `topic` là một trong 6 chủ đề (trang chủ và `/blog/` nhóm bài theo trường này, sắp theo `n` trong từng chủ đề):
+     `A` Contact Center & vòng đời · `B` CRM & Omnichannel · `C` AI trong CSKH · `D` WFM & QM · `E` Campaign & Autodialer · `F` Tích hợp & lựa chọn giải pháp.
+   - `n` là số thứ tự bài trong kế hoạch (1–34 đã dùng); bài mới lấy số kế tiếp.
    - Bài chỉ có tiếng Việt: bỏ `en` trong title/summary (thẻ sẽ ghi "Vietnamese only" khi xem bằng EN).
    - `"draft": true` để tạm ẩn bài khỏi danh sách mà không xoá.
 5. Chạy `python3 _scripts/build-sitemap.py` ở thư mục gốc repo để cập nhật `/sitemap.xml` (đọc `posts.json`, bỏ bài `draft`). Commit cả `sitemap.xml` cùng bài.

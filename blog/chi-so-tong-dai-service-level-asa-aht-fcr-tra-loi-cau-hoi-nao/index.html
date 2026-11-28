@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" data-title-vi="Chỉ số tổng đài: Service Level, ASA, AHT, FCR trả lời câu hỏi nào? — Trương Mạnh Tùng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chỉ số tổng đài: Service Level, ASA, AHT, FCR trả lời câu hỏi nào? — Trương Mạnh Tùng</title>
+<meta name="description" content="Giải thích Service Level, ASA, AHT, FCR: mỗi chỉ số tổng đài đo gì, tính thế nào và đọc ra sao. Lập trang thống nhất công thức ngay hôm nay.">
+<link rel="canonical" href="https://truongmanhtung.com/blog/chi-so-tong-dai-service-level-asa-aht-fcr-tra-loi-cau-hoi-nao/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://truongmanhtung.com/blog/chi-so-tong-dai-service-level-asa-aht-fcr-tra-loi-cau-hoi-nao/">
+<meta property="og:title" content="Chỉ số tổng đài: Service Level, ASA, AHT, FCR trả lời câu hỏi nào?">
+<meta property="og:description" content="Giải thích Service Level, ASA, AHT, FCR: mỗi chỉ số tổng đài đo gì, tính thế nào và đọc ra sao. Lập trang thống nhất công thức ngay hôm nay.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://truongmanhtung.com/blog/chi-so-tong-dai-service-level-asa-aht-fcr-tra-loi-cau-hoi-nao/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:author" content="https://www.linkedin.com/in/tungtm141">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+ "headline":"Chỉ số tổng đài: Service Level, ASA, AHT, FCR trả lời câu hỏi nào?","description":"Giải thích Service Level, ASA, AHT, FCR: mỗi chỉ số tổng đài đo gì, tính thế nào và đọc ra sao. Lập trang thống nhất công thức ngay hôm nay.","inLanguage":"vi",
+ "image":"https://truongmanhtung.com/blog/chi-so-tong-dai-service-level-asa-aht-fcr-tra-loi-cau-hoi-nao/og.jpg",
+ "mainEntityOfPage":"https://truongmanhtung.com/blog/chi-so-tong-dai-service-level-asa-aht-fcr-tra-loi-cau-hoi-nao/",
+ "author":{"@type":"Person","name":"Trương Mạnh Tùng","url":"https://truongmanhtung.com/"}}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="navlink hide-sm" href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap narrow">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/"><span data-l="vi">Trang chủ</span><span data-l="en">Home</span></a> / <a href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a> / <a href="/blog/#wfm-qm"><span data-l="vi">WFM &amp; QM</span><span data-l="en">WFM &amp; QM</span></a></nav>
+
+  <header class="post-head">
+    <div class="meta">
+      <span class="tag"><span data-l="vi">WFM &amp; QM</span><span data-l="en">WFM &amp; QM</span></span>
+      <span><span data-l="vi">6 phút đọc</span><span data-l="en">6 min read</span></span>
+    </div>
+    <h1>Chỉ số tổng đài: Service Level, ASA, AHT, FCR trả lời câu hỏi nào?</h1>
+  </header>
+
+  <p class="lang-note" data-l="en">This article is currently available in Vietnamese only.</p>
+
+  <article class="prose" lang="vi">
+<p>Theo <a href="https://sqmgroup.com/resources/library/blog/top-10-customer-service-metrics" target="_blank" rel="noopener">SQM Group (2021)</a>, mức FCR trung bình của các trung tâm liên hệ là 72%, nghĩa là gần một phần ba khách hàng phải liên hệ lại để giải quyết cùng một vấn đề. Con số này nhắc rằng một chỉ số tổng đài chỉ có ý nghĩa khi ta biết nó đang trả lời câu hỏi nào. Service Level, ASA, AHT và FCR thường nằm cạnh nhau trên cùng một báo cáo, nhưng mỗi chỉ số đo một khía cạnh khác nhau và rất dễ bị đọc nhầm khi tách rời. Bài viết này giải thích từng chỉ số theo câu hỏi nó trả lời, những điểm cách tính cần thống nhất trước khi so sánh số liệu, và các ví dụ đã công bố từ ngân hàng tại Việt Nam.</p>
+<h2>Service Level: bao nhiêu khách được trả lời đủ nhanh?</h2>
+<p>Service Level là tỷ lệ cuộc gọi được trả lời trong một ngưỡng thời gian cho trước. Chuẩn quen thuộc nhất là 80/20, tức 80% cuộc gọi được trả lời trong vòng 20 giây (<a href="https://fonolo.com/?p=51564" target="_blank" rel="noopener">Fonolo</a>). Nguồn gốc của chuẩn này không rõ ràng. Fonolo nêu hai giả thuyết: nó được cài sẵn trong nền tảng của Rockwell những năm 1970, hoặc xuất phát từ nghiên cứu của AT&amp;T cho thấy người gọi thường cúp máy sau 20 giây chờ. Chính bài này kết luận rằng không ai biết chắc.</p>
+<p>Dù vậy, chuẩn này vẫn phổ biến. <a href="https://callcentrehelper.com/contact-centre-service-level-standards-144586.htm" target="_blank" rel="noopener">Khảo sát của Call Centre Helper (2019)</a> với hơn 250 chuyên gia tổng đài cho thấy nhóm câu trả lời lớn nhất vẫn quanh mức 80/20, và có đơn vị đặt trần bỏ dở từ 2% đến 5% tùy mức hài lòng và giá trị thương hiệu.</p>
+<p>Có hai điểm cần thống nhất trước khi so sánh số liệu. Điểm thứ nhất là cuộc gọi bỏ dở được tính thế nào. <a href="https://www.gladly.ai/glossary/call-center-service-level/" target="_blank" rel="noopener">Gladly (2026)</a> liệt kê ít nhất bốn quy ước, cho ra những con số chênh lệch đáng kể từ cùng một dữ liệu. <a href="https://www.cisco.com/c/it_it/support/docs/contact-center/unified-contact-center-enterprise/216240-how-to-perform-service-level-calculation.html" target="_blank" rel="noopener">Cisco (2020)</a> mô tả cách làm này trong Unified Contact Center Enterprise bằng ba kiểu tính: bỏ qua cuộc bỏ dở, tính theo hướng bất lợi, hoặc tính theo hướng có lợi, và mỗi kiểu thay đổi mẫu số của công thức. Điểm thứ hai là khoảng thời gian báo cáo. Theo Gladly, số liệu tính theo từng nửa giờ cho thấy chính xác lúc nào vận hành thất bại: số theo tháng dùng để báo cáo, còn số theo khoảng dùng để điều hành.</p>
+<p>Service Level trả lời câu hỏi khách hàng có được tiếp cận đủ nhanh hay không. Nó không cho biết 20% còn lại đã chờ bao lâu. <a href="https://www.verint.com/blog/managers-guide-to-call-center-service-levels/" target="_blank" rel="noopener">Verint (2023)</a> lưu ý người gọi không bỏ cuộc với tốc độ cố định, nên ngưỡng có thể nới lên 40 giây hoặc một phút nếu hiểu rõ mức chịu đựng của khách.</p>
+<h2>ASA: thời gian chờ trung bình là bao lâu?</h2>
+<p>ASA là thời gian chờ trung bình trong hàng đợi mà người gọi trải qua trước khi được trả lời (<a href="https://beijerterm.com/A_Pocket_Guide_to_Call_Center_Terms_and_Acronyms" target="_blank" rel="noopener">Beijerterm</a>). Cũng theo tài liệu này, có những biến thể của ASA loại bỏ thời gian chờ của các cuộc gọi bỏ dở, hoặc chỉ loại những cuộc bỏ dở trước một mốc nhất định. Vì vậy hai báo cáo cùng gọi là ASA có thể không so sánh được với nhau.</p>
+<p>Gladly chỉ ra điểm yếu cố hữu của một con số trung bình: vài cuộc chờ rất lâu bị hòa vào mức trung bình. Nếu loại bỏ các cuộc bỏ dở, những giờ tệ nhất lại cho ra con số đẹp nhất. Vì vậy nên đọc ASA cùng Service Level và tỷ lệ bỏ dở.</p>
+<p>ASA và Service Level cũng thường được ước tính từ công thức Erlang C. <a href="https://soon.works/blog/erlang-c-traffic-model-for-non-mathematicians" target="_blank" rel="noopener">Soon (2026)</a> mô tả đây là mô hình hàng đợi với các giả định: cuộc gọi đến theo phân bố Poisson, thời gian xử lý theo phân bố mũ, các tổng đài viên giống hệt nhau, chỗ chờ không giới hạn và khách không bỏ dở. Kết quả là nhu cầu nhân sự trước khi tính hao hụt, kỹ năng và lịch nghỉ. Khi lượng cuộc gọi đến bằng hoặc vượt năng lực phục vụ, mô hình không có thời gian chờ ổn định hữu hạn. Đây là ước tính để lập kế hoạch, cần đối chiếu với số liệu thực tế theo từng khoảng.</p>
+<h2>AHT: một cuộc gọi tốn bao nhiêu thời gian xử lý?</h2>
+<p>AHT là thời gian trung bình cho một cuộc gọi, tính bằng tổng thời gian đàm thoại, giữ máy và xử lý sau cuộc gọi chia cho số cuộc gọi (Beijerterm). Ví dụ trong tài liệu này: 14 phút đàm thoại, 8 phút giữ máy và 6 phút xử lý sau cuộc gọi cho 8 cuộc gọi, tức (14 + 8 + 6) / 8 = 3,5 phút.</p>
+<p>AHT trả lời câu hỏi nguồn lực đang tiêu tốn bao nhiêu cho mỗi cuộc gọi, nên rất hữu ích cho việc lập kế hoạch nhân sự. Cái bẫy được <a href="https://justcall.io/blog/call-center-terminology.html" target="_blank" rel="noopener">JustCall (2026)</a> mô tả khá gọn: coi AHT thấp là tốt mà không kiểm tra nó phải trả giá gì ở FCR hay mức hài lòng. JustCall cũng khuyến nghị chốt một định nghĩa duy nhất cho AHT, FCR và ASA trong hệ thống phân tích.</p>
+<p>Một ví dụ về việc rút ngắn một thành phần của AHT: <a href="https://www.vpbank.com.vn/tin-tuc/thong-cao-bao-chi/2022/vpbank-nang-cao-trai-nghiem-khach-hang-bang-voice-biometrics" target="_blank" rel="noopener">VPBank (2022)</a> cho biết với Voice Biometrics, khách hàng có thể trao đổi vấn đề với tổng đài viên trong khoảng 10 đến 12 giây sau khi kết nối, không phải trả lời nhiều câu hỏi xác thực. Thông cáo không công bố AHT trước và sau, nên không thể suy ra mức giảm cụ thể.</p>
+<h2>FCR: khách hàng có phải gọi lại không?</h2>
+<p>FCR là tỷ lệ liên hệ được giải quyết hoàn toàn ngay lần tương tác đầu tiên, không cần theo dõi thêm (<a href="https://www.hivedesk.com/glossary/first-call-resolution" target="_blank" rel="noopener">HiveDesk, 2026</a>). HiveDesk dẫn SQM Group với mức trung bình khoảng 71% và từ 80% trở lên được xem là xuất sắc. Trang của SQM (2021) ghi mức chuẩn trung bình là 72%. Hai trang ghi hai mức hơi khác nhau, nên khi làm mốc so sánh hãy ghi rõ nguồn và năm.</p>
+<p>SQM cũng cho biết 93% khách hàng dùng kênh tổng đài và 72% khách hàng dùng website kỳ vọng được giải quyết trong một lần liên hệ. Theo nghiên cứu của SQM, cứ mỗi 1% FCR cải thiện thì mức hài lòng của khách hàng tăng khoảng 1%.</p>
+<p>FCR trả lời câu hỏi vấn đề của khách đã được giải quyết hay chưa, nên đây là chỉ số kết quả, khác với ba chỉ số còn lại vốn đo tốc độ và nguồn lực. Cần thống nhất thêm cách xác định liên hệ lại: trong bao nhiêu ngày thì một cuộc gọi tiếp theo cùng chủ đề được tính là chưa giải quyết. Các nguồn đã đọc không đưa ra ngưỡng chung, nên đây là điều cần chốt trong nội bộ.</p>
+<h2>Đọc bốn chỉ số cùng nhau, và ví dụ chỉ số tổng đài tại Việt Nam</h2>
+<p>Cách đơn giản để ghi nhớ: Service Level và ASA cho biết khách có được tiếp cận nhanh không, AHT cho biết mỗi cuộc gọi tốn bao nhiêu công, FCR cho biết khách có được giải quyết xong không. Khi AHT giảm nhưng FCR cũng giảm, phần tiết kiệm có thể chỉ là chuyển sang những cuộc gọi lặp lại.</p>
+<p>Về thực tế tại Việt Nam, <a href="https://www.vpbank.com.vn/tin-tuc/thong-cao-bao-chi/2021/tong-dai-vpbank-duoc-vinh-danh-giai-thuong-trai-nghiem-khach-hang-xuat-sac-nhat" target="_blank" rel="noopener">thông cáo của VPBank (2021)</a> cho biết tổng đài 24/7 của ngân hàng được Digital CX Awards 2021 vinh danh, hệ thống cho khách đánh giá mức hài lòng sau mỗi cuộc gọi, chat hoặc email, và có 11 dịch vụ tự phục vụ trên IVR. Năm 2023, VPBank công bố giảm 56% thời gian chờ kết nối tới tổng đài sau các sáng kiến cải thiện trải nghiệm (<a href="https://thitruongtaichinhtiente.vn/vpbank-tiep-tuc-dot-pha-trong-trai-nghiem-khach-hang-48011.html" target="_blank" rel="noopener">Thị trường Tài chính Tiền tệ, 2023</a>). Bài báo không nói con số này đo bằng chỉ số nào, nên không thể so trực tiếp với chuẩn 80/20.</p>
+<h2>Kết luận</h2>
+<p>Bốn chỉ số tổng đài này bổ sung cho nhau: Service Level và ASA đo khả năng tiếp cận, AHT đo mức tiêu tốn nguồn lực và FCR đo kết quả. Trước khi đặt mục tiêu hay so sánh với đơn vị khác, cần bảo đảm mọi người dùng cùng một công thức.</p>
+<p>Việc có thể làm ngay trong tuần này: lập một trang ghi cách tính hiện tại của từng chỉ số trên hệ thống của bạn, gồm cuộc gọi bỏ dở được tính thế nào, báo cáo theo khoảng thời gian nào, AHT gồm những thành phần nào và FCR dùng cửa sổ liên hệ lại bao nhiêu ngày. Sau đó nhờ đội vận hành, đội dữ liệu và đội chất lượng cùng xác nhận.</p>  </article>
+
+  <section class="sources" aria-label="Nguồn / Sources">
+    <h2><span data-l="vi">Nguồn tham khảo</span><span data-l="en">Sources</span></h2>
+    <p>Các nguồn được dẫn trong bài.</p>
+    <ol>
+      <li><a href="https://sqmgroup.com/resources/library/blog/top-10-customer-service-metrics" target="_blank" rel="noopener">SQM Group (2021) – sqmgroup.com</a></li>
+      <li><a href="https://fonolo.com/?p=51564" target="_blank" rel="noopener">Fonolo – fonolo.com</a></li>
+      <li><a href="https://callcentrehelper.com/contact-centre-service-level-standards-144586.htm" target="_blank" rel="noopener">Khảo sát của Call Centre Helper (2019) – callcentrehelper.com</a></li>
+      <li><a href="https://www.gladly.ai/glossary/call-center-service-level/" target="_blank" rel="noopener">Gladly (2026) – gladly.ai</a></li>
+      <li><a href="https://www.cisco.com/c/it_it/support/docs/contact-center/unified-contact-center-enterprise/216240-how-to-perform-service-level-calculation.html" target="_blank" rel="noopener">Cisco (2020) – cisco.com</a></li>
+      <li><a href="https://www.verint.com/blog/managers-guide-to-call-center-service-levels/" target="_blank" rel="noopener">Verint (2023) – verint.com</a></li>
+      <li><a href="https://beijerterm.com/A_Pocket_Guide_to_Call_Center_Terms_and_Acronyms" target="_blank" rel="noopener">Beijerterm – beijerterm.com</a></li>
+      <li><a href="https://soon.works/blog/erlang-c-traffic-model-for-non-mathematicians" target="_blank" rel="noopener">Soon (2026) – soon.works</a></li>
+      <li><a href="https://justcall.io/blog/call-center-terminology.html" target="_blank" rel="noopener">JustCall (2026) – justcall.io</a></li>
+      <li><a href="https://www.vpbank.com.vn/tin-tuc/thong-cao-bao-chi/2022/vpbank-nang-cao-trai-nghiem-khach-hang-bang-voice-biometrics" target="_blank" rel="noopener">VPBank (2022) – vpbank.com.vn</a></li>
+      <li><a href="https://www.hivedesk.com/glossary/first-call-resolution" target="_blank" rel="noopener">HiveDesk, 2026 – hivedesk.com</a></li>
+      <li><a href="https://www.vpbank.com.vn/tin-tuc/thong-cao-bao-chi/2021/tong-dai-vpbank-duoc-vinh-danh-giai-thuong-trai-nghiem-khach-hang-xuat-sac-nhat" target="_blank" rel="noopener">thông cáo của VPBank (2021) – vpbank.com.vn</a></li>
+      <li><a href="https://thitruongtaichinhtiente.vn/vpbank-tiep-tuc-dot-pha-trong-trai-nghiem-khach-hang-48011.html" target="_blank" rel="noopener">Thị trường Tài chính Tiền tệ, 2023 – thitruongtaichinhtiente.vn</a></li>
+    </ol>
+  </section>
+
+  <section class="sources" aria-label="Bài viết liên quan / Related">
+    <h2><span data-l="vi">Bài viết liên quan</span><span data-l="en">Related</span></h2>
+    <ul>
+      <li><a href="/blog/vi-sao-chi-theo-doi-aht-chua-du-danh-gia-chat-luong-cskh/">Vì sao chỉ theo dõi AHT chưa đủ để đánh giá chất lượng CSKH?</a></li>
+      <li><a href="/blog/khung-cham-diem-chat-luong-cuoc-goi-yeu-to-can-thong-nhat/">Khung chấm điểm chất lượng cuộc gọi: những yếu tố cần thống nhất</a></li>
+      <li><a href="/blog/ket-hop-du-lieu-van-hanh-va-chat-luong-tim-nguyen-nhan-van-de-dich-vu/">Kết hợp dữ liệu vận hành và dữ liệu chất lượng để tìm nguyên nhân của vấn đề dịch vụ</a></li>
+    </ul>
+  </section>
+
+  <aside class="author" aria-label="Tác giả / Author">
+    <div class="av" aria-hidden="true">TT</div>
+    <div>
+      <p class="name">Trương Mạnh Tùng</p>
+      <p class="sub"><span data-l="vi">Account Manager tại BaseBS, đồng hành cùng ngân hàng, tài chính, bảo hiểm trong xây dựng và vận hành Contact Center.</span><span data-l="en">Account Manager at BaseBS, helping banks, finance and insurance companies build and run their Contact Centers.</span></p>
+      <div class="acts">
+        <a class="btn primary" href="https://zalo.me/0915306688" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo</span><span data-l="en">Message on Zalo</span></a>
+        <a class="btn" href="mailto:tungtm@basebs.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/tungtm141" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+  <p class="disclaimer"><span data-l="vi">Bài viết thể hiện góc nhìn cá nhân của tác giả, không phải quan điểm chính thức của BaseBS hay khách hàng được nhắc tới.</span><span data-l="en">Views are the author's own and do not represent BaseBS or any client mentioned.</span></p>
+
+  <nav class="post-nav"><a href="/blog/"><span data-l="vi">← Tất cả bài viết</span><span data-l="en">← All posts</span></a></nav>
+</main>
+
+<footer><div class="wrap">© 2026 Trương Mạnh Tùng · <a href="/">truongmanhtung.com</a></div></footer>
+<script src="/assets/blog.js" defer></script>
+</body>
+</html>

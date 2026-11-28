@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" data-title-vi="Chất lượng dữ liệu đầu vào ảnh hưởng thế nào đến cuộc gọi ra? — Trương Mạnh Tùng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chất lượng dữ liệu đầu vào ảnh hưởng thế nào đến cuộc gọi ra? — Trương Mạnh Tùng</title>
+<meta name="description" content="Chất lượng dữ liệu đầu vào quyết định bao nhiêu cuộc gọi đến đúng người: số liệu dữ liệu xuống cấp, bước làm sạch và ví dụ từ Việt Nam.">
+<link rel="canonical" href="https://truongmanhtung.com/blog/chat-luong-du-lieu-dau-vao-anh-huong-the-nao-den-cuoc-goi-ra/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://truongmanhtung.com/blog/chat-luong-du-lieu-dau-vao-anh-huong-the-nao-den-cuoc-goi-ra/">
+<meta property="og:title" content="Chất lượng dữ liệu đầu vào ảnh hưởng thế nào đến cuộc gọi ra?">
+<meta property="og:description" content="Chất lượng dữ liệu đầu vào quyết định bao nhiêu cuộc gọi đến đúng người: số liệu dữ liệu xuống cấp, bước làm sạch và ví dụ từ Việt Nam.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://truongmanhtung.com/blog/chat-luong-du-lieu-dau-vao-anh-huong-the-nao-den-cuoc-goi-ra/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:author" content="https://www.linkedin.com/in/tungtm141">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+ "headline":"Chất lượng dữ liệu đầu vào ảnh hưởng thế nào đến cuộc gọi ra?","description":"Chất lượng dữ liệu đầu vào quyết định bao nhiêu cuộc gọi đến đúng người: số liệu dữ liệu xuống cấp, bước làm sạch và ví dụ từ Việt Nam.","inLanguage":"vi",
+ "image":"https://truongmanhtung.com/blog/chat-luong-du-lieu-dau-vao-anh-huong-the-nao-den-cuoc-goi-ra/og.jpg",
+ "mainEntityOfPage":"https://truongmanhtung.com/blog/chat-luong-du-lieu-dau-vao-anh-huong-the-nao-den-cuoc-goi-ra/",
+ "author":{"@type":"Person","name":"Trương Mạnh Tùng","url":"https://truongmanhtung.com/"}}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="navlink hide-sm" href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap narrow">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/"><span data-l="vi">Trang chủ</span><span data-l="en">Home</span></a> / <a href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a> / <a href="/blog/#campaign-autodialer"><span data-l="vi">Campaign &amp; Autodialer</span><span data-l="en">Campaign &amp; Autodialer</span></a></nav>
+
+  <header class="post-head">
+    <div class="meta">
+      <span class="tag"><span data-l="vi">Campaign &amp; Autodialer</span><span data-l="en">Campaign &amp; Autodialer</span></span>
+      <span><span data-l="vi">7 phút đọc</span><span data-l="en">7 min read</span></span>
+    </div>
+    <h1>Chất lượng dữ liệu đầu vào ảnh hưởng thế nào đến cuộc gọi ra?</h1>
+  </header>
+
+  <p class="lang-note" data-l="en">This article is currently available in Vietnamese only.</p>
+
+  <article class="prose" lang="vi">
+<p>Khoảng 35 triệu số điện thoại tại Mỹ bị ngắt kết nối rồi sẵn sàng cấp lại cho thuê bao mới mỗi năm, theo ước tính trong lệnh năm 2018 của FCC, như <a href="https://www.akingump.com/a/web/100475/aokv9/highlights-from-fccs-reassigned-number-database-order.pdf" target="_blank" rel="noopener">Akin Gump</a> tóm tắt. Nghĩa là một phần danh sách gọi có thể trỏ đến người không còn là khách hàng của mình ngay cả khi dữ liệu từng đúng. Bài này trình bày chất lượng dữ liệu đầu vào ảnh hưởng thế nào đến chiến dịch gọi ra, các số liệu về tốc độ dữ liệu liên hệ xuống cấp, và những bước làm sạch có thể áp dụng trước và trong chiến dịch. Mục đích là giúp đội vận hành biết nên kiểm tra gì trước khi đổ lỗi cho kịch bản hay nhân sự.</p>
+<h2>Chất lượng dữ liệu đầu vào hỏng ở những chỗ nào?</h2>
+<p>Một dòng trong danh sách gọi có thể sai theo bốn cách khác nhau, và mỗi cách cần cách xử lý riêng:</p>
+<ul>
+<li><strong>Số không còn hoạt động:</strong> đã ngắt, hoặc đang ở ngoài vùng phục vụ.</li>
+<li><strong>Số đổi chủ:</strong> số vẫn hoạt động nhưng thuộc người khác.</li>
+<li><strong>Gắn sai người:</strong> hồ sơ ghi nhầm số di động cho khách hàng. Theo <a href="https://one-to-one-sellers.insidearm.com/blogs/neustar-tcpa-compliance-and-operational-strategies/00017808-when-bad-information-happens-to-good-coll" target="_blank" rel="noopener">InsideARM</a>, một nghiên cứu năm 2013 của Neustar cho thấy tối đa 20% hồ sơ khách hàng gắn với số di động sai.</li>
+<li><strong>Trùng lặp và lỗi thời:</strong> cùng một khách có nhiều dòng, hoặc thông tin đã cũ. Cũng bài này dẫn nghiên cứu ngành cho rằng mỗi tháng khoảng 2% hồ sơ trong CRM trở nên lỗi thời vì chuyển nhà, đổi tình trạng hôn nhân hay qua đời.</li>
+</ul>
+<p>Bài không ghi ngày đăng, và Neustar là nhà cung cấp dịch vụ dữ liệu, nên con số trên nên đọc như mức tham khảo, không phải chuẩn thị trường.</p>
+<h2>Dữ liệu liên hệ xuống cấp nhanh đến mức nào?</h2>
+<p>Các thống kê về tốc độ xuống cấp khác nhau khá nhiều. <a href="https://landbase.com/blog/data-decay-rate-statistics" target="_blank" rel="noopener">Landbase</a> (cập nhật 01/2026) tổng hợp lại từ bên thứ ba: cơ sở dữ liệu B2B xuống cấp khoảng 2,1% mỗi tháng, tức khoảng 22,5% mỗi năm theo SMARTe; 42,9% liên hệ có thay đổi số điện thoại trong vòng một năm theo IndustrySelect; toàn bộ khoảng dao động 22,5% đến 70,3% mỗi năm tuỳ cách đo. Tôi chưa đối chiếu các số này với nguồn gốc, và chúng thiên về dữ liệu B2B, nên chỉ dùng để thấy rằng dữ liệu không đứng yên.</p>
+<p>Với số điện thoại, lệnh FCC cho biết cách một thị trường xử lý vấn đề đổi chủ. Theo <a href="https://www.jdsupra.com/legalnews/wrong-number-the-fcc-works-to-solve-61595" target="_blank" rel="noopener">JD Supra (01/2019)</a>, nhà mạng phải chờ tối thiểu 45 ngày trước khi cấp lại số đã ngắt và báo cáo dữ liệu ngắt kết nối vào ngày 15 hằng tháng. Theo Akin Gump, bên gọi được bảo vệ khi tra cơ sở dữ liệu, nhưng phải lưu hồ sơ ngày liên hệ và lần truy vấn. Đây là quy định của Mỹ, và Việt Nam không có cơ chế tương đương trong các nguồn tôi đã đọc; bài học dùng được là nên ghi lại ngày dữ liệu được xác minh lần cuối.</p>
+<h2>Dữ liệu sai làm lệch kết quả chiến dịch như thế nào?</h2>
+<p>Dữ liệu sai làm giảm tỷ lệ nghe máy và right-party contact, đồng thời làm sai lệch cách đọc chỉ số. <a href="https://www.datasoap.co.uk/industries/debt-collection" target="_blank" rel="noopener">Data Soap</a>, nhà cung cấp dịch vụ làm sạch dữ liệu tại Anh, cho rằng right-party contact dưới 30% là vấn đề phổ biến trong thu hồi nợ; đây là nhận định của nhà cung cấp, trang không nêu cách đo.</p>
+<p>Hệ quả thực tế nằm ở chi phí quay số. <a href="https://www.intelemark.com/blog/improving-connect-rates-best-practices-for-caller-id-management-and-outbound-campaigns/" target="_blank" rel="noopener">Intelemark (10/2025)</a> minh hoạ: với 1.000 lượt gọi, tỷ lệ kết nối 10%, 20% và 30% cho 100, 200 và 300 cuộc được trả lời. Con số mang tính minh hoạ, nhưng cho thấy cùng một khối lượng quay số có thể cho kết quả gấp ba lần. Khi RPC thấp, nhiều đội tăng số lần thử. <a href="https://customerthink.com/how_many_attempts_should_you_make_in_telemarketing_campaigns/" target="_blank" rel="noopener">CustomerThink</a> dẫn kinh nghiệm cá nhân rằng có thể cần 8 đến 12 cuộc để tiếp cận một khách hàng tiềm năng, và một agency giới hạn tối đa 8 lần mỗi hồ sơ. Tác giả bài đó cảnh báo cách làm này có thể là tiết kiệm giả, vì nguyên nhân thật thường là chất lượng dữ liệu, thời điểm gọi và cách quản lý dialer.</p>
+<p>Dữ liệu tốt cũng giúp chọn đúng người để gọi trước. <a href="https://www.callcentrehelper.com/how-you-can-get-the-best-out-of-your-outbound-dialler-216979.htm" target="_blank" rel="noopener">Call Centre Helper (đăng 01/2023, cập nhật 09/2025)</a> khuyến nghị dialer lấy ra các liên hệ phù hợp nhất thay vì gọi ngẫu nhiên, ví dụ lọc theo khả năng thanh toán và số tiền nợ, và đổi chiến lược quay số theo thời điểm trong ngày. Bài có đóng góp từ CEO một nhà cung cấp dialer và không nêu số liệu cải thiện.</p>
+<h2>Làm sạch trước và trong chiến dịch: các bước cụ thể</h2>
+<p>Từ các nguồn trên có thể rút ra một quy trình năm bước:</p>
+<ol>
+<li><strong>Loại số không hoạt động trước khi nạp vào dialer.</strong> Data Soap mô tả kiểm tra HLR để loại số di động đã ngắt, bị cấp lại hoặc chỉ hoạt động khi roaming; theo trang này, kiểm tra trước mỗi lần gọi mất dưới một giây cho mỗi số.</li>
+<li><strong>Gỡ trùng lặp và đối chiếu số với tên, địa chỉ hoặc định danh khác.</strong> InsideARM khuyến nghị liên kết số điện thoại với tên và địa chỉ, rồi duy trì dữ liệu chính xác từ đầu thay vì chỉ làm sạch khi có sự cố.</li>
+<li><strong>Kiểm tra định kỳ và liên tục.</strong> Intelemark gợi ý kiểm tra hằng quý, kèm script kiểm tra liên tục để xác thực số, loại trùng và loại số không hoạt động.</li>
+<li><strong>Chấm điểm độ tin cậy của số.</strong> Một số nhà cung cấp, như tài liệu <a href="https://risk.lexisnexis.com/-/media/files/product%20pages/brochure/lnrs-phone-confidence-indicator-ss-nxr15446-00-0322-en-us.pdf" target="_blank" rel="noopener">LexisNexis Risk Solutions</a> (bản quyền 2022), chấm mức liên kết giữa số điện thoại và cá nhân trên thang 0 đến 5 để ưu tiên số đáng gọi.</li>
+<li><strong>Đưa kết quả cuộc gọi quay lại hồ sơ.</strong> Khuyến nghị này là của tôi, không từ các nguồn trên: sai số, chuyển máy, người nhận báo không đúng người nên được ghi bằng mã kết quả chuẩn trong CRM, kèm ngày, để lần gọi sau không lặp lại lỗi cũ.</li>
+</ol>
+<p>Để biết các bước trên có hiệu quả không, thước đo trực tiếp nhất là right-party contact. <a href="https://www.callcentrehelper.com/what-is-right-party-contact-rpc-208556.htm" target="_blank" rel="noopener">Call Centre Helper (2022)</a> định nghĩa đó là cuộc gọi đến đúng người, không phải hộp thư thoại hay bên thứ ba, nên nếu tỷ lệ này tăng sau khi làm sạch thì dữ liệu đang cải thiện thật.</p>
+<h2>Ví dụ Việt Nam: đối chiếu dữ liệu ở ngành viễn thông và ngân hàng</h2>
+<p>Hai đợt đối chiếu dữ liệu quy mô lớn gần đây cho thấy dữ liệu liên hệ ở Việt Nam đã thay đổi rõ.</p>
+<p><strong>Viễn thông.</strong> Theo <a href="https://doanhnhan.baophapluat.vn/tu-313-cac-nha-mang-se-khoa-sim-dien-thoai-co-thong-tin-khong-chinh-xac-50549.html" target="_blank" rel="noopener">Doanh nhân Pháp luật (14/03/2023)</a>, Cục Viễn thông cho biết khoảng 3,5 triệu thuê bao của Viettel, VNPT và MobiFone có thông tin chưa khớp Cơ sở dữ liệu quốc gia về dân cư, với hạn chuẩn hoá đến 31/3/2023. Đến họp báo ngày 6/9/2023, như <a href="https://lsvn.vn/loai-bo-thanh-cong-12-5-trieu-sim-rac-khong-chinh-chu-1694039403.html" target="_blank" rel="noopener">Luật sư Việt Nam (07/09/2023)</a> đưa tin, Bộ TT&amp;TT cho biết khoảng 12,5 triệu SIM không chính chủ đã bị loại bỏ, và 7,15 triệu thuê bao đã cập nhật thông tin sau khi 19,6 triệu bản ghi lệch được đánh dấu. Với đội chiến dịch, điều này có nghĩa là một số trong hồ sơ cũ có thể đã bị loại bỏ hoặc đổi chủ.</p>
+<p><strong>Ngân hàng.</strong> Theo <a href="https://thitruongtaichinhtiente.vn/hon-108-trieu-ho-so-khach-hang-da-duoc-xac-thuc-sinh-trac-hoc-67833.html" target="_blank" rel="noopener">Tạp chí Thị trường Tài chính Tiền tệ (22/05/2025)</a>, báo cáo của Ngân hàng Nhà nước nêu hơn 108 triệu hồ sơ khách hàng cá nhân đã được đối chiếu sinh trắc học, tương đương hơn 92% tài khoản thanh toán cá nhân phát sinh giao dịch trên kênh số tính đến 11/4/2025, sau khi Quyết định 2345/QĐ-NHNN có hiệu lực từ 1/7/2024. <a href="https://tapchinganhang.gov.vn/toan-bo-ho-so-khach-hang-ca-nhan-va-doanh-nghiep-mo-tai-khoan-thanh-toan-tai-ngan-hang-da-duoc-doi-chieu-du-lieu-va-xac-minh-thong-tin-16399.html" target="_blank" rel="noopener">Tạp chí Ngân hàng (18/08/2025)</a> đưa tin toàn bộ hồ sơ có giao dịch kênh số đã được đối chiếu. Các nguồn này nói về hồ sơ định danh, không nói về số điện thoại liên hệ trong CRM của từng đơn vị, nên đây là cơ hội để đối chiếu lại, không phải bằng chứng rằng dữ liệu liên hệ đã sạch.</p>
+<h2>Kết luận</h2>
+<p>Chất lượng dữ liệu đầu vào quyết định bao nhiêu nỗ lực quay số biến thành cuộc trò chuyện với đúng người; kịch bản và nhân sự chỉ phát huy khi bước này đã ổn.</p>
+<p>Việc làm được trong tuần này: lấy danh sách của chiến dịch sắp chạy, chọn mẫu khoảng 200 dòng, đối chiếu số với hồ sơ định danh và ghi lại tỷ lệ số sai, trùng và không rõ chủ. Nếu tỷ lệ này đủ lớn để thay đổi kế hoạch quay số, nên làm sạch trước khi nạp danh sách vào dialer.</p>  </article>
+
+  <section class="sources" aria-label="Nguồn / Sources">
+    <h2><span data-l="vi">Nguồn tham khảo</span><span data-l="en">Sources</span></h2>
+    <p>Các nguồn được dẫn trong bài.</p>
+    <ol>
+      <li><a href="https://www.akingump.com/a/web/100475/aokv9/highlights-from-fccs-reassigned-number-database-order.pdf" target="_blank" rel="noopener">Akin Gump – akingump.com</a></li>
+      <li><a href="https://one-to-one-sellers.insidearm.com/blogs/neustar-tcpa-compliance-and-operational-strategies/00017808-when-bad-information-happens-to-good-coll" target="_blank" rel="noopener">InsideARM – one-to-one-sellers.insidearm.com</a></li>
+      <li><a href="https://landbase.com/blog/data-decay-rate-statistics" target="_blank" rel="noopener">Landbase – landbase.com</a></li>
+      <li><a href="https://www.jdsupra.com/legalnews/wrong-number-the-fcc-works-to-solve-61595" target="_blank" rel="noopener">JD Supra (01/2019) – jdsupra.com</a></li>
+      <li><a href="https://www.datasoap.co.uk/industries/debt-collection" target="_blank" rel="noopener">Data Soap – datasoap.co.uk</a></li>
+      <li><a href="https://www.intelemark.com/blog/improving-connect-rates-best-practices-for-caller-id-management-and-outbound-campaigns/" target="_blank" rel="noopener">Intelemark (10/2025) – intelemark.com</a></li>
+      <li><a href="https://customerthink.com/how_many_attempts_should_you_make_in_telemarketing_campaigns/" target="_blank" rel="noopener">CustomerThink – customerthink.com</a></li>
+      <li><a href="https://www.callcentrehelper.com/how-you-can-get-the-best-out-of-your-outbound-dialler-216979.htm" target="_blank" rel="noopener">Call Centre Helper (đăng 01/2023, cập nhật 09/2025) – callcentrehelper.com</a></li>
+      <li><a href="https://risk.lexisnexis.com/-/media/files/product%20pages/brochure/lnrs-phone-confidence-indicator-ss-nxr15446-00-0322-en-us.pdf" target="_blank" rel="noopener">LexisNexis Risk Solutions – risk.lexisnexis.com</a></li>
+      <li><a href="https://www.callcentrehelper.com/what-is-right-party-contact-rpc-208556.htm" target="_blank" rel="noopener">Call Centre Helper (2022) – callcentrehelper.com</a></li>
+      <li><a href="https://doanhnhan.baophapluat.vn/tu-313-cac-nha-mang-se-khoa-sim-dien-thoai-co-thong-tin-khong-chinh-xac-50549.html" target="_blank" rel="noopener">Doanh nhân Pháp luật (14/03/2023) – doanhnhan.baophapluat.vn</a></li>
+      <li><a href="https://lsvn.vn/loai-bo-thanh-cong-12-5-trieu-sim-rac-khong-chinh-chu-1694039403.html" target="_blank" rel="noopener">Luật sư Việt Nam (07/09/2023) – lsvn.vn</a></li>
+      <li><a href="https://thitruongtaichinhtiente.vn/hon-108-trieu-ho-so-khach-hang-da-duoc-xac-thuc-sinh-trac-hoc-67833.html" target="_blank" rel="noopener">Tạp chí Thị trường Tài chính Tiền tệ (22/05/2025) – thitruongtaichinhtiente.vn</a></li>
+      <li><a href="https://tapchinganhang.gov.vn/toan-bo-ho-so-khach-hang-ca-nhan-va-doanh-nghiep-mo-tai-khoan-thanh-toan-tai-ngan-hang-da-duoc-doi-chieu-du-lieu-va-xac-minh-thong-tin-16399.html" target="_blank" rel="noopener">Tạp chí Ngân hàng (18/08/2025) – tapchinganhang.gov.vn</a></li>
+    </ol>
+  </section>
+
+  <section class="sources" aria-label="Bài viết liên quan / Related">
+    <h2><span data-l="vi">Bài viết liên quan</span><span data-l="en">Related</span></h2>
+    <ul>
+      <li><a href="/blog/ket-noi-chien-dich-goi-ra-voi-crm-6-diem-can-thong-nhat-truoc/">Kết nối chiến dịch gọi ra với CRM: 6 điểm cần thống nhất trước</a></li>
+      <li><a href="/blog/autodialer-la-gi-so-sanh-goi-thu-cong-va-cach-chon-che-do/">Autodialer là gì? So sánh với gọi thủ công và cách chọn chế độ</a></li>
+      <li><a href="/blog/danh-gia-hieu-qua-chien-dich-goi-ra-cac-chi-so-can-theo-doi/">Đánh giá hiệu quả chiến dịch gọi ra: các chỉ số cần theo dõi</a></li>
+    </ul>
+  </section>
+
+  <aside class="author" aria-label="Tác giả / Author">
+    <div class="av" aria-hidden="true">TT</div>
+    <div>
+      <p class="name">Trương Mạnh Tùng</p>
+      <p class="sub"><span data-l="vi">Account Manager tại BaseBS, đồng hành cùng ngân hàng, tài chính, bảo hiểm trong xây dựng và vận hành Contact Center.</span><span data-l="en">Account Manager at BaseBS, helping banks, finance and insurance companies build and run their Contact Centers.</span></p>
+      <div class="acts">
+        <a class="btn primary" href="https://zalo.me/0915306688" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo</span><span data-l="en">Message on Zalo</span></a>
+        <a class="btn" href="mailto:tungtm@basebs.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/tungtm141" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+  <p class="disclaimer"><span data-l="vi">Bài viết thể hiện góc nhìn cá nhân của tác giả, không phải quan điểm chính thức của BaseBS hay khách hàng được nhắc tới.</span><span data-l="en">Views are the author's own and do not represent BaseBS or any client mentioned.</span></p>
+
+  <nav class="post-nav"><a href="/blog/"><span data-l="vi">← Tất cả bài viết</span><span data-l="en">← All posts</span></a></nav>
+</main>
+
+<footer><div class="wrap">© 2026 Trương Mạnh Tùng · <a href="/">truongmanhtung.com</a></div></footer>
+<script src="/assets/blog.js" defer></script>
+</body>
+</html>

@@ -5,9 +5,9 @@ Chạy ở thư mục gốc repo sau khi thêm/sửa bài:
     python3 _scripts/build-sitemap.py
 
 - Bài có "draft": true bị bỏ qua.
-- lastmod của bài = "date" trong posts.json.
-- lastmod của /blog/ = ngày bài mới nhất.
-- Trang chủ lấy lastmod = ngày bài mới nhất (trang chủ có mục "Bài viết mới").
+- lastmod của bài = "lastmod" trong posts.json (chỉ dùng cho sitemap, không hiển thị trên trang).
+- lastmod của /blog/ = lastmod mới nhất.
+- Trang chủ lấy lastmod = lastmod mới nhất (trang chủ có mục chủ đề).
 - Không đưa vào: /about-me, /chatbot-demo, blog/_mau-bai-viet (đều noindex).
 """
 import json
@@ -19,12 +19,12 @@ BASE = "https://truongmanhtung.com"
 
 posts = json.loads((ROOT / "blog" / "posts.json").read_text(encoding="utf-8"))
 posts = [p for p in posts if not p.get("draft")]
-posts.sort(key=lambda p: p["date"], reverse=True)
+posts.sort(key=lambda p: p["lastmod"], reverse=True)
 
-latest = posts[0]["date"] if posts else None
+latest = posts[0]["lastmod"] if posts else None
 
 entries = [(f"{BASE}/", latest), (f"{BASE}/blog/", latest)]
-entries += [(f"{BASE}/blog/{p['slug']}/", p["date"]) for p in posts]
+entries += [(f"{BASE}/blog/{p['slug']}/", p["lastmod"]) for p in posts]
 
 lines = ['<?xml version="1.0" encoding="UTF-8"?>',
          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']

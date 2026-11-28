@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" data-title-vi="Ticket, SLA và lịch sử cuộc gọi: theo dõi yêu cầu hỗ trợ thế nào? — Trương Mạnh Tùng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ticket, SLA và lịch sử cuộc gọi: theo dõi yêu cầu hỗ trợ thế nào? — Trương Mạnh Tùng</title>
+<meta name="description" content="Cách nối ticket, SLA và lịch sử cuộc gọi để theo dõi yêu cầu hỗ trợ: chỗ nối CTI, thiết kế đồng hồ SLA, ví dụ và quy định trong nước, sáu bước triển khai.">
+<link rel="canonical" href="https://truongmanhtung.com/blog/ticket-sla-lich-su-cuoc-goi-theo-doi-yeu-cau-ho-tro/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://truongmanhtung.com/blog/ticket-sla-lich-su-cuoc-goi-theo-doi-yeu-cau-ho-tro/">
+<meta property="og:title" content="Ticket, SLA và lịch sử cuộc gọi: theo dõi yêu cầu hỗ trợ thế nào?">
+<meta property="og:description" content="Cách nối ticket, SLA và lịch sử cuộc gọi để theo dõi yêu cầu hỗ trợ: chỗ nối CTI, thiết kế đồng hồ SLA, ví dụ và quy định trong nước, sáu bước triển khai.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://truongmanhtung.com/blog/ticket-sla-lich-su-cuoc-goi-theo-doi-yeu-cau-ho-tro/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:author" content="https://www.linkedin.com/in/tungtm141">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+ "headline":"Ticket, SLA và lịch sử cuộc gọi: theo dõi yêu cầu hỗ trợ thế nào?","description":"Cách nối ticket, SLA và lịch sử cuộc gọi để theo dõi yêu cầu hỗ trợ: chỗ nối CTI, thiết kế đồng hồ SLA, ví dụ và quy định trong nước, sáu bước triển khai.","inLanguage":"vi",
+ "image":"https://truongmanhtung.com/blog/ticket-sla-lich-su-cuoc-goi-theo-doi-yeu-cau-ho-tro/og.jpg",
+ "mainEntityOfPage":"https://truongmanhtung.com/blog/ticket-sla-lich-su-cuoc-goi-theo-doi-yeu-cau-ho-tro/",
+ "author":{"@type":"Person","name":"Trương Mạnh Tùng","url":"https://truongmanhtung.com/"}}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="navlink hide-sm" href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap narrow">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/"><span data-l="vi">Trang chủ</span><span data-l="en">Home</span></a> / <a href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a> / <a href="/blog/#crm-omnichannel"><span data-l="vi">CRM &amp; Omnichannel</span><span data-l="en">CRM &amp; Omnichannel</span></a></nav>
+
+  <header class="post-head">
+    <div class="meta">
+      <span class="tag"><span data-l="vi">CRM &amp; Omnichannel</span><span data-l="en">CRM &amp; Omnichannel</span></span>
+      <span><span data-l="vi">6 phút đọc</span><span data-l="en">6 min read</span></span>
+    </div>
+    <h1>Ticket, SLA và lịch sử cuộc gọi: theo dõi yêu cầu hỗ trợ thế nào?</h1>
+  </header>
+
+  <p class="lang-note" data-l="en">This article is currently available in Vietnamese only.</p>
+
+  <article class="prose" lang="vi">
+<p>Theo <a href="https://techcombank.com/thong-tin/thong-bao/thong-bao-ve-quy-trinh-tiep-nhan-va-giai-quyet-phan-nan-khieu-nai-cua-khach-hang" target="_blank" rel="noopener">thông báo quy trình của Techcombank (đăng 06/04/2026)</a>, một yêu cầu hỗ trợ được xác nhận trong 02 ngày làm việc, mục tiêu xử lý là 02 ngày làm việc với ca thường và 14 ngày làm việc với ca phức tạp, còn giới hạn theo quy định là 30 ngày. Ba mốc đó chỉ kiểm soát được khi ba thành phần cùng chạy: ticket ghi lại yêu cầu, SLA đo thời hạn, và lịch sử cuộc gọi cho biết điều gì đã xảy ra.</p>
+<p>Bài này đi qua vai trò của từng thành phần, chỗ nối giữa cuộc gọi và ticket, cách thiết kế đồng hồ SLA, các ví dụ trong nước và thứ tự triển khai.</p>
+<h2>Ba thành phần, ba vai trò khác nhau</h2>
+<p>Ticket là đơn vị theo dõi một yêu cầu từ lúc mở đến lúc đóng. SLA là cam kết thời gian gắn với ticket. Lịch sử cuộc gọi là bản ghi từng lần liên hệ qua kênh thoại, gồm thời điểm, người nghe và ghi chú.</p>
+<p>Cầu nối kỹ thuật thường là CTI. Theo <a href="https://www.webex.com/us/en/articles/CTI-computer-telephony-integration.html" target="_blank" rel="noopener">Webex</a>, CTI ghi chi tiết cuộc gọi và gắn vào đúng bản ghi CRM nên không cần nhập tay. <a href="https://blog.intermedia.com/computer-telephony-integration/" target="_blank" rel="noopener">Intermedia (2026)</a> mô tả nhân viên nhận màn hình với tương tác cũ và các vụ việc đang mở, rồi khi kết thúc hệ thống tự ghi cuộc gọi và ghi chú. Cả hai là nhà cung cấp.</p>
+<p>Thiếu cầu nối này, SLA dễ vỡ. <a href="https://clearfeed.ai/blogs/sla-breach-in-customer-support" target="_blank" rel="noopener">ClearFeed</a> nêu một nguyên nhân phổ biến của vi phạm SLA: nhân viên chuyển qua lại giữa các ứng dụng chưa tích hợp nên bỏ sót yêu cầu khẩn.</p>
+<h2>Chỗ nối giữa cuộc gọi và ticket cần thiết kế</h2>
+<p><a href="https://docs.oracle.com/cd/F28161_01/books/OnDemCTIDev/overview-of-cti-and-crm-on-demand-integration.html" target="_blank" rel="noopener">Oracle</a> mô tả một cách làm cụ thể. Khi nhân viên nhận cuộc gọi, hệ thống tạo bản ghi hoạt động và tự ghép với bản ghi liên quan theo ba cách, ưu tiên từ cao xuống thấp: bản ghi được truyền vào rõ ràng, dữ liệu khách nhập ở IVR (có thể gồm số yêu cầu dịch vụ), rồi tra theo số gọi đến. Nếu nhiều bản ghi cùng khớp, màn hình ưu tiên yêu cầu dịch vụ trước liên hệ. Nghĩa là nếu IVR cho khách nhập số ticket, cuộc gọi sẽ nối vào đúng yêu cầu thay vì mở thêm một ticket mới.</p>
+<p><a href="https://ozonetel.com/?p=64490" target="_blank" rel="noopener">Ozonetel</a> cho biết số điện thoại là khóa tra cứu, nhưng không nêu khi một số khớp nhiều hồ sơ hoặc không khớp hồ sơ nào thì làm gì. Phần này tổ chức phải tự quy định. Hai chi tiết nhỏ cũng nên thống nhất:</p>
+<ul>
+<li>Với <a href="https://doc.caresoft.vn/danh-sach-tinh-nang/slas/sla-thoa-thuan-muc-dich-vu" target="_blank" rel="noopener">Caresoft</a>, thời gian phản hồi đầu tiên tính từ nhận xét đầu tiên của khách, còn phiếu do nhân viên tạo không tính chỉ số này. Ticket tạo từ cuộc gọi cần quy tắc rõ về mốc bắt đầu.</li>
+<li><a href="https://www.cxtoday.com/contact-center/how-to-measure-first-contact-resolution/" target="_blank" rel="noopener">CX Today (2022)</a> cho rằng mã kết quả trong CRM là cách chính xác nhất để nhận ra gọi lại cùng vấn đề, nhưng mã thường lỗi thời hoặc điền vội. <a href="https://enreach.es/en/blog/what-fcr-is-in-a-contact-centre-and-how-to-improve-it/" target="_blank" rel="noopener">Enreach (2026)</a> thêm rằng tích hợp tổng đài với CRM hoặc ticket giúp nhân viên thấy ngữ cảnh ngay từ đầu.</li>
+</ul>
+<h2>Đồng hồ SLA cho yêu cầu hỗ trợ: đo gì, dừng khi nào, cảnh báo ra sao</h2>
+<p>Hầu hết nguồn đều tách hai đồng hồ. <a href="https://blog.hubspot.com/service/sla-management-software" target="_blank" rel="noopener">HubSpot (cập nhật 9/2026)</a> tách thời gian phản hồi đầu tiên và thời gian xử lý vì mỗi cái lộ ra một loại chậm trễ: phản hồi nhanh vẫn có thể để ticket mở nhiều ngày. <a href="https://appmaster.io/vi/blog/xay-dung-trinh-theo-doi-sla" target="_blank" rel="noopener">AppMaster (6/2026)</a> mô tả thêm giờ làm việc, thời gian tạm dừng và cách tính vi phạm. Cả hai bán sản phẩm liên quan.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Chỗ hay sai</th>
+<th>Cách xử lý</th>
+<th>Nguồn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chỉ đo thời gian đóng ticket</td>
+<td>Tách đồng hồ phản hồi đầu và xử lý</td>
+<td>HubSpot, AppMaster</td>
+</tr>
+<tr>
+<td>Đồng hồ chạy khi chờ khách</td>
+<td>Dừng theo trạng thái chờ khách, ghi thời điểm và lý do; chậm trễ nội bộ không được dừng</td>
+<td>AppMaster, eesel</td>
+</tr>
+<tr>
+<td>Tính theo lịch 24/7 khi chỉ có giờ hành chính</td>
+<td>Gắn lịch làm việc cho từng chính sách</td>
+<td>AppMaster, HubSpot (tiếng Pháp)</td>
+</tr>
+<tr>
+<td>Chỉ biết khi đã trễ</td>
+<td>Cảnh báo ở ngưỡng 50–80% thời hạn</td>
+<td>HubSpot, ClearFeed</td>
+</tr>
+</tbody>
+</table></div>
+<p>Về ngưỡng cảnh báo, HubSpot ví dụ báo nhân viên khi đã qua 50% mục tiêu và báo quản lý ở 75%, còn ClearFeed gợi ý 75–80% mà không dẫn nguồn. Về mục tiêu, <a href="https://www.eesel.ai/blog/sla-best-practices" target="_blank" rel="noopener">eesel (2026)</a> khuyên đặt mức đạt được khoảng 95% số lần theo phân vị 90 và 95 của dữ liệu lịch sử, rồi đọc SLA cùng CSAT để biết có bị làm đẹp số hay không. <a href="https://blog.hubspot.fr/service/service-level-agreement" target="_blank" rel="noopener">HubSpot (tiếng Pháp)</a> thêm hai cái bẫy: tỷ lệ đạt SLA chỉ đo thời hạn, không đo chất lượng trả lời, và ticket mở lại có thể bị tính là đã đóng.</p>
+<p>Với các bảng chuẩn thời gian, nên thận trọng. <a href="https://stealthagents.com/research/customer-support-sla-benchmarks-2026" target="_blank" rel="noopener">Stealth Agents (6/2026)</a> tổng hợp mục tiêu theo mức ưu tiên, nhưng đây là bài của đơn vị bán dịch vụ hỗ trợ, tự thừa nhận số liệu gom từ nhiều báo cáo và có chỗ mâu thuẫn. <a href="https://unthread.io/blog/customer-support-sla-statistics/" target="_blank" rel="noopener">Unthread (5/2026)</a> cũng lưu ý các con số đến từ những bộ dữ liệu khác nhau nên không nên coi là một chuẩn duy nhất.</p>
+<h2>Ví dụ trong nước: thời hạn đến từ quy định, không chỉ từ phần mềm</h2>
+<p><strong>Techcombank (2026).</strong> Thông báo nêu các kênh tiếp nhận gồm hotline 24/7, email và quầy giao dịch, xác nhận trong 02 ngày làm việc (qua điện thoại hoặc trực tiếp thì xác nhận ngay khi nhận), mục tiêu 02 ngày làm việc cho ca thường và 14 ngày làm việc cho ca phức tạp. Trang không nêu mã tra cứu và không định nghĩa các mức nghiêm trọng.</p>
+<p><strong>Quy định tra soát.</strong> Theo <a href="https://vnba.org.vn/vi/xu-ly-tra-soat--khieu-nai-trong-su-dung-tai-khoan-thanh-toan-tai-ngan-hang-9235.htm" target="_blank" rel="noopener">VNBA (1/2/2023)</a>, dẫn Điều 15a Thông tư 23/2014/TT-NHNN (sửa đổi bởi Thông tư 02/2019/TT-NHNN), việc tra soát, khiếu nại tối đa 30 ngày làm việc kể từ ngày tiếp nhận đề nghị lần đầu. Bồi hoàn tổn thất trong 5 ngày làm việc sau khi báo kết quả. Nếu sau 30 ngày chưa xác định được nguyên nhân thì hai bên thỏa thuận phương án xử lý trong 15 ngày làm việc tiếp theo.</p>
+<p>Hai nguồn lệch nhau ở chi tiết: thông báo của Techcombank ghi "30 ngày", còn VNBA ghi "30 ngày làm việc". Bài VNBA từ 2023 và không cho biết văn bản đã sửa đổi chưa, nên cần đối chiếu bản hiện hành trước khi cấu hình SLA theo quy định. Cũng đáng chú ý là mốc tính thời hạn: "ngày tiếp nhận lần đầu", thường chính là thời điểm cuộc gọi đầu tiên, không phải lúc ticket được mở.</p>
+<p><strong>Kênh chính thức và bằng chứng.</strong> Tạp chí Công Thương (25/12/2018) kể trường hợp ngân hàng xác nhận đã nhận email khiếu nại nhưng không phản hồi. <a href="https://tapchicongthuong.vn/giai-quyet-khieu-nai-voi-ngan-hang--bo-cong-thuong-luu-y-3-diem-58711.htm" target="_blank" rel="noopener">Bài viết</a> khuyến cáo khách dùng kênh chính thức, lưu bằng chứng và ghi âm cuộc gọi tổng đài, đồng thời nêu thời hạn thương lượng không quá 07 ngày làm việc theo Luật Bảo vệ quyền lợi người tiêu dùng. Bài đã hơn bảy năm tuổi và luật có thể đã thay đổi.</p>
+<h2>Triển khai: sáu bước theo thứ tự</h2>
+<p>Đây là gợi ý của người viết, ghép từ các nguồn trên:</p>
+<ol>
+<li>Lưu hai mốc riêng cho mỗi yêu cầu: lúc tiếp nhận lần đầu (thường từ lịch sử cuộc gọi) và lúc ticket được mở.</li>
+<li>Chuẩn hóa trường tối thiểu của ticket: kênh, loại yêu cầu, mức ưu tiên, mã cuộc gọi liên quan, mã kết quả.</li>
+<li>Viết quy tắc ghép cuộc gọi với ticket, gồm cả trường hợp số khớp nhiều hồ sơ hoặc không khớp.</li>
+<li>Lập ma trận SLA theo mức ưu tiên và kênh. Với yêu cầu có thời hạn pháp lý, đặt SLA nội bộ ngắn hơn hạn đó.</li>
+<li>Quy định khi nào dừng đồng hồ, ai được dừng và cảnh báo ở ngưỡng nào.</li>
+<li>Soát định kỳ: HubSpot gợi ý xem hằng tháng tỷ lệ đạt, lý do vi phạm và CSAT; eesel gợi ý xem lại mục tiêu mỗi quý.</li>
+</ol>
+<h2>Kết luận</h2>
+<p>Để theo dõi yêu cầu hỗ trợ đến nơi đến chốn, ticket, SLA và lịch sử cuộc gọi chỉ có giá trị khi chúng khớp nhau về mốc thời gian, về khóa nhận diện và về quy tắc dừng đồng hồ. Việc đầu tiên có thể làm ngay là lấy mười ticket đã đóng gần nhất và kiểm tra từng ticket có đủ ba thứ hay không: mốc tiếp nhận đầu tiên, các cuộc gọi liên quan và lý do mỗi lần dừng đồng hồ SLA. Ticket nào thiếu thứ nào sẽ chỉ ra bước cần làm trước.</p>  </article>
+
+  <section class="sources" aria-label="Nguồn / Sources">
+    <h2><span data-l="vi">Nguồn tham khảo</span><span data-l="en">Sources</span></h2>
+    <p>Các nguồn được dẫn trong bài.</p>
+    <ol>
+      <li><a href="https://techcombank.com/thong-tin/thong-bao/thong-bao-ve-quy-trinh-tiep-nhan-va-giai-quyet-phan-nan-khieu-nai-cua-khach-hang" target="_blank" rel="noopener">thông báo quy trình của Techcombank (đăng 06/04/2026) – techcombank.com</a></li>
+      <li><a href="https://www.webex.com/us/en/articles/CTI-computer-telephony-integration.html" target="_blank" rel="noopener">Webex – webex.com</a></li>
+      <li><a href="https://blog.intermedia.com/computer-telephony-integration/" target="_blank" rel="noopener">Intermedia (2026) – blog.intermedia.com</a></li>
+      <li><a href="https://clearfeed.ai/blogs/sla-breach-in-customer-support" target="_blank" rel="noopener">ClearFeed – clearfeed.ai</a></li>
+      <li><a href="https://docs.oracle.com/cd/F28161_01/books/OnDemCTIDev/overview-of-cti-and-crm-on-demand-integration.html" target="_blank" rel="noopener">Oracle – docs.oracle.com</a></li>
+      <li><a href="https://ozonetel.com/?p=64490" target="_blank" rel="noopener">Ozonetel – ozonetel.com</a></li>
+      <li><a href="https://doc.caresoft.vn/danh-sach-tinh-nang/slas/sla-thoa-thuan-muc-dich-vu" target="_blank" rel="noopener">Caresoft – doc.caresoft.vn</a></li>
+      <li><a href="https://www.cxtoday.com/contact-center/how-to-measure-first-contact-resolution/" target="_blank" rel="noopener">CX Today (2022) – cxtoday.com</a></li>
+      <li><a href="https://enreach.es/en/blog/what-fcr-is-in-a-contact-centre-and-how-to-improve-it/" target="_blank" rel="noopener">Enreach (2026) – enreach.es</a></li>
+      <li><a href="https://blog.hubspot.com/service/sla-management-software" target="_blank" rel="noopener">HubSpot (cập nhật 9/2026) – blog.hubspot.com</a></li>
+      <li><a href="https://appmaster.io/vi/blog/xay-dung-trinh-theo-doi-sla" target="_blank" rel="noopener">AppMaster (6/2026) – appmaster.io</a></li>
+      <li><a href="https://www.eesel.ai/blog/sla-best-practices" target="_blank" rel="noopener">eesel (2026) – eesel.ai</a></li>
+      <li><a href="https://blog.hubspot.fr/service/service-level-agreement" target="_blank" rel="noopener">HubSpot (tiếng Pháp) – blog.hubspot.fr</a></li>
+      <li><a href="https://stealthagents.com/research/customer-support-sla-benchmarks-2026" target="_blank" rel="noopener">Stealth Agents (6/2026) – stealthagents.com</a></li>
+      <li><a href="https://unthread.io/blog/customer-support-sla-statistics/" target="_blank" rel="noopener">Unthread (5/2026) – unthread.io</a></li>
+      <li><a href="https://vnba.org.vn/vi/xu-ly-tra-soat--khieu-nai-trong-su-dung-tai-khoan-thanh-toan-tai-ngan-hang-9235.htm" target="_blank" rel="noopener">VNBA (1/2/2023) – vnba.org.vn</a></li>
+      <li><a href="https://tapchicongthuong.vn/giai-quyet-khieu-nai-voi-ngan-hang--bo-cong-thuong-luu-y-3-diem-58711.htm" target="_blank" rel="noopener">Bài viết – tapchicongthuong.vn</a></li>
+    </ol>
+  </section>
+
+  <section class="sources" aria-label="Bài viết liên quan / Related">
+    <h2><span data-l="vi">Bài viết liên quan</span><span data-l="en">Related</span></h2>
+    <ul>
+      <li><a href="/blog/dong-bo-ho-so-khach-hang-crm-core-5-van-de-hay-gap/">Đồng bộ hồ sơ khách hàng giữa CRM và core: 5 vấn đề hay gặp</a></li>
+      <li><a href="/blog/tich-hop-contact-center-5-luong-du-lieu-can-lam-ro/">Tích hợp Contact Center: 5 luồng dữ liệu cần làm rõ</a></li>
+      <li><a href="/blog/tich-hop-crm-contact-center-du-lieu-hien-thi/">Tích hợp CRM với Contact Center: dữ liệu nào nên hiển thị?</a></li>
+    </ul>
+  </section>
+
+  <aside class="author" aria-label="Tác giả / Author">
+    <div class="av" aria-hidden="true">TT</div>
+    <div>
+      <p class="name">Trương Mạnh Tùng</p>
+      <p class="sub"><span data-l="vi">Account Manager tại BaseBS, đồng hành cùng ngân hàng, tài chính, bảo hiểm trong xây dựng và vận hành Contact Center.</span><span data-l="en">Account Manager at BaseBS, helping banks, finance and insurance companies build and run their Contact Centers.</span></p>
+      <div class="acts">
+        <a class="btn primary" href="https://zalo.me/0915306688" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo</span><span data-l="en">Message on Zalo</span></a>
+        <a class="btn" href="mailto:tungtm@basebs.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/tungtm141" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+  <p class="disclaimer"><span data-l="vi">Bài viết thể hiện góc nhìn cá nhân của tác giả, không phải quan điểm chính thức của BaseBS hay khách hàng được nhắc tới.</span><span data-l="en">Views are the author's own and do not represent BaseBS or any client mentioned.</span></p>
+
+  <nav class="post-nav"><a href="/blog/"><span data-l="vi">← Tất cả bài viết</span><span data-l="en">← All posts</span></a></nav>
+</main>
+
+<footer><div class="wrap">© 2026 Trương Mạnh Tùng · <a href="/">truongmanhtung.com</a></div></footer>
+<script src="/assets/blog.js" defer></script>
+</body>
+</html>

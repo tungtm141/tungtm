@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" data-title-vi="Đánh giá hiệu quả chiến dịch gọi ra: các chỉ số cần theo dõi — Trương Mạnh Tùng">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Đánh giá hiệu quả chiến dịch gọi ra: các chỉ số cần theo dõi — Trương Mạnh Tùng</title>
+<meta name="description" content="Đánh giá hiệu quả chiến dịch gọi ra theo chuỗi nghe máy, RPC, kết quả và chi phí: công thức, mẫu số cần thống nhất và ví dụ từ Việt Nam.">
+<link rel="canonical" href="https://truongmanhtung.com/blog/danh-gia-hieu-qua-chien-dich-goi-ra-cac-chi-so-can-theo-doi/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://truongmanhtung.com/blog/danh-gia-hieu-qua-chien-dich-goi-ra-cac-chi-so-can-theo-doi/">
+<meta property="og:title" content="Đánh giá hiệu quả chiến dịch gọi ra: các chỉ số cần theo dõi">
+<meta property="og:description" content="Đánh giá hiệu quả chiến dịch gọi ra theo chuỗi nghe máy, RPC, kết quả và chi phí: công thức, mẫu số cần thống nhất và ví dụ từ Việt Nam.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://truongmanhtung.com/blog/danh-gia-hieu-qua-chien-dich-goi-ra-cac-chi-so-can-theo-doi/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:author" content="https://www.linkedin.com/in/tungtm141">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+ "headline":"Đánh giá hiệu quả chiến dịch gọi ra: các chỉ số cần theo dõi","description":"Đánh giá hiệu quả chiến dịch gọi ra theo chuỗi nghe máy, RPC, kết quả và chi phí: công thức, mẫu số cần thống nhất và ví dụ từ Việt Nam.","inLanguage":"vi",
+ "image":"https://truongmanhtung.com/blog/danh-gia-hieu-qua-chien-dich-goi-ra-cac-chi-so-can-theo-doi/og.jpg",
+ "mainEntityOfPage":"https://truongmanhtung.com/blog/danh-gia-hieu-qua-chien-dich-goi-ra-cac-chi-so-can-theo-doi/",
+ "author":{"@type":"Person","name":"Trương Mạnh Tùng","url":"https://truongmanhtung.com/"}}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Trương Mạnh Tùng</a>
+    <div class="right">
+      <a class="navlink hide-sm" href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap narrow">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/"><span data-l="vi">Trang chủ</span><span data-l="en">Home</span></a> / <a href="/blog/"><span data-l="vi">Bài viết</span><span data-l="en">Insights</span></a> / <a href="/blog/#campaign-autodialer"><span data-l="vi">Campaign &amp; Autodialer</span><span data-l="en">Campaign &amp; Autodialer</span></a></nav>
+
+  <header class="post-head">
+    <div class="meta">
+      <span class="tag"><span data-l="vi">Campaign &amp; Autodialer</span><span data-l="en">Campaign &amp; Autodialer</span></span>
+      <span><span data-l="vi">6 phút đọc</span><span data-l="en">6 min read</span></span>
+    </div>
+    <h1>Đánh giá hiệu quả chiến dịch gọi ra: các chỉ số cần theo dõi</h1>
+  </header>
+
+  <p class="lang-note" data-l="en">This article is currently available in Vietnamese only.</p>
+
+  <article class="prose" lang="vi">
+<p>Khoảng 80% cuộc gọi từ số lạ hiện không được nghe máy, theo khảo sát State of the Call 2025 của <a href="https://www.businesswire.com/news/home/20250930624483/en" target="_blank" rel="noopener">Hiya</a> (đăng ngày 30/09/2025). Với một chiến dịch gọi ra, điều đó nghĩa là phần lớn nỗ lực quay số dừng lại trước khi cuộc trò chuyện bắt đầu, và một con số chung như "tỷ lệ thành công" dễ che mất chỗ hao hụt. Bài này đề xuất cách đọc hiệu quả chiến dịch gọi ra theo chuỗi từ quay số đến kết quả, kèm công thức và những điểm hay bị hiểu lệch khi lập báo cáo vận hành.</p>
+<h2>Hiệu quả chiến dịch gọi ra nên đo theo chuỗi nào?</h2>
+<p>Một chiến dịch đi qua bốn chặng: quay số, kết nối, gặp đúng người, rồi mới đến kết quả kinh doanh. Mất người ở chặng nào thì sửa ở chặng đó: danh sách số, khung giờ gọi, kịch bản hay phân bổ agent.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Chặng</th>
+<th>Chỉ số</th>
+<th>Công thức theo nguồn</th>
+<th>Ví dụ trong nguồn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kết nối</td>
+<td>Answer success rate</td>
+<td>cuộc được trả lời ÷ tổng cuộc gọi đi × 100</td>
+<td>80/100 = 80%</td>
+</tr>
+<tr>
+<td>Gặp đúng người</td>
+<td>Right-party contact (RPC)</td>
+<td>số RPC ÷ tổng cuộc gọi × 100</td>
+<td>200/1.000 = 20%</td>
+</tr>
+<tr>
+<td>Kết quả</td>
+<td>Conversion rate</td>
+<td>kết quả thành công ÷ tổng cuộc gọi đi × 100</td>
+<td>60/200 = 30%</td>
+</tr>
+<tr>
+<td>Kết quả (thu hồi nợ)</td>
+<td>Promise to pay (PTP)</td>
+<td>cuộc dẫn đến cam kết ÷ tổng cuộc gọi × 100</td>
+<td>300/1.000 = 30%</td>
+</tr>
+<tr>
+<td>Chi phí</td>
+<td>Cost per call</td>
+<td>chi phí vận hành ÷ số cuộc gọi</td>
+<td>50.000 USD ÷ 10.000 = 5 USD</td>
+</tr>
+</tbody>
+</table></div>
+<p>Các ví dụ lấy từ <a href="https://www.cloudtalk.io/blog/outbound-call-center-metrics/" target="_blank" rel="noopener">CloudTalk (2025)</a>, <a href="https://www.callcentrehelper.com/what-is-right-party-contact-rpc-208556.htm" target="_blank" rel="noopener">Call Centre Helper (2022)</a> và <a href="https://tratta.io/blog/kpi-collection-debt-metrics" target="_blank" rel="noopener">Tratta (09/2025)</a>; đây là số minh hoạ, không phải benchmark ngành.</p>
+<p>Một điểm dễ lệch là mẫu số của PTP. Tratta chia cho tổng cuộc gọi, còn <a href="https://cxtoday.com/understanding-the-promise-to-pay-metric-and-how-to-improve-it" target="_blank" rel="noopener">CX Today (2021)</a> chia cho số right-party contact. Với số ví dụ trong chính bài Tratta (400 RPC và 300 cam kết trên 1.000 cuộc gọi), cách đầu cho 30%, cách sau cho 75% theo phép tính của tôi. Trước khi so sánh hai chiến dịch hay hai đơn vị, cần thống nhất mẫu số.</p>
+<h2>Nhóm tiếp cận: nghe máy, kết nối và right-party contact</h2>
+<p>Chỉ số đầu tiên cần tách là nghe máy, vì nó phản ánh thói quen người nhận hơn là chất lượng nhân sự. Một bài trên <a href="https://cafef.vn/cai-kho-cua-telesale-2021041214273594.chn" target="_blank" rel="noopener">CafeF (04/2021)</a> trích con số không chính thức: trong 100 cuộc gọi telesale, chỉ khoảng 5 đến 7 người chịu nghe máy. Bài không nêu nguồn và đang giới thiệu dịch vụ Voice Brandname, nên chỉ nên đọc như một chỉ dấu.</p>
+<p>Cách đếm cũng quan trọng. Báo cáo telesales của <a href="https://helpdesk.getfly.vn/web-version/markdown/reporting/telesales-report" target="_blank" rel="noopener">Getfly</a> tách bốn nhóm: khách hàng đã được gọi, gọi thành công (có ghi nhận thời lượng), gọi nhỡ và chưa gọi. Nghe máy vì thế nên đếm theo cuộc có thời lượng, không theo số lần bấm gọi.</p>
+<p>Right-party contact là bước lọc tiếp theo. Theo Call Centre Helper, cuộc gọi chỉ tính khi agent gặp đúng người cần gặp, không phải hộp thư thoại, người thân hay bên thứ ba; với thu hồi nợ, đó là chính chủ tài khoản. <a href="https://legal.thomsonreuters.com/en/insights/articles/the-5-kpis-for-the-collections-department" target="_blank" rel="noopener">Thomson Reuters (2026)</a> mô tả RPC là cuộc gọi đến đúng người qua số điện thoại hợp lệ. Nếu tỷ lệ nghe máy ổn mà RPC thấp, nguyên nhân thường nằm ở dữ liệu liên hệ, chủ đề sẽ được bàn riêng ở bài về chất lượng dữ liệu đầu vào.</p>
+<h2>Nhóm kết quả: chuyển đổi, cam kết thanh toán và thu hồi</h2>
+<p>Với bán hàng và chăm sóc chủ động, chỉ số chính là conversion rate. <a href="https://www.callcentrehelper.com/key-outbound-call-centre-metrics-252339.htm" target="_blank" rel="noopener">Call Centre Helper (02/2025)</a> và <a href="https://www.scorebuddycx.com/blog/13-outbound-call-center-metrics" target="_blank" rel="noopener">Scorebuddy (2025)</a> nêu mức dao động 2% đến 20% tuỳ ngành và chất lượng lead. Khoảng này rộng đến mức không dùng làm mục tiêu được; so với chính chiến dịch kỳ trước đáng tin hơn. CloudTalk bổ sung first call close, tỷ lệ chốt ngay trong cuộc gọi đầu (ví dụ 40/200 = 20%).</p>
+<p>Với thu hồi nợ, Thomson Reuters liệt kê năm KPI: days sales outstanding, collector effective index (số tiền thu so với tổng khoản phải thu cùng kỳ), RPC, tỷ lệ cuộc gọi dẫn đến cam kết thanh toán, và lợi nhuận trên mỗi tài khoản (lợi nhuận gộp chia cho số tài khoản quá hạn đang quản lý). Tratta ghi chú rằng CEI quá cao cũng có thể báo hiệu chiến dịch quá gay gắt, một cảnh báo hữu ích khi mục tiêu thu hồi đi cùng yêu cầu giữ quan hệ khách hàng. Với telesales bán hàng, <a href="https://tuoitre.vn/cong-viec-cua-nhan-vien-telesales-co-phai-chi-goi-dien-cho-khach-hang-phan-1-2-20230220151459046.htm" target="_blank" rel="noopener">Tuổi Trẻ (02/2023)</a> liệt kê các chỉ số thường dùng: số cold call hằng tháng, số hợp đồng chốt qua điện thoại, thời gian tư vấn trung bình và tỷ lệ cuộc gọi bị từ chối.</p>
+<p>Các nguồn trên dừng lại ở cam kết thanh toán. Một bổ sung thực tế, không có trong các nguồn đó, là theo dõi thêm tỷ lệ cam kết được thực hiện đúng hạn, vì cam kết chưa phải là tiền về.</p>
+<h2>Nhóm vận hành và chi phí: handle time, occupancy, cuộc gọi bị bỏ</h2>
+<p>Nhóm này cho biết năng suất có đi kèm chất lượng hay không. CloudTalk tính thời lượng xử lý trung bình bằng tổng thời gian nói, giữ máy và xử lý sau cuộc gọi chia cho số cuộc (500 phút cho 100 cuộc là 5 phút). Scorebuddy dẫn các nguồn khác cho mức tham khảo khoảng 4 đến 6 phút và 80 đến 200 cuộc mỗi agent mỗi ngày với telemarketing; hai con số này thuộc dạng tổng hợp lại, nên chỉ để định hướng.</p>
+<p>Occupancy là phần thời gian agent thực sự xử lý cuộc gọi (6 trên 8 giờ là 75% trong ví dụ của CloudTalk). Chỉ số này đi cùng chế độ quay số: với predictive dialer, occupancy tăng nhưng cuộc gọi bị bỏ cũng có thể tăng. CloudTalk tính tỷ lệ bỏ cuộc gọi bằng số cuộc bị bỏ chia tổng cuộc gọi, nên báo cáo cần ghi rõ mẫu số là tổng cuộc quay hay chỉ những cuộc có người nghe.</p>
+<p>Ở cuối chuỗi là chi phí trên mỗi kết quả. CloudTalk ví dụ 20.000 USD cho 400 khách hàng mới, tương đương 50 USD mỗi khách. Chi phí mỗi cuộc gọi thấp chưa chắc tốt nếu RPC và conversion thấp theo.</p>
+<h2>Số liệu từ Việt Nam và cách dựng bảng báo cáo một trang</h2>
+<p>Ba ví dụ trong nước cho thấy các chỉ số thành công hay được công bố mà thiếu mẫu số.</p>
+<ul>
+<li><strong>FE Credit:</strong> theo case study của Genesys trên <a href="https://www.casestudies.com/company/genesys/case-study/fe-credit-leverages-the-genesys-engagetm-solution-to-deliver-highly-efficient-omnichannel-customer-experiences" target="_blank" rel="noopener">casestudies.com</a>, hệ thống thực hiện 1,7 triệu cuộc gọi ra mỗi ngày, tỷ lệ kết nối trên 30%, service level tăng lên khoảng 85–90% từ 30–40%. Trang không nêu năm, mức nền của connect rate hay cách tính.</li>
+<li><strong>Home Credit Việt Nam:</strong> <a href="https://fpt.ai/case-studies/ai-creates-a-breakthrough-in-productivity-for-home-credit-vietnam/" target="_blank" rel="noopener">FPT AI (04/2024)</a> ghi 2.000.000 cuộc gọi mỗi tháng, tỷ lệ thành công 98%; <a href="https://vnexpress.net/ai-tao-dot-pha-nang-suat-cho-cong-ty-tai-chinh-4135461.html" target="_blank" rel="noopener">VnExpress (07/2020)</a> ghi hàng chục nghìn cuộc mỗi ngày và tỷ lệ thành công trên 90% sau sáu tháng. Cả hai đều là số từ phía nhà cung cấp, và "thành công" không được định nghĩa.</li>
+<li><strong>Cash24:</strong> case study của VCC Live trên <a href="https://www.casestudies.com/company/vcc-live/case-study/leading-microloan-services-in-vietnam-with-up-to-90-agent-availability" target="_blank" rel="noopener">casestudies.com</a> nêu agent availability tối đa 90% khi dùng predictive dialer, nhưng không nêu cách đo.</li>
+</ul>
+<p>Từ đó có thể dựng bảng một trang cho mỗi chiến dịch, mỗi dòng ghi rõ tử số và mẫu số: số cuộc gọi đã quay; số cuộc được nghe máy; RPC; kết quả chính (conversion hoặc cam kết thanh toán, kèm cam kết được thực hiện); handle time cùng occupancy; chi phí trên mỗi kết quả. Các trường như số cuộc gọi, nghe máy, nhỡ và công nợ còn lại thường đã có sẵn trong báo cáo CRM, như báo cáo của Getfly.</p>
+<h2>Kết luận</h2>
+<p>Đánh giá hiệu quả chiến dịch gọi ra bằng một tỷ lệ thành công duy nhất thường không đủ; chuỗi từ nghe máy, RPC đến kết quả và chi phí mới chỉ ra chỗ cần sửa.</p>
+<p>Việc làm được trong tuần này: lấy một chiến dịch vừa kết thúc, điền sáu dòng của bảng trên và ghi rõ mẫu số từng dòng. Dòng nào chưa điền được cho biết dữ liệu còn thiếu ở dialer hoặc CRM, và đó là việc nên xử lý trước khi đặt mục tiêu cho kỳ sau.</p>  </article>
+
+  <section class="sources" aria-label="Nguồn / Sources">
+    <h2><span data-l="vi">Nguồn tham khảo</span><span data-l="en">Sources</span></h2>
+    <p>Các nguồn được dẫn trong bài.</p>
+    <ol>
+      <li><a href="https://www.businesswire.com/news/home/20250930624483/en" target="_blank" rel="noopener">Hiya – businesswire.com</a></li>
+      <li><a href="https://www.cloudtalk.io/blog/outbound-call-center-metrics/" target="_blank" rel="noopener">CloudTalk (2025) – cloudtalk.io</a></li>
+      <li><a href="https://www.callcentrehelper.com/what-is-right-party-contact-rpc-208556.htm" target="_blank" rel="noopener">Call Centre Helper (2022) – callcentrehelper.com</a></li>
+      <li><a href="https://tratta.io/blog/kpi-collection-debt-metrics" target="_blank" rel="noopener">Tratta (09/2025) – tratta.io</a></li>
+      <li><a href="https://cxtoday.com/understanding-the-promise-to-pay-metric-and-how-to-improve-it" target="_blank" rel="noopener">CX Today (2021) – cxtoday.com</a></li>
+      <li><a href="https://cafef.vn/cai-kho-cua-telesale-2021041214273594.chn" target="_blank" rel="noopener">CafeF (04/2021) – cafef.vn</a></li>
+      <li><a href="https://helpdesk.getfly.vn/web-version/markdown/reporting/telesales-report" target="_blank" rel="noopener">Getfly – helpdesk.getfly.vn</a></li>
+      <li><a href="https://legal.thomsonreuters.com/en/insights/articles/the-5-kpis-for-the-collections-department" target="_blank" rel="noopener">Thomson Reuters (2026) – legal.thomsonreuters.com</a></li>
+      <li><a href="https://www.callcentrehelper.com/key-outbound-call-centre-metrics-252339.htm" target="_blank" rel="noopener">Call Centre Helper (02/2025) – callcentrehelper.com</a></li>
+      <li><a href="https://www.scorebuddycx.com/blog/13-outbound-call-center-metrics" target="_blank" rel="noopener">Scorebuddy (2025) – scorebuddycx.com</a></li>
+      <li><a href="https://tuoitre.vn/cong-viec-cua-nhan-vien-telesales-co-phai-chi-goi-dien-cho-khach-hang-phan-1-2-20230220151459046.htm" target="_blank" rel="noopener">Tuổi Trẻ (02/2023) – tuoitre.vn</a></li>
+      <li><a href="https://www.casestudies.com/company/genesys/case-study/fe-credit-leverages-the-genesys-engagetm-solution-to-deliver-highly-efficient-omnichannel-customer-experiences" target="_blank" rel="noopener">casestudies.com</a></li>
+      <li><a href="https://fpt.ai/case-studies/ai-creates-a-breakthrough-in-productivity-for-home-credit-vietnam/" target="_blank" rel="noopener">FPT AI (04/2024) – fpt.ai</a></li>
+      <li><a href="https://vnexpress.net/ai-tao-dot-pha-nang-suat-cho-cong-ty-tai-chinh-4135461.html" target="_blank" rel="noopener">VnExpress (07/2020) – vnexpress.net</a></li>
+      <li><a href="https://www.casestudies.com/company/vcc-live/case-study/leading-microloan-services-in-vietnam-with-up-to-90-agent-availability" target="_blank" rel="noopener">casestudies.com</a></li>
+    </ol>
+  </section>
+
+  <section class="sources" aria-label="Bài viết liên quan / Related">
+    <h2><span data-l="vi">Bài viết liên quan</span><span data-l="en">Related</span></h2>
+    <ul>
+      <li><a href="/blog/chat-luong-du-lieu-dau-vao-anh-huong-the-nao-den-cuoc-goi-ra/">Chất lượng dữ liệu đầu vào ảnh hưởng thế nào đến cuộc gọi ra?</a></li>
+      <li><a href="/blog/ket-noi-chien-dich-goi-ra-voi-crm-6-diem-can-thong-nhat-truoc/">Kết nối chiến dịch gọi ra với CRM: 6 điểm cần thống nhất trước</a></li>
+      <li><a href="/blog/autodialer-la-gi-so-sanh-goi-thu-cong-va-cach-chon-che-do/">Autodialer là gì? So sánh với gọi thủ công và cách chọn chế độ</a></li>
+    </ul>
+  </section>
+
+  <aside class="author" aria-label="Tác giả / Author">
+    <div class="av" aria-hidden="true">TT</div>
+    <div>
+      <p class="name">Trương Mạnh Tùng</p>
+      <p class="sub"><span data-l="vi">Account Manager tại BaseBS, đồng hành cùng ngân hàng, tài chính, bảo hiểm trong xây dựng và vận hành Contact Center.</span><span data-l="en">Account Manager at BaseBS, helping banks, finance and insurance companies build and run their Contact Centers.</span></p>
+      <div class="acts">
+        <a class="btn primary" href="https://zalo.me/0915306688" target="_blank" rel="noopener"><span data-l="vi">Nhắn Zalo</span><span data-l="en">Message on Zalo</span></a>
+        <a class="btn" href="mailto:tungtm@basebs.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/tungtm141" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+  <p class="disclaimer"><span data-l="vi">Bài viết thể hiện góc nhìn cá nhân của tác giả, không phải quan điểm chính thức của BaseBS hay khách hàng được nhắc tới.</span><span data-l="en">Views are the author's own and do not represent BaseBS or any client mentioned.</span></p>
+
+  <nav class="post-nav"><a href="/blog/"><span data-l="vi">← Tất cả bài viết</span><span data-l="en">← All posts</span></a></nav>
+</main>
+
+<footer><div class="wrap">© 2026 Trương Mạnh Tùng · <a href="/">truongmanhtung.com</a></div></footer>
+<script src="/assets/blog.js" defer></script>
+</body>
+</html>

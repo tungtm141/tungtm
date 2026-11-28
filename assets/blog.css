@@ -46,7 +46,7 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 .eyebrow{font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--signal);margin:0 0 12px}
 .page-head h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 14px;font-weight:700}
 .page-head p{color:var(--muted);max-width:62ch;margin:0;font-size:1.1rem}
-.post-list{list-style:none;margin:0;padding:32px 0 64px;display:grid;gap:16px}
+.post-list{list-style:none;margin:0;padding:16px 0 8px;display:grid;gap:16px}
 .post-list:empty{padding:0}
 .post-card{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px 26px;transition:border-color .2s}
 .post-card:hover{border-color:var(--signal)}
@@ -117,3 +117,15 @@ footer a{text-decoration:none}
   header.top,.author .acts,.post-nav,.lang-note{display:none}
   body{background:#fff;color:#000;font-size:11pt}
 }
+
+/* Nhóm theo chủ đề */
+.topic-nav{display:flex;flex-wrap:wrap;gap:8px;padding:28px 0 8px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 56px);z-index:5;background:var(--bg)}
+.topic-nav a{text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:.9rem;font-weight:500}
+.topic-nav a:hover{border-color:var(--signal);color:var(--signal)}
+.count{display:inline-block;background:var(--signal-soft);color:var(--signal);font-weight:600;font-size:.78rem;padding:1px 8px;border-radius:20px;vertical-align:middle}
+.topic-block{padding:32px 0 8px;scroll-margin-top:120px}
+.topic-block+.topic-block{border-top:1px solid var(--line);margin-top:24px}
+.topic-head h2{margin:0 0 6px;font-size:1.5rem;letter-spacing:-.01em}
+.topic-head p{margin:0;color:var(--muted)}
+.topic-block:last-of-type{padding-bottom:56px}
+@media (max-width:700px){.topic-nav{position:static}}
